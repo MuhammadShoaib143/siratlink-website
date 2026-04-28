@@ -60,13 +60,7 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="hidden shrink-0 xl:flex xl:items-center xl:gap-3">
-            <a
-              href={siteConfig.phoneHref}
-              className="inline-flex items-center justify-center rounded-full border border-line bg-white/86 px-4 py-3 text-sm font-semibold text-ink shadow-[0_12px_26px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
-            >
-              Call Now
-            </a>
+          <div className="hidden shrink-0 xl:block">
             <LinkButton href="/contact" className="px-4 py-3 2xl:px-5 2xl:py-3.5">
               <span className="hidden 2xl:inline">Book a Consultation</span>
               <span className="2xl:hidden">Consultation</span>

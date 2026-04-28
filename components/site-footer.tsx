@@ -9,6 +9,7 @@ export function SiteFooter() {
     .join(", ");
 
   const mailingAddressLineTwo = `${siteConfig.mailingAddress.city}, ${siteConfig.mailingAddress.region} ${siteConfig.mailingAddress.postalCode}`;
+  const physicalAddressLine = `${siteConfig.physicalAddress.street1}, ${siteConfig.physicalAddress.city}, ${siteConfig.physicalAddress.region} ${siteConfig.physicalAddress.postalCode}`;
 
   return (
     <footer className="border-t border-line bg-brand-navy text-white">
@@ -32,13 +33,13 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.2fr_0.58fr_0.58fr_0.68fr] lg:px-8">
         <div>
-          <div className="relative h-[8.75rem] w-[8.75rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(243,246,248,0.96),rgba(233,238,243,0.9))] shadow-soft ring-1 ring-white/10">
+          <div className="relative h-[7rem] w-[7rem] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[linear-gradient(180deg,rgba(243,246,248,0.96),rgba(233,238,243,0.9))] shadow-soft ring-1 ring-white/10">
             <Image
               src="/siratlink-logo-transparent-clean.png"
               alt="SiratLink LLC logo"
               fill
-              sizes="140px"
-              className="object-contain p-3.5"
+              sizes="112px"
+              className="object-contain p-3"
             />
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-white/72">
@@ -54,6 +55,7 @@ export function SiteFooter() {
             <p>{siteConfig.location}</p>
             <p>{mailingAddressLineOne}</p>
             <p>{mailingAddressLineTwo}</p>
+            <p>{physicalAddressLine}</p>
             <p>
               <a href={siteConfig.phoneHref} className="transition hover:text-white">
                 {siteConfig.phone}
@@ -64,6 +66,14 @@ export function SiteFooter() {
                 {siteConfig.email}
               </a>
             </p>
+          </div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-semibold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:bg-white/92">
+              Book a Consultation
+            </Link>
+            <a href={siteConfig.phoneHref} className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14">
+              Call Now
+            </a>
           </div>
         </div>
 

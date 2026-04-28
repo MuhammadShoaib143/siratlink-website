@@ -68,7 +68,7 @@ export function ContactForm({
   }
 
   return (
-    <div className="soft-card premium-border rounded-[2rem] p-6 sm:p-8">
+    <div className="soft-card premium-border surface-outline rounded-[2rem] p-6 sm:p-8">
       <div className="mb-6">
         <h2 className="font-display text-2xl font-semibold text-ink">{title}</h2>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate">{description}</p>
@@ -82,6 +82,19 @@ export function ContactForm({
             </span>
           ))}
         </div>
+      </div>
+
+      <div className="mb-6 grid gap-3 sm:grid-cols-3">
+        {[
+          { label: "Response style", value: "Clear next-step guidance" },
+          { label: "Best for", value: "Carriers and growth-minded businesses" },
+          { label: "Inquiry path", value: "Gmail compose or mail app fallback" },
+        ].map((item) => (
+          <div key={item.label} className="rounded-[1.35rem] border border-line bg-white/78 px-4 py-4">
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-accent">{item.label}</p>
+            <p className="mt-2 text-sm font-medium leading-6 text-ink">{item.value}</p>
+          </div>
+        ))}
       </div>
 
       <form className="grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit}>
@@ -132,7 +145,7 @@ export function ContactForm({
         <div className="sm:col-span-2">
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-accent-deep sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3.5 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,118,110,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-accent-deep sm:w-auto"
           >
             {submitLabel}
           </button>

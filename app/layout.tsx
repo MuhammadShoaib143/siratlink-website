@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { siteConfig } from "@/lib/site";
 
@@ -96,6 +97,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sora.variable} font-sans antialiased`}>
+        <ScrollProgress />
         <Script
           id="organization-schema"
           type="application/ld+json"
