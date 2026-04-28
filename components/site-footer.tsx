@@ -45,6 +45,7 @@ export function SiteFooter() {
             SiratLink supports carriers, owner operators, and growth-minded businesses with dependable execution, organized communication, and a premium client experience.
           </p>
           <div className="mt-5 space-y-2 text-sm text-white/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">Contact</p>
             <p>{siteConfig.location}</p>
             <p>{mailingAddressLineOne}</p>
             <p>{mailingAddressLineTwo}</p>

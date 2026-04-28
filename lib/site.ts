@@ -58,9 +58,9 @@ export const footerNav = {
 };
 
 export const homeStats = [
-  { value: "Primary Focus", label: "Dispatching solutions for carriers and owner operators" },
-  { value: "Columbus, OH", label: "U.S. based operations with national reach" },
-  { value: "Growth Ready", label: "Built to expand into modern back-office support" },
+  { value: "Dispatch First", label: "Primary support for carriers and owner operators" },
+  { value: "Columbus, OH", label: "Ohio-based operations with national reach" },
+  { value: "Growth Ready", label: "Secondary support for digital and back-office needs" },
 ];
 
 export const trustPoints = [
@@ -101,6 +101,11 @@ export const serviceHighlights = [
     description:
       "Daily coordination support designed to create consistency, reduce downtime, and keep trucks productive.",
   },
+  {
+    title: "Carrier Support",
+    description:
+      "Ongoing support designed to keep communication clear, expectations aligned, and the daily operation more stable.",
+  },
 ];
 
 export const secondaryServices = [
@@ -125,9 +130,9 @@ export const secondaryServices = [
 ];
 
 export const consultationPoints = [
-  "Book a consultation with a U.S.-based service partner",
-  "Clear next steps for carriers, fleets, and business clients",
-  "Flexible support designed around your current stage of growth",
+  "Dispatch-first support with a clear next step",
+  "Flexible recommendations for fleets and growth-minded businesses",
+  "Professional communication from first inquiry onward",
 ];
 
 export const testimonials = [

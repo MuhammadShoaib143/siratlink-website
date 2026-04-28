@@ -21,8 +21,10 @@ export const metadata = buildPageMetadata({
   path: "/",
   keywords: [
     "dispatching services",
+    "truck dispatch service",
     "truck dispatch company",
     "dispatch company in Columbus Ohio",
+    "owner operator dispatch",
     "business support services",
   ],
 });

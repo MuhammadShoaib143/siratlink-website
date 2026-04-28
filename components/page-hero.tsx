@@ -26,13 +26,17 @@ export function PageHero({
   return (
     <SectionShell className="relative overflow-hidden pb-10 pt-10 sm:pt-14 lg:pb-16 lg:pt-20">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(circle_at_top_left,_rgba(15,118,110,0.16),_transparent_38%),radial-gradient(circle_at_top_right,_rgba(212,162,76,0.12),_transparent_24%)]" />
-      <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
         <Reveal className="relative z-10">
-          <p className="eyebrow mb-5">{eyebrow}</p>
-          <h1 className="max-w-3xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-[3.85rem]">
+          <div className="glass-strip inline-flex rounded-full px-4 py-2">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-accent-deep">
+              {eyebrow}
+            </p>
+          </div>
+          <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl lg:text-[4rem]">
             {title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate">{description}</p>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate lg:text-[1.08rem]">{description}</p>
           {(primaryCta || secondaryCta) && (
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               {primaryCta ? (

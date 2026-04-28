@@ -24,8 +24,11 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   keywords: [
     "dispatching services",
+    "truck dispatch service",
     "truck dispatch company",
+    "dispatch company USA",
     "dispatch company in Columbus Ohio",
+    "owner operator dispatch",
     "virtual assistance services",
     "web development services",
     "digital marketing services",

@@ -15,7 +15,7 @@ export function InfoCard({
   children?: ReactNode;
 }) {
   return (
-    <div className={`soft-card premium-border rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft ${className}`}>
+    <div className={`soft-card premium-border rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft sm:p-7 ${className}`}>
       {eyebrow ? (
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           {eyebrow}
@@ -41,7 +41,7 @@ export function ServiceCard({
 }) {
   return (
     <div
-      className={`group rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 ${
+      className={`group rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 sm:p-7 ${
         featured
           ? "relative overflow-hidden border border-accent/20 bg-brand-navy text-white shadow-soft"
           : "soft-card premium-border text-ink"
@@ -86,7 +86,7 @@ export function StepCard({
   description: string;
 }) {
   return (
-    <div className="soft-card premium-border rounded-[2rem] p-6">
+    <div className="soft-card premium-border rounded-[2rem] p-6 sm:p-7">
       <div className="inline-flex rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent-deep">
         {step}
       </div>
@@ -106,7 +106,7 @@ export function TestimonialCard({
   role: string;
 }) {
   return (
-    <div className="soft-card premium-border rounded-[2rem] p-6">
+    <div className="soft-card premium-border rounded-[2rem] p-6 sm:p-7">
       <p className="text-base leading-8 text-ink">“{quote}”</p>
       <div className="mt-6 border-t border-line pt-4">
         <p className="font-semibold text-ink">{name}</p>

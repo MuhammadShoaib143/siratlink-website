@@ -61,7 +61,7 @@ export default function DigitalMarketingServicesPage() {
       <PageHero
         eyebrow="Digital Marketing Services"
         title="Digital marketing support for businesses that want stronger visibility, clearer positioning, and more qualified opportunities."
-        description="Digital marketing is presented as a secondary SiratLink service that supports business growth through social media management, paid advertising support, lead generation, branding support, and content strategy."
+        description="Digital marketing is presented as a secondary SiratLink service that supports business growth through social media, paid advertising, lead generation, branding support, and content strategy."
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
         secondaryCta={{ label: "View All Services", href: "/services" }}
         stats={["Secondary growth service", "Lead generation support", "Professional brand presentation"]}
@@ -87,7 +87,7 @@ export default function DigitalMarketingServicesPage() {
           <SectionIntro
             eyebrow="What This Covers"
             title="A modern digital marketing service positioned to support visibility, trust, and long-term business growth."
-            description="This service is intentionally presented as a premium secondary offer. It supports the broader SiratLink brand while keeping dispatching as the company&apos;s lead service."
+            description="This service is intentionally presented as a premium secondary offer while keeping dispatching as the company&apos;s lead service."
             className="mb-10"
           />
         </Reveal>
@@ -106,7 +106,7 @@ export default function DigitalMarketingServicesPage() {
             <SectionIntro
               eyebrow="Why It Matters"
               title="Digital growth works better when the business presents itself clearly and consistently."
-              description="Marketing support should do more than create activity. It should help a business look more established, generate stronger inquiries, and build a more credible presence across the channels that matter."
+              description="Marketing support should do more than create activity. It should help a business look more established, generate stronger inquiries, and build a more credible presence."
             />
             <p className="mt-5 text-base leading-8 text-slate">
               SiratLink positions digital marketing as a serious business growth service for companies that want structured support around visibility, messaging, and lead generation.

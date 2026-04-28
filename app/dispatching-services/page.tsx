@@ -16,17 +16,21 @@ export const metadata = buildPageMetadata({
   path: "/dispatching-services",
   keywords: [
     "dispatching services",
+    "truck dispatch service",
     "truck dispatch company",
+    "dispatch company USA",
+    "Columbus Ohio dispatch company",
     "owner operator dispatching",
+    "owner operator dispatch",
     "carrier dispatch support",
   ],
 });
 
 const benefits = [
   "Less time spent chasing loads and more time focused on delivering freight.",
-  "More professional broker communication that supports better business relationships.",
-  "A clearer dispatch workflow with organized support around paperwork and trip execution.",
-  "Operational consistency designed to reduce downtime and improve day-to-day focus.",
+  "More professional broker communication that supports stronger relationships.",
+  "A clearer dispatch workflow with organized paperwork and trip coordination.",
+  "Operational consistency designed to reduce downtime and improve focus.",
 ];
 
 const pricingPoints = [
@@ -57,14 +61,14 @@ export default function DispatchingServicesPage() {
     <>
       <PageHero
         eyebrow="Dispatching Services"
-        title="Dispatching support designed to help carriers and owner operators run with more structure and stronger momentum."
-        description="SiratLink provides professional dispatching services that help keep operations organized, loads moving, and communication handled with the level of care serious trucking businesses need."
+        title="Dispatching support designed to help carriers run with more structure, stronger communication, and steadier momentum."
+        description="SiratLink provides professional dispatching services that keep operations organized, loads moving, and communication handled with the level of care serious trucking businesses expect."
         primaryCta={{ label: "Book a Dispatch Consultation", href: "/contact" }}
         secondaryCta={{ label: "View All Services", href: "/services" }}
-        stats={["Owner operators and carriers", "Professional broker communication", "Conversion-focused inquiry path"]}
+        stats={["Owner operators and fleets", "Professional broker communication", "Flexible support model"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
-          <p className="eyebrow">Conversion Focused Support</p>
+          <p className="eyebrow">What Clients Come For</p>
           <h2 className="mt-4 font-display text-2xl font-semibold text-ink">
             What you can expect from SiratLink dispatching
           </h2>
@@ -84,7 +88,7 @@ export default function DispatchingServicesPage() {
           <SectionIntro
             eyebrow="Service Scope"
             title="Dispatch coordination that covers the core needs of daily trucking operations."
-            description="The service scope is intentionally practical and benefit-driven so carriers immediately understand what is being handled and why it matters."
+            description="The service scope stays practical and easy to understand so carriers can quickly see what is being handled and why it matters."
             className="mb-10"
           />
         </Reveal>
@@ -102,7 +106,7 @@ export default function DispatchingServicesPage() {
           <SectionIntro
             eyebrow="How We Support Carriers"
             title="A dispatching approach built around professionalism, communication, and consistent support."
-            description="The flow stays clear from onboarding to daily execution, which helps the page feel more trustworthy and conversion-ready."
+            description="The workflow stays clear from onboarding to daily execution so the offer feels more trustworthy and easier to act on."
             className="mb-10"
           />
         </Reveal>
@@ -111,7 +115,7 @@ export default function DispatchingServicesPage() {
             <StepCard
               step="01"
               title="Operational Alignment"
-              description="We get clear on your lanes, equipment, revenue priorities, communication preferences, and dispatch workflow needs."
+              description="We get clear on your lanes, equipment, revenue priorities, and dispatch workflow needs."
             />
           </Reveal>
           <Reveal delay={90}>
@@ -125,7 +129,7 @@ export default function DispatchingServicesPage() {
             <StepCard
               step="03"
               title="Ongoing Carrier Support"
-              description="We stay focused on dependable follow-through, paperwork support, and a service relationship built for continuity."
+              description="We stay focused on dependable follow-through, paperwork support, and steady carrier support."
             />
           </Reveal>
         </div>
@@ -137,14 +141,14 @@ export default function DispatchingServicesPage() {
             <SectionIntro
               eyebrow="Pricing Strategy"
               title="Flexible dispatch pricing built around fit, support level, and operational complexity."
-              description="SiratLink does not use one-size-fits-all pricing. We structure plans around fleet size, support needs, lane profile, and the level of day-to-day coordination required."
+              description="SiratLink does not use one-size-fits-all pricing. Plans are structured around fleet size, support needs, lane profile, and the level of day-to-day coordination required."
             />
             <div className="mt-8 rounded-[2rem] bg-brand-navy p-6 text-white shadow-soft sm:p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">
                 What To Expect
               </p>
               <p className="mt-4 text-base leading-8 text-white/76">
-                The goal is to create a professional, sustainable service relationship that works for owner operators and fleets without unnecessary friction, hidden complexity, or long-term pressure.
+                Flexible plans based on your operation, custom pricing for owner operators and fleets, no hidden fees, and no long-term contracts.
               </p>
             </div>
           </Reveal>
@@ -179,7 +183,7 @@ export default function DispatchingServicesPage() {
             <SectionIntro
               eyebrow="Why It Matters"
               title="Dispatching should help you operate smarter, communicate better, and protect your time."
-              description="For owner operators and small carriers, scattered communication and inconsistent planning can create unnecessary strain. SiratLink brings more structure to the process so your operation feels better supported every day."
+              description="For owner operators and small carriers, scattered communication and inconsistent planning create unnecessary strain. SiratLink brings more structure to the process so your operation feels better supported every day."
             />
             <div className="mt-8 space-y-4">
               {[
@@ -201,7 +205,7 @@ export default function DispatchingServicesPage() {
           <Reveal delay={90}>
             <ContactForm
               title="Request dispatch support"
-              description="Tell us about your truck, lanes, and dispatch needs. This consultation section is designed to convert real business inquiries."
+              description="Tell us about your trucks, lanes, and dispatch needs and prepare a ready-to-send consultation inquiry."
               defaultService="Dispatching Services"
               submitLabel="Get Your Custom Plan"
             />

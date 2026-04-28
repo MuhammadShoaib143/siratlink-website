@@ -25,10 +25,10 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About SiratLink"
         title="A modern service company built around trust, operational discipline, and long-term client growth."
-        description="SiratLink LLC is a Columbus, Ohio based professional service company focused on dependable dispatching and scalable business support. We are building the kind of client experience that feels responsive, organized, and ready for real-world execution."
+        description="SiratLink LLC is an Ohio-based professional service company focused on dependable dispatching and scalable business support with a more organized client experience."
         primaryCta={{ label: "Contact Us", href: "/contact" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
-        stats={["Columbus, Ohio based", "Dispatch-first service model", "Built for long-term client support"]}
+        stats={["Ohio-based service company", "Dispatch-first service model", "Built for long-term client support"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">What Defines Us</p>
@@ -58,14 +58,14 @@ export default function AboutPage() {
             <InfoCard
               eyebrow="Mission"
               title="Support clients with dependable service that improves how their business operates."
-              description="Our mission is to provide professional support that helps carriers, owner operators, and growing businesses work more efficiently, communicate more clearly, and operate with greater confidence."
+              description="Our mission is to provide professional support that helps carriers, owner operators, and growing businesses work more efficiently and communicate more clearly."
             />
           </Reveal>
           <Reveal delay={90}>
             <InfoCard
               eyebrow="Vision"
               title="Grow into a trusted multi-service partner for operations, communication, and digital support."
-              description="While dispatching is our current priority, SiratLink is being built to support broader business needs over time, including virtual assistance, web development, digital marketing, digital operations support, and scalable back-office services."
+              description="While dispatching is the current priority, SiratLink is being built to support broader business needs over time through virtual assistance, web development, digital marketing, and scalable back-office support."
             />
           </Reveal>
         </div>
@@ -77,10 +77,10 @@ export default function AboutPage() {
             <SectionIntro
               eyebrow="Business Philosophy"
               title="Strong operations come from clear systems, respectful communication, and consistent follow-through."
-              description="We believe great service should remove friction, not create more of it. That means being organized, answering promptly, handling details carefully, and supporting clients in a way that reflects well on their business every step of the way."
+              description="We believe great service should remove friction, not create more of it. That means staying organized, answering promptly, handling details carefully, and supporting clients in a way that reflects well on their business."
             />
             <p className="mt-5 text-base leading-8 text-slate">
-              SiratLink is committed to operational excellence because our clients rely on real outcomes, not just promises. We take a practical, professional approach that values trust, reliability, and measurable support.
+              SiratLink is committed to operational excellence because clients rely on real outcomes, not just promises.
             </p>
           </Reveal>
 

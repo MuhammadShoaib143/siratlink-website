@@ -38,12 +38,12 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Book a consultation for dispatching, business support, or digital growth."
-        description="Reach SiratLink by phone, email, or form and we will help you choose the right next step."
+        description="Reach SiratLink by phone, email, or form and we will help you choose the right next step with a cleaner inquiry experience."
         primaryCta={{ label: "Book a Consultation", href: "#contact-form" }}
         secondaryCta={{ label: "View Dispatching Services", href: "/dispatching-services" }}
         stats={[
           "Responsive contact experience",
-          "Built for carriers and business clients",
+          "Built for carriers, fleets, and business clients",
           "Westerville and Columbus, Ohio based",
         ]}
       >
@@ -67,7 +67,7 @@ export default function ContactPage() {
         <SectionIntro
           eyebrow="Start The Conversation"
           title="A cleaner contact experience with direct next steps."
-          description="Choose the fastest way to reach SiratLink, or send your details through the consultation form."
+          description="Choose the fastest way to reach SiratLink, or send your details through the consultation form with the information most serious leads are expected to provide."
           className="mb-10"
         />
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
@@ -154,7 +154,7 @@ export default function ContactPage() {
             <div id="contact-form">
               <ContactForm
                 title="Request your consultation"
-                description="Share the essentials and we will prepare a ready-to-send inquiry email."
+                description="Share your contact details, company name, number of trucks if applicable, service needed, and message."
                 submitLabel="Book a Consultation"
               />
             </div>

@@ -60,9 +60,10 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="hidden shrink-0 2xl:block">
+          <div className="hidden shrink-0 xl:block">
             <LinkButton href="/contact" className="px-4 py-3 2xl:px-5 2xl:py-3.5">
-              Book a Consultation
+              <span className="hidden 2xl:inline">Book a Consultation</span>
+              <span className="2xl:hidden">Consultation</span>
             </LinkButton>
           </div>
 

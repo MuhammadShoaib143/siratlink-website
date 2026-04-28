@@ -103,7 +103,7 @@ export default function WebDevelopmentPage() {
             <SectionIntro
               eyebrow="Future-Focused Positioning"
               title="A strong website helps a business look established before a conversation even begins."
-              description="Businesses increasingly need a digital presence that communicates credibility, clarity, and quality. SiratLink’s web development direction is designed to help clients present themselves better and create a stronger foundation for digital growth."
+              description="Businesses increasingly need a digital presence that communicates credibility, clarity, and quality. SiratLink’s web development direction is designed to help clients present themselves better."
             />
             <p className="mt-5 text-base leading-8 text-slate">
               This service is positioned as premium, modern, and practical for companies that want their online presence to match the professionalism of their business.

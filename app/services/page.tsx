@@ -14,6 +14,7 @@ export const metadata = buildPageMetadata({
   path: "/services",
   keywords: [
     "dispatching services",
+    "truck dispatch service",
     "virtual assistance services",
     "web development services",
     "digital marketing services",
@@ -26,14 +27,14 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Professional support services built to help businesses move faster, look sharper, and grow with less friction."
-        description="Dispatching is our lead service today, with virtual assistance, web development, and broader operations support positioned to expand alongside client demand."
+        title="Premium business support with dispatching as the clear lead service."
+        description="Dispatching remains the primary SiratLink offer, while virtual assistance, web development, and digital marketing support the brand as polished secondary services."
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
         secondaryCta={{ label: "Explore Dispatching", href: "/dispatching-services" }}
-        stats={["Dispatching as the lead offer", "Business support positioned for scale", "Premium service-first presentation"]}
+        stats={["Dispatching stays primary", "Secondary services support growth", "Built for premium business positioning"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
-          <p className="eyebrow">Service Mix</p>
+          <p className="eyebrow">Service Structure</p>
           <div className="mt-5 grid gap-4">
             {[
               "Dispatching services for carriers and owner operators",
@@ -52,8 +53,8 @@ export default function ServicesPage() {
       <SectionShell>
         <SectionIntro
           eyebrow="Core Services"
-          title="The service lineup leads with dispatching while presenting the rest of the brand as polished, credible, and growth-ready."
-          description="Dispatching remains the clearest conversion path for carriers and owner operators. The secondary services are positioned to support broader business needs without competing with the lead offer."
+          title="Dispatching leads the service lineup and stays the clearest conversion path."
+          description="The supporting services are positioned to strengthen the SiratLink brand without competing with the primary dispatching offer."
           className="mb-10"
         />
         <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
@@ -93,8 +94,8 @@ export default function ServicesPage() {
         <Reveal>
           <SectionIntro
             eyebrow="Growth Services"
-            title="Secondary services presented with the same premium standard as the core dispatching offer."
-            description="These services help position SiratLink as a serious long-term business support brand while still keeping dispatching as the primary lead generation focus."
+            title="Secondary services presented with the same premium standard."
+            description="These services give growth-minded clients access to broader support while keeping dispatching front and center."
             className="mb-10"
           />
         </Reveal>
@@ -109,24 +110,24 @@ export default function ServicesPage() {
 
       <SectionShell>
         <Reveal className="soft-card premium-border rounded-[2.25rem] p-8 lg:p-10">
-          <p className="eyebrow">Why Businesses Choose SiratLink</p>
+          <p className="eyebrow">Why Clients Choose SiratLink</p>
           <div className="mt-6 grid gap-5 lg:grid-cols-3">
             <div className="rounded-[1.75rem] bg-canvas p-5">
               <h3 className="font-display text-xl font-semibold text-ink">Professional Communication</h3>
               <p className="mt-3 text-sm leading-7 text-slate">
-                We prioritize clarity, responsiveness, and communication that strengthens your business reputation.
+                We prioritize clarity, responsiveness, and communication that strengthens business credibility.
               </p>
             </div>
             <div className="rounded-[1.75rem] bg-canvas p-5">
               <h3 className="font-display text-xl font-semibold text-ink">Scalable Support</h3>
               <p className="mt-3 text-sm leading-7 text-slate">
-                Our service model is designed to adapt as your operational needs become more complex over time.
+                The service model is designed to adapt as operational needs grow more complex.
               </p>
             </div>
             <div className="rounded-[1.75rem] bg-canvas p-5">
               <h3 className="font-display text-xl font-semibold text-ink">Business-Focused Execution</h3>
               <p className="mt-3 text-sm leading-7 text-slate">
-                Every service is shaped around helping clients save time, reduce friction, and operate more confidently.
+                Every offer is shaped around saving time, reducing friction, and supporting better execution.
               </p>
             </div>
           </div>

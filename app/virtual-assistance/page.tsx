@@ -84,7 +84,7 @@ export default function VirtualAssistancePage() {
           <SectionIntro
             eyebrow="Service Overview"
             title="Business-focused support that feels polished, dependable, and operationally useful."
-            description="The copy and layout keep this offer premium and practical rather than sounding like generic VA marketing."
+            description="This offer stays premium and practical instead of sounding like generic VA marketing."
             className="mb-10"
           />
         </Reveal>
@@ -103,7 +103,7 @@ export default function VirtualAssistancePage() {
             <SectionIntro
               eyebrow="Why It Works"
               title="The right support helps businesses operate more smoothly without sacrificing professionalism."
-              description="Virtual assistance is not just about offloading tasks. It is about creating reliable support around communication, organization, and repeatable processes so your business can stay focused on higher-value work."
+              description="Virtual assistance is not just about offloading tasks. It is about creating reliable support around communication, organization, and repeatable processes."
             />
             <p className="mt-5 text-base leading-8 text-slate">
               SiratLink positions this service as modern operational support for businesses that need responsiveness, structure, and room to grow.
