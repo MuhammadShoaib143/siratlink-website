@@ -1,0 +1,39 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="siratlink-app-accent" x1="20" y1="103" x2="111" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F766E"/>
+      <stop offset="0.54" stop-color="#0F5C94"/>
+      <stop offset="1" stop-color="#D4A24C"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#0F172A"/>
+  <path
+    d="M26 84C16 67 16 44 28 28C40 13 61 6 81 11C93 14 104 21 112 30"
+    stroke="#F8FAFC"
+    stroke-width="8"
+    stroke-linecap="round"
+  />
+  <path
+    d="M110 30C120 42 125 56 123 70C122 87 113 101 100 110C85 120 65 123 47 117"
+    stroke="url(#siratlink-app-accent)"
+    stroke-width="8"
+    stroke-linecap="round"
+  />
+  <path
+    d="M112 30L119 33L114 41"
+    stroke="#D4A24C"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M40 75C48 63 60 57 73 57C85 57 95 52 103 41"
+    stroke="#F8FAFC"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="39" cy="75" r="5.5" fill="#D4A24C"/>
+  <circle cx="73" cy="57" r="4.5" fill="#2DD4BF"/>
+  <circle cx="103" cy="41" r="4.25" fill="#F8FAFC"/>
+</svg>

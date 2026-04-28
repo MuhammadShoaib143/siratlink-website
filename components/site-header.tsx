@@ -1,0 +1,108 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+
+import { LinkButton } from "@/components/link-button";
+import { primaryNav } from "@/lib/site";
+
+export function SiteHeader() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  return (
+    <header className="sticky top-0 z-50">
+      <div className="border-b border-white/50 bg-brand-navy px-4 py-2 text-center text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-white/75 sm:px-6 lg:px-8">
+        Columbus, Ohio Based • Serving U.S. Carriers and Growth-Minded Businesses
+      </div>
+      <div className="border-b border-white/55 bg-canvas/82 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
+          <Link href="/" className="flex shrink-0 items-center gap-3">
+            <div className="relative h-[3.6rem] w-[8.25rem] sm:h-[4rem] sm:w-[9.25rem] lg:h-[4.35rem] lg:w-[10rem]">
+              <Image
+                src="/siratlink-logo-transparent-clean.png"
+                alt="SiratLink LLC logo"
+                fill
+                priority
+                sizes="(max-width: 640px) 132px, (max-width: 1024px) 148px, 160px"
+                className="object-contain object-left"
+              />
+            </div>
+          </Link>
+
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-px xl:flex 2xl:gap-1">
+            {primaryNav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === item.href
+                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8rem] font-medium transition xl:px-3 2xl:px-4 2xl:text-sm ${
+                    active
+                      ? "bg-white text-accent shadow-soft"
+                      : "text-slate hover:bg-white/80 hover:text-ink"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="hidden shrink-0 2xl:block">
+            <LinkButton href="/contact" className="px-4 py-3 2xl:px-5 2xl:py-3.5">
+              Book a Consultation
+            </LinkButton>
+          </div>
+
+          <button
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={open}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink transition hover:border-accent hover:text-accent xl:hidden"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="sr-only">Menu</span>
+            <div className="flex flex-col gap-1.5">
+              <span className={`block h-0.5 w-5 bg-current transition ${open ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`block h-0.5 w-5 bg-current transition ${open ? "opacity-0" : ""}`} />
+              <span className={`block h-0.5 w-5 bg-current transition ${open ? "-translate-y-2 -rotate-45" : ""}`} />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div
+        className={`overflow-hidden border-b border-line bg-white/95 transition-[max-height,opacity] duration-300 xl:hidden ${
+          open ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+          {primaryNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-2xl px-4 py-3 text-sm font-medium text-ink transition hover:bg-canvas hover:text-accent"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <LinkButton href="/contact" className="mt-2">
+            Book a Consultation
+          </LinkButton>
+        </nav>
+      </div>
+    </header>
+  );
+}
