@@ -22,16 +22,16 @@ export function SectionIntro({
   return (
     <div
       className={`${centered ? "mx-auto text-center" : ""} ${
-        action ? "flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between" : ""
+        action ? "flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between" : ""
       } ${className}`}
     >
-      <div className={centered ? "mx-auto max-w-3xl" : "max-w-3xl"}>
+      <div className={centered ? "mx-auto max-w-3xl" : "max-w-[44rem]"}>
         <p className="eyebrow">{eyebrow}</p>
-        <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+        <h2 className="mt-3 font-display text-3xl font-semibold leading-[1.05] text-ink sm:text-4xl lg:text-[2.85rem]">
           {title}
         </h2>
         {description ? (
-          <p className="mt-4 max-w-2xl text-base leading-8 text-slate">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate lg:text-[1.05rem]">
             {description}
           </p>
         ) : null}

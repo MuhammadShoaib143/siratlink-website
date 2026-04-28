@@ -1,5 +1,4 @@
 import { ContactForm } from "@/components/contact-form";
-import { ConsultationBand } from "@/components/consultation-band";
 import { LinkButton } from "@/components/link-button";
 import { MailActionButton } from "@/components/mail-action-button";
 import { Reveal } from "@/components/reveal";
@@ -35,88 +34,79 @@ const heroHighlights = [
 
 const trustSignals = [
   {
-    title: "Columbus, Ohio Based",
-    description:
-      "U.S.-based support for carriers that value clear communication and dependable execution.",
+    title: "Dispatch-First Offer",
+    description: "The core service stays focused on loads, paperwork, broker communication, and dependable day-to-day support.",
   },
   {
-    title: "Dispatching Comes First",
-    description:
-      "Dispatching is the core service, with support around loads, paperwork, and daily coordination.",
+    title: "U.S.-Based Support",
+    description: "SiratLink is based in Ohio and positioned to serve carriers that want organized, business-minded communication.",
   },
   {
-    title: "Clear Communication",
-    description:
-      "Timely updates and organized broker-facing communication help the operation stay steady.",
+    title: "Professional Delivery",
+    description: "The experience is built around responsiveness, cleaner workflow, and stronger operational discipline.",
   },
   {
-    title: "Built For Long-Term Support",
-    description:
-      "Additional support is available in virtual assistance, web, and digital marketing.",
+    title: "Growth-Ready Brand",
+    description: "Virtual assistance, web support, and digital marketing remain available as secondary growth services.",
   },
 ];
 
-const differentiators = [
+const dispatchPillars = [
   "Load sourcing aligned to lane fit and revenue goals.",
   "Broker-facing communication that sounds sharper and more organized.",
-  "Paperwork and trip coordination designed to reduce daily friction.",
-  "A steady service style built around clarity and responsiveness.",
+  "Paperwork and route coordination designed to reduce daily friction.",
 ];
-
-const featuredServiceHighlights = serviceHighlights.slice(0, 4);
 
 const workflow = [
   {
     step: "01",
     title: "Discovery Call",
-    description:
-      "We learn your lanes, truck type, and dispatch priorities.",
+    description: "We learn your lanes, truck type, and dispatch priorities.",
   },
   {
     step: "02",
-    title: "Dispatch Alignment",
-    description:
-      "We align on communication style, load criteria, and workflow expectations.",
+    title: "Support Alignment",
+    description: "We align on load criteria, communication style, and workflow expectations.",
   },
   {
     step: "03",
-    title: "Consistent Execution",
-    description:
-      "Support stays focused on cleaner coordination and dependable daily execution.",
+    title: "Daily Execution",
+    description: "Support stays focused on cleaner coordination and dependable follow-through.",
   },
 ];
 
 const finalChecklist = [
-  "Dispatching support for owner operators and growing carriers",
-  "Clear communication and organized day-to-day coordination",
-  "Additional business support available as your company grows",
+  "Dispatching remains the primary service",
+  "Clear support path for owner operators and fleets",
+  "Additional business support available as you grow",
 ];
+
+const featuredServiceHighlights = serviceHighlights.slice(0, 4);
 
 export default function HomePage() {
   return (
     <>
       <SectionShell className="relative overflow-hidden pb-12 pt-8 sm:pt-12 lg:pb-20 lg:pt-16">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(15,118,110,0.2),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(212,162,76,0.16),_transparent_20%),linear-gradient(180deg,_rgba(255,255,255,0.28),_transparent)]" />
-        <div className="relative grid items-start gap-10 lg:grid-cols-[1.03fr_0.97fr]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(15,118,110,0.18),_transparent_34%),radial-gradient(circle_at_top_right,_rgba(212,162,76,0.12),_transparent_20%),linear-gradient(180deg,_rgba(255,255,255,0.3),_transparent)]" />
+        <div className="relative grid items-start gap-10 lg:grid-cols-[1fr_0.96fr]">
           <Reveal className="relative z-10">
             <div className="glass-strip inline-flex rounded-full px-4 py-2">
               <span className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent-deep">
-                Columbus, Ohio Based • Premium Dispatching Support
+                Columbus, Ohio Based • Dispatching Comes First
               </span>
             </div>
-            <h1 className="mt-6 max-w-5xl font-display text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl lg:text-[4.7rem]">
-              Premium dispatch support for carriers that need stronger communication and more dependable daily execution.
+
+            <h1 className="mt-6 max-w-5xl font-display text-4xl font-semibold leading-[0.98] text-ink sm:text-5xl lg:text-[4.9rem]">
+              Premium dispatch support for carriers that need stronger communication and steadier execution.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate sm:text-[1.1rem]">
-              SiratLink helps owner operators, fleet owners, and growing carriers move with more structure, cleaner broker communication, and steadier dispatch support.
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate sm:text-[1.08rem]">
+              SiratLink helps owner operators, fleet owners, and growing carriers run with more structure, cleaner broker communication, and dependable daily support.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {heroHighlights.map((item) => (
-                <div
-                  key={item}
-                  className="glass-strip rounded-[1.4rem] px-4 py-4 text-sm leading-7 text-slate"
-                >
+                <div key={item} className="glass-strip rounded-[1.4rem] px-4 py-4 text-sm leading-7 text-slate">
                   {item}
                 </div>
               ))}
@@ -129,7 +119,7 @@ export default function HomePage() {
               <LinkButton
                 href="/dispatching-services"
                 variant="secondary"
-                className="w-full border-white/70 bg-white/80 sm:w-auto"
+                className="w-full border-white/70 bg-white/85 sm:w-auto"
               >
                 Explore Dispatching Services
               </LinkButton>
@@ -146,26 +136,14 @@ export default function HomePage() {
                 email={siteConfig.email}
                 label={`Email ${siteConfig.email}`}
                 copiedLabel="Email Copied"
-                className="inline-flex items-center justify-center rounded-full border border-line bg-white/76 px-4 py-3 text-sm font-medium text-ink shadow-[0_12px_26px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
+                className="inline-flex items-center justify-center rounded-full border border-line bg-white/82 px-4 py-3 text-sm font-medium text-ink shadow-[0_12px_26px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
               />
-            </div>
-
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              {[
-                "Owner operators",
-                "Small and mid-sized carriers",
-                "Fleet owners",
-              ].map((item) => (
-                <span key={item} className="metric-pill text-sm font-medium text-ink">
-                  {item}
-                </span>
-              ))}
             </div>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {homeStats.map((stat, index) => (
-                <Reveal key={stat.label} delay={index * 90}>
-                  <div className="soft-card premium-border rounded-[1.8rem] p-5">
+                <Reveal key={stat.label} delay={index * 80}>
+                  <div className="soft-card premium-border rounded-[1.75rem] p-5">
                     <p className="font-display text-lg font-semibold text-ink">{stat.value}</p>
                     <p className="mt-2 text-sm leading-6 text-slate">{stat.label}</p>
                   </div>
@@ -176,14 +154,14 @@ export default function HomePage() {
 
           <Reveal delay={120}>
             <div className="relative">
-              <div className="absolute -right-6 top-8 hidden h-28 w-28 rounded-full bg-brand-gold/15 blur-3xl lg:block" />
-              <div className="absolute -left-8 bottom-20 hidden h-32 w-32 rounded-full bg-accent/15 blur-3xl lg:block" />
+              <div className="absolute -right-8 top-6 hidden h-28 w-28 rounded-full bg-brand-gold/12 blur-3xl lg:block" />
+              <div className="absolute -left-8 bottom-16 hidden h-32 w-32 rounded-full bg-accent/14 blur-3xl lg:block" />
 
-              <div className="hero-panel premium-border relative overflow-hidden rounded-[2.4rem] p-5 sm:p-7">
-                <div className="grid-dots absolute inset-0 opacity-30" />
+              <div className="hero-panel premium-border relative overflow-hidden rounded-[2.5rem] p-5 sm:p-7">
+                <div className="grid-dots absolute inset-0 opacity-25" />
                 <div className="relative">
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-accent/15 bg-white/90 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-accent-deep">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-accent/15 bg-white/92 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-accent-deep">
                       Dispatch Operations View
                     </span>
                     <span className="rounded-full bg-brand-navy px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/75">
@@ -194,7 +172,7 @@ export default function HomePage() {
                   <div className="mt-4 rounded-[2rem] bg-brand-navy p-6 text-white shadow-soft">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-sm text-white/60">Today&apos;s Priority</p>
+                        <p className="text-sm text-white/58">Priority</p>
                         <p className="mt-2 font-display text-3xl font-semibold leading-tight">
                           Keep trucks moving with more structure and less friction.
                         </p>
@@ -205,58 +183,26 @@ export default function HomePage() {
                     </div>
 
                     <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                      <MetricPanel
-                        label="Focus"
-                        value="Better loads and cleaner workflow"
-                      />
-                      <MetricPanel
-                        label="Approach"
-                        value="Professional broker-facing communication"
-                      />
+                      <MetricPanel label="Focus" value="Better loads and cleaner workflow" />
+                      <MetricPanel label="Approach" value="Professional broker-facing communication" />
                     </div>
                   </div>
 
-                  <div className="mt-4 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-                    <div className="animate-float soft-card premium-border rounded-[1.8rem] p-5">
-                      <p className="eyebrow">Dispatching Core</p>
-                      <div className="mt-4 space-y-4">
-                        {[
-                          "Load searching aligned to lanes and goals",
-                          "Rate negotiation focused on margin protection",
-                          "Paperwork support and route coordination",
-                        ].map((item) => (
-                          <div key={item} className="flex items-start gap-3">
-                            <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
-                            <p className="text-sm leading-7 text-slate">{item}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="grid gap-4">
-                      <div className="rounded-[1.8rem] border border-line bg-canvas/90 p-5">
-                        <p className="eyebrow">Best Fit</p>
-                        <p className="mt-4 font-display text-xl font-semibold text-ink">
-                          Owner operators and carriers who need dependable daily support.
-                        </p>
-                      </div>
-                      <div className="rounded-[1.8rem] border border-white/10 bg-accent-deep p-5 text-white shadow-soft">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/65">
-                          Additional Services
-                        </p>
-                        <p className="mt-3 text-sm leading-7 text-white/78">
-                          Virtual assistance, web development, and digital marketing are available as secondary services for businesses that need broader support.
-                        </p>
-                      </div>
-                    </div>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                    <CompactPanel
+                      eyebrow="Core Scope"
+                      title="Load search, paperwork, negotiation, and daily coordination."
+                    />
+                    <CompactPanel
+                      eyebrow="Best Fit"
+                      title="Owner operators, small carriers, and fleets that want dependable daily support."
+                    />
                   </div>
 
                   <div className="mt-4 rounded-[1.8rem] border border-white/70 bg-white/88 p-5 shadow-soft">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                      Why Clients Reach Out
-                    </p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Why Clients Reach Out</p>
                     <p className="mt-3 text-sm leading-7 text-slate">
-                      Carriers come to SiratLink when they need dependable support, stronger communication, and a more organized dispatch process.
+                      SiratLink is built for carriers that want a more composed dispatch process and a more credible business-facing presence.
                     </p>
                   </div>
                 </div>
@@ -267,285 +213,174 @@ export default function HomePage() {
       </SectionShell>
 
       <SectionShell className="pt-4">
-        <Reveal>
-          <div className="glass-strip rounded-[2rem] px-5 py-6 sm:px-6">
-            <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-              <SectionIntro
-                eyebrow="Why SiratLink"
-                title="Support built around professionalism, responsiveness, and day-to-day reliability."
-                description={`${siteConfig.shortName} helps carriers stay organized, communicate clearly, and run with more confidence.`}
-              />
-              <div className="grid gap-3 sm:grid-cols-2">
-                {[
-                  "Professional broker communication",
-                  "U.S.-based business positioning",
-                  "Clear dispatch workflow support",
-                  "Long-term growth mindset",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[1.25rem] bg-white/75 px-4 py-4 text-sm font-medium text-ink shadow-[0_12px_24px_rgba(15,23,42,0.05)]"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Reveal>
+        <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
+          <Reveal>
+            <SectionIntro
+              eyebrow="Why SiratLink"
+              title="A dispatch-first service model with a more professional operating standard."
+              description="The site now leads with the offer more clearly: dispatching is the main service, and everything else supports a stronger business experience."
+            />
+          </Reveal>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {trustSignals.map((signal, index) => (
-            <Reveal key={signal.title} delay={index * 80}>
-              <TrustCard title={signal.title} description={signal.description} />
-            </Reveal>
-          ))}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {trustSignals.map((signal, index) => (
+              <Reveal key={signal.title} delay={index * 70}>
+                <SignalCard title={signal.title} description={signal.description} />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </SectionShell>
 
       <SectionShell className="section-wash">
-        <div className="relative">
-          <SectionIntro
-            eyebrow="Dispatching Services"
-            title="Dispatching is the core service and the clearest place to get started with SiratLink."
-            description="The focus stays on what matters most: better loads, cleaner coordination, and more dependable support."
-            action={
-              <LinkButton href="/dispatching-services" variant="secondary">
-                View Full Dispatching Page
-              </LinkButton>
-            }
-          />
+        <SectionIntro
+          eyebrow="Primary Service"
+          title="Dispatching is the clearest place to start with SiratLink."
+          description="The value proposition stays tight: better loads, cleaner communication, and more dependable daily coordination."
+          action={
+            <LinkButton href="/dispatching-services" variant="secondary">
+              View Full Dispatching Page
+            </LinkButton>
+          }
+        />
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
-            <Reveal>
-              <div className="overflow-hidden rounded-[2.2rem] bg-brand-navy p-6 text-white shadow-soft sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">
-                  Dispatching Services
-                </p>
-                <h2 className="mt-4 font-display text-3xl font-semibold sm:text-[2.6rem]">
-                  Dispatching support built for profitable, well-organized operations.
-                </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-white/74">
-                  SiratLink focuses on the dispatch work that directly affects how a carrier runs each day.
-                </p>
+        <div className="mt-10 grid gap-5 lg:grid-cols-[1.04fr_0.96fr]">
+          <Reveal>
+            <div className="overflow-hidden rounded-[2.25rem] bg-brand-navy p-6 text-white shadow-soft sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">Dispatching Services</p>
+              <h2 className="mt-4 font-display text-3xl font-semibold sm:text-[2.7rem]">
+                Dispatch support built for profitable, well-organized operations.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-white/74">
+                SiratLink focuses on the parts of dispatching that directly affect how a carrier runs each day.
+              </p>
 
-                <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  {differentiators.map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-[1.45rem] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-7 text-white/80"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <LinkButton href="/contact">Book a Consultation</LinkButton>
-                  <LinkButton
-                    href="/dispatching-services"
-                    variant="secondary"
-                    className="border-white/20 bg-white/10 text-white hover:bg-white/14 hover:text-white"
+              <div className="mt-7 space-y-3">
+                {dispatchPillars.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 rounded-[1.45rem] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-7 text-white/80"
                   >
-                    See Dispatching Details
-                  </LinkButton>
-                </div>
+                    <span className="mt-2 h-2.5 w-2.5 rounded-full bg-brand-gold" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-            </Reveal>
 
-            <div className="grid gap-4">
-              {featuredServiceHighlights.map((service, index) => (
-                <Reveal key={service.title} delay={index * 70}>
-                  <DispatchServiceCard {...service} />
-                </Reveal>
-              ))}
-              <Reveal delay={featuredServiceHighlights.length * 70}>
-                <div className="soft-card premium-border rounded-[1.8rem] p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                    Also Included
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-slate">
-                    Route coordination and paperwork support remain part of the offer.
-                  </p>
-                </div>
-              </Reveal>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <LinkButton href="/contact">Book a Consultation</LinkButton>
+                <LinkButton
+                  href="/dispatching-services"
+                  variant="secondary"
+                  className="border-white/20 bg-white/10 text-white hover:bg-white/14 hover:text-white"
+                >
+                  See Dispatching Details
+                </LinkButton>
+              </div>
             </div>
+          </Reveal>
+
+          <div className="grid gap-4">
+            {featuredServiceHighlights.map((service, index) => (
+              <Reveal key={service.title} delay={index * 70}>
+                <DispatchServiceCard {...service} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </SectionShell>
 
-      <SectionShell className="pt-0">
-        <Reveal>
-          <ConsultationBand
-            eyebrow="Book A Consultation"
-            title="Talk with SiratLink about dispatch support that fits your operation."
-            description="If you need help with loads, broker communication, or daily coordination, we can talk through the right next step."
-          />
-        </Reveal>
-      </SectionShell>
-
       <SectionShell>
-        <div className="grid gap-8 lg:grid-cols-[0.96fr_1.04fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <Reveal>
             <SectionIntro
-              eyebrow="Why Carriers Choose SiratLink"
-              title="The goal is simple: help carriers operate with more consistency and less daily friction."
-              description="The service stays focused on communication, coordination, and reliable follow-through."
+              eyebrow="How It Works"
+              title="A cleaner three-step path from first call to daily support."
+              description="The process is intentionally simple so busy operators can understand the next step quickly."
             />
 
             <div className="mt-8 space-y-4">
-              {[
-                "Broker communication handled in a more professional way.",
-                "Dependable follow-through that keeps loads moving with less confusion.",
-                "A cleaner workflow around paperwork and daily coordination.",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="soft-card premium-border flex items-start gap-3 rounded-[1.6rem] px-5 py-5"
-                >
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
-                  <p className="text-sm leading-7 text-slate">{item}</p>
-                </div>
+              {workflow.map((item) => (
+                <CompactStep key={item.step} step={item.step} title={item.title} description={item.description} />
               ))}
             </div>
           </Reveal>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Reveal>
-              <FeaturedInsight
-                eyebrow="Professional Support"
-                title="Reliable communication helps carriers protect relationships and stay on schedule."
-                description="From broker updates to trip coordination, consistent communication helps the day run more smoothly."
-              />
-            </Reveal>
-            <Reveal delay={90}>
-              <FeaturedInsight
-                eyebrow="Operational Focus"
-                title="Better organization leads to fewer delays, less confusion, and more productive days."
-                description="SiratLink brings structure to the dispatch process so carriers can stay focused on execution."
-              />
-            </Reveal>
-            <Reveal delay={180} className="sm:col-span-2">
-              <div className="overflow-hidden rounded-[2rem] bg-accent-deep p-6 text-white shadow-soft sm:p-7">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Good Fit</p>
-                <p className="mt-4 font-display text-2xl font-semibold sm:text-3xl">
-                  A strong fit for owner operators, small carriers, and fleets that want dependable dispatch support without unnecessary complications.
-                </p>
+          <Reveal delay={120}>
+            <div className="rounded-[2.25rem] border border-line bg-white/82 p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] backdrop-blur-sm sm:p-8">
+              <p className="eyebrow">Secondary Services</p>
+              <h2 className="mt-3 font-display text-3xl font-semibold leading-[1.06] text-ink">
+                Additional services are available, but they stay secondary to dispatching.
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-slate">
+                SiratLink can also support broader business needs as clients grow and need more operational coverage.
+              </p>
+
+              <div className="mt-8 grid gap-4">
+                {secondaryServices.map((service, index) => (
+                  <Reveal key={service.title} delay={index * 70}>
+                    <SecondaryServiceCard
+                      title={service.title}
+                      description={service.description}
+                      href={service.href}
+                    />
+                  </Reveal>
+                ))}
               </div>
-            </Reveal>
-          </div>
-        </div>
-      </SectionShell>
-
-      <SectionShell className="bg-white/55">
-        <Reveal>
-          <SectionIntro
-            eyebrow="How It Works"
-            title="A clearer three-step process for getting started."
-            align="center"
-            description="A simple start for busy operators who want clarity fast."
-            className="mb-10"
-          />
-        </Reveal>
-
-        <div className="grid gap-4 lg:grid-cols-3">
-          {workflow.map((item, index) => (
-            <Reveal key={item.step} delay={index * 90}>
-              <div className="soft-card premium-border rounded-[2rem] p-6">
-                <div className="inline-flex rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent-deep">
-                  Step {item.step}
-                </div>
-                <h3 className="mt-5 font-display text-2xl font-semibold text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate">{item.description}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </SectionShell>
-
-      <SectionShell>
-        <SectionIntro
-          eyebrow="Additional Services"
-          title="SiratLink also offers business support services beyond dispatching."
-          description="These services are secondary to dispatching and available as broader support needs grow."
-          className="mb-10"
-        />
-
-        <div className="grid gap-4 lg:grid-cols-3">
-          {secondaryServices.map((service, index) => (
-            <Reveal key={service.title} delay={index * 90}>
-              <FutureServiceCard
-                title={service.title}
-                description={service.description}
-                href={service.href}
-                featured={service.title === "Virtual Assistance"}
-              />
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
         </div>
       </SectionShell>
 
       <SectionShell className="section-wash">
-        <div className="relative">
-          <SectionIntro
-            eyebrow="Client Feedback"
-            title="Realistic client feedback built around trust, consistency, and communication."
-            description="These testimonials reflect the kind of support carriers expect from a dependable dispatch partner."
-            className="mb-10"
-          />
+        <SectionIntro
+          eyebrow="Client Confidence"
+          title="Support that feels composed, credible, and worth trusting."
+          description="The strongest proof point is still the same: carriers want dispatch support that reduces friction and improves communication."
+          className="mb-10"
+        />
 
-          <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-            <Reveal>
-              <div className="overflow-hidden rounded-[2.1rem] bg-brand-navy p-6 text-white shadow-soft sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">
-                  Reputation Matters
-                </p>
-                <h3 className="mt-4 font-display text-3xl font-semibold">
-                  Carriers want support that makes the business feel more composed, not more chaotic.
-                </h3>
-                <p className="mt-5 text-base leading-8 text-white/74">
-                  Clear communication and steady follow-through are what make dispatch support worth trusting.
-                </p>
-              </div>
-            </Reveal>
-
-            <div className="grid gap-4 md:grid-cols-2">
-              {testimonials.map((testimonial, index) => (
-                <Reveal
-                  key={testimonial.name}
-                  delay={index * 90}
-                  className={index === 2 ? "md:col-span-2" : ""}
-                >
-                  <TestimonialCard {...testimonial} />
-                </Reveal>
-              ))}
+        <div className="grid gap-4 lg:grid-cols-[0.84fr_1.16fr]">
+          <Reveal>
+            <div className="overflow-hidden rounded-[2.2rem] bg-brand-navy p-6 text-white shadow-soft sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">Reputation Matters</p>
+              <h3 className="mt-4 font-display text-3xl font-semibold">
+                Carriers remember the dispatch partners who communicate well and follow through.
+              </h3>
+              <p className="mt-5 text-base leading-7 text-white/74">
+                Clear updates, dependable coordination, and steadier execution are what make the service feel valuable.
+              </p>
             </div>
+          </Reveal>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {testimonials.map((testimonial, index) => (
+              <Reveal key={testimonial.name} delay={index * 80} className={index === 2 ? "md:col-span-2" : ""}>
+                <TestimonialCard {...testimonial} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </SectionShell>
 
       <SectionShell>
         <Reveal>
-          <div className="spot-grid overflow-hidden rounded-[2.35rem] bg-brand-navy px-6 py-8 text-white shadow-soft sm:px-8 lg:px-10 lg:py-10">
-            <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div className="spot-grid overflow-hidden rounded-[2.35rem] px-6 py-8 text-white shadow-soft sm:px-8 lg:px-10 lg:py-10">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">
-                  Get Started
-                </p>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">Get Started</p>
                 <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">
                   Start with a consultation and see what support fits your operation best.
                 </h2>
-                <p className="mt-5 max-w-xl text-base leading-8 text-white/74">
-                  Tell us about your lanes, dispatch needs, or broader support goals and we&apos;ll help you identify the next step.
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/74">
+                  Tell us about your lanes, dispatch needs, or broader support goals and we&apos;ll help you identify the right next step.
                 </p>
 
                 <div className="mt-6 space-y-3">
                   {finalChecklist.map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-3 rounded-[1.35rem] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-7 text-white/80"
+                      className="flex items-start gap-3 rounded-[1.35rem] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-6 text-white/80"
                     >
                       <span className="mt-2 h-2.5 w-2.5 rounded-full bg-brand-gold" />
                       <span>{item}</span>
@@ -587,7 +422,22 @@ function MetricPanel({ label, value }: { label: string; value: string }) {
   );
 }
 
-function TrustCard({
+function CompactPanel({
+  eyebrow,
+  title,
+}: {
+  eyebrow: string;
+  title: string;
+}) {
+  return (
+    <div className="rounded-[1.8rem] border border-line bg-white/88 p-5 shadow-soft">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{eyebrow}</p>
+      <p className="mt-3 font-display text-xl font-semibold text-ink">{title}</p>
+    </div>
+  );
+}
+
+function SignalCard({
   title,
   description,
 }: {
@@ -614,9 +464,7 @@ function DispatchServiceCard({
     <div className="soft-card premium-border rounded-[1.8rem] p-5 transition duration-300 hover:-translate-y-1">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            Dispatching Highlight
-          </p>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Dispatching Highlight</p>
           <h3 className="mt-3 font-display text-2xl font-semibold text-ink">{title}</h3>
         </div>
         <span className="rounded-full bg-accent-soft px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent-deep">
@@ -628,64 +476,42 @@ function DispatchServiceCard({
   );
 }
 
-function FeaturedInsight({
-  eyebrow,
+function CompactStep({
+  step,
   title,
   description,
 }: {
-  eyebrow: string;
+  step: string;
   title: string;
   description: string;
 }) {
   return (
-    <div className="soft-card premium-border rounded-[2rem] p-6">
-      <p className="eyebrow">{eyebrow}</p>
-      <h3 className="mt-4 font-display text-2xl font-semibold text-ink">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-slate">{description}</p>
+    <div className="soft-card premium-border rounded-[1.8rem] p-6">
+      <div className="inline-flex rounded-full bg-accent-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent-deep">
+        Step {step}
+      </div>
+      <h3 className="mt-5 font-display text-2xl font-semibold text-ink">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-slate">{description}</p>
     </div>
   );
 }
 
-function FutureServiceCard({
+function SecondaryServiceCard({
   title,
   description,
   href,
-  featured = false,
 }: {
   title: string;
   description: string;
   href: string;
-  featured?: boolean;
 }) {
   return (
-    <div
-      className={`rounded-[2rem] p-6 transition duration-300 hover:-translate-y-1 ${
-        featured
-          ? "border border-accent/15 bg-accent-deep text-white shadow-soft"
-          : "soft-card premium-border text-ink"
-      }`}
-    >
-      <p
-        className={`text-xs font-semibold uppercase tracking-[0.2em] ${
-          featured ? "text-white/65" : "text-accent"
-        }`}
-      >
-        Additional Service
-      </p>
-      <h3 className="mt-4 font-display text-2xl font-semibold">{title}</h3>
-      <p className={`mt-4 text-sm leading-7 ${featured ? "text-white/78" : "text-slate"}`}>
-        {description}
-      </p>
-      <div className="mt-6">
-        <LinkButton
-          href={href}
-          variant={featured ? "secondary" : "secondary"}
-          className={
-            featured
-              ? "border-white/20 bg-white/10 text-white hover:bg-white/14 hover:text-white"
-              : ""
-          }
-        >
+    <div className="soft-card premium-border rounded-[1.8rem] p-5 transition duration-300 hover:-translate-y-1">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Secondary Service</p>
+      <h3 className="mt-3 font-display text-2xl font-semibold text-ink">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-slate">{description}</p>
+      <div className="mt-5">
+        <LinkButton href={href} variant="secondary">
           Learn More
         </LinkButton>
       </div>

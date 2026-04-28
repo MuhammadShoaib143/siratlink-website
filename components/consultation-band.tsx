@@ -30,13 +30,13 @@ export function ConsultationBand({
             {eyebrow}
           </p>
           <h2 className="mt-3 font-display text-3xl font-semibold sm:text-4xl">{title}</h2>
-          <p className="mt-4 text-base leading-8 text-white/74">{description}</p>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/72">{description}</p>
           {points.length ? (
             <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
               {points.map((point) => (
                 <div
                   key={point}
-                  className="rounded-[1.4rem] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-7 text-white/78"
+                  className="rounded-[1.4rem] border border-white/10 bg-white/6 px-4 py-3.5 text-sm leading-6 text-white/78"
                 >
                   {point}
                 </div>
