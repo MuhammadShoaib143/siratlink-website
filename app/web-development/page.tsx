@@ -1,4 +1,4 @@
-import { InfoCard } from "@/components/cards";
+import { InfoCard, StepCard } from "@/components/cards";
 import { ConsultationBand } from "@/components/consultation-band";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
@@ -49,6 +49,37 @@ const offerings = [
     title: "Maintainable Execution",
     description:
       "Clean, structured builds intended to be easier to manage, evolve, and build on over time.",
+  },
+];
+
+const workflow = [
+  {
+    step: "01",
+    title: "Clarify the business goals",
+    description: "We identify what the website needs to communicate, who it needs to reach, and what credibility gap it needs to close.",
+  },
+  {
+    step: "02",
+    title: "Shape the presentation",
+    description: "Design direction, page structure, messaging, and responsive experience are aligned around a stronger business presence.",
+  },
+  {
+    step: "03",
+    title: "Launch a cleaner digital presence",
+    description: "The final site should help the business look more established, easier to trust, and better prepared for growth.",
+  },
+];
+
+const faqs = [
+  {
+    title: "Is this only for trucking businesses?",
+    description:
+      "No. Web development is positioned as a broader SiratLink business support service for companies that need a more credible and modern online presence.",
+  },
+  {
+    title: "What kind of websites fit this service best?",
+    description:
+      "Service businesses, small companies, and growth-minded brands that need stronger clarity, trust, and conversion support are the best fit.",
   },
 ];
 
@@ -116,6 +147,41 @@ export default function WebDevelopmentPage() {
               defaultService="Web Development"
               submitLabel="Book a Consultation"
             />
+          </Reveal>
+        </div>
+      </SectionShell>
+
+      <SectionShell>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <Reveal>
+            <SectionIntro
+              eyebrow="Process"
+              title="A website project should improve trust before it ever starts talking about features."
+              description="The process is designed around business clarity, not just shipping a page quickly."
+              className="mb-8"
+            />
+            <div className="grid gap-4">
+              {workflow.map((item, index) => (
+                <Reveal key={item.step} delay={index * 80}>
+                  <StepCard step={item.step} title={item.title} description={item.description} />
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={90}>
+            <SectionIntro
+              eyebrow="FAQ"
+              title="A few practical questions before starting a website conversation."
+              description="This keeps the page feeling more complete and intentional for serious business leads."
+              className="mb-8"
+            />
+            <div className="grid gap-4">
+              {faqs.map((item, index) => (
+                <Reveal key={item.title} delay={index * 80}>
+                  <InfoCard title={item.title} description={item.description} />
+                </Reveal>
+              ))}
+            </div>
           </Reveal>
         </div>
       </SectionShell>

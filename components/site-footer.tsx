@@ -30,7 +30,7 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.6fr_0.6fr_0.6fr] lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.2fr_0.58fr_0.58fr_0.68fr] lg:px-8">
         <div>
           <div className="relative h-[8.75rem] w-[8.75rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(243,246,248,0.96),rgba(233,238,243,0.9))] shadow-soft ring-1 ring-white/10">
             <Image
@@ -44,6 +44,11 @@ export function SiteFooter() {
           <p className="mt-6 max-w-md text-sm leading-7 text-white/72">
             SiratLink supports carriers, owner operators, and growth-minded businesses with dependable execution, organized communication, and a premium client experience.
           </p>
+          <div className="mt-6 flex flex-wrap gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/65">
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Dispatch Focused</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Ohio Based</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Business Support</span>
+          </div>
           <div className="mt-5 space-y-2 text-sm text-white/80">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">Contact</p>
             <p>{siteConfig.location}</p>

@@ -7,52 +7,95 @@ import { Reveal } from "@/components/reveal";
 import { SectionIntro } from "@/components/section-intro";
 import { SectionShell } from "@/components/section-shell";
 import { buildPageMetadata } from "@/lib/metadata";
-import { serviceHighlights } from "@/lib/site";
+import { serviceHighlights, siteConfig } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "Dispatching Services",
   description:
-    "Premium dispatching services for owner operators and trucking carriers, including load searching, rate negotiation, broker communication, and route coordination.",
+    "Truck dispatch service for owner operators, small carriers, and growing fleets with load sourcing, broker communication, paperwork support, and route coordination.",
   path: "/dispatching-services",
   keywords: [
     "dispatching services",
     "truck dispatch service",
-    "truck dispatch company",
     "dispatch company USA",
     "Columbus Ohio dispatch company",
-    "owner operator dispatching",
+    "freight dispatch services",
     "owner operator dispatch",
-    "carrier dispatch support",
+    "small fleet dispatch support",
   ],
 });
 
-const benefits = [
-  "Less time spent chasing loads and more time focused on delivering freight.",
-  "More professional broker communication that supports stronger relationships.",
-  "A clearer dispatch workflow with organized paperwork and trip coordination.",
-  "Operational consistency designed to reduce downtime and improve focus.",
+const whoWeHelp = [
+  {
+    title: "Owner operators",
+    description: "Operators who need help finding better loads, staying organized, and reducing the time lost to broker calls and paperwork.",
+  },
+  {
+    title: "Small fleets",
+    description: "Carriers that need more structure, steadier communication, and cleaner dispatch execution across multiple trucks.",
+  },
+  {
+    title: "New carriers",
+    description: "Operations that need support building a more consistent dispatch rhythm without sounding inexperienced to brokers.",
+  },
+  {
+    title: "Carriers needing steady support",
+    description: "Teams looking for day-to-day dispatch consistency instead of chasing loads and updates in a reactive way.",
+  },
+];
+
+const operationalBenefits = [
+  "Less time spent searching for the next workable load.",
+  "Better communication flow with brokers and dispatch contacts.",
+  "Organized paperwork support that keeps key details from slipping.",
+  "A clearer dispatch process with more consistent follow-through.",
+];
+
+const dispatchFaqs = [
+  {
+    question: "What does SiratLink handle day to day?",
+    answer:
+      "SiratLink supports load sourcing, broker communication, rate negotiation support, paperwork coordination, route flow, and daily dispatch management built around a cleaner operating process.",
+  },
+  {
+    question: "How do you find loads?",
+    answer:
+      "The approach centers on lane fit, equipment type, timing, and revenue goals so load searching feels more deliberate than random board activity.",
+  },
+  {
+    question: "How do you communicate with brokers?",
+    answer:
+      "Communication is positioned to sound clear, timely, and professional so your operation is represented with more confidence and consistency.",
+  },
+  {
+    question: "Do you guarantee better rates or revenue?",
+    answer:
+      "No. SiratLink focuses on better coordination, stronger negotiation support, and more organized dispatch operations. Actual performance varies by market, lane, equipment, and execution.",
+  },
 ];
 
 const pricingPoints = [
+  "Flexible plans based on your operation size and dispatch needs.",
+  "Custom pricing for owner operators and fleets.",
+  "No hidden fees in the way the service is positioned.",
+  "No long-term contracts required to start the conversation.",
+];
+
+const startSteps = [
   {
-    title: "Flexible By Fleet Size",
-    description:
-      "Dispatch support is structured around the size and complexity of your operation instead of forcing every client into the same model.",
+    step: "01",
+    title: "Tell us about the operation",
+    description: "Share truck count, preferred lanes, dispatch pain points, and the level of support you need right now.",
   },
   {
-    title: "Custom Plans For Owner Operators And Fleets",
-    description:
-      "We tailor the service approach around solo operators, small carriers, and growing fleets so the support feels practical from day one.",
+    step: "02",
+    title: "Align on support scope",
+    description: "We map out how load sourcing, broker communication, paperwork support, and route coordination should be handled.",
   },
   {
-    title: "No Long-Term Contracts",
-    description:
-      "The offer is positioned to earn trust through performance, communication, and fit rather than locking clients into unnecessary commitments.",
-  },
-  {
-    title: "Performance-Based Options Available",
-    description:
-      "When appropriate, SiratLink can discuss structures that align the service relationship with measurable dispatch outcomes and growth goals.",
+    step: "03",
+    title: "Move into steady execution",
+    description: "Dispatching support stays focused on consistent communication, cleaner workflow, and dependable follow-through.",
   },
 ];
 
@@ -60,155 +103,172 @@ export default function DispatchingServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Dispatching Services"
-        title="Dispatching support designed to help carriers run with more structure, stronger communication, and steadier momentum."
-        description="SiratLink provides professional dispatching services that keep operations organized, loads moving, and communication handled with the level of care serious trucking businesses expect."
-        primaryCta={{ label: "Book a Dispatch Consultation", href: "/contact" }}
-        secondaryCta={{ label: "View All Services", href: "/services" }}
-        stats={["Owner operators and fleets", "Professional broker communication", "Flexible support model"]}
+        eyebrow="Truck Dispatch Service"
+        title="Dispatch support for owner operators and fleets that need stronger coordination, clearer communication, and a more dependable daily process."
+        description="SiratLink provides dispatch-first support for carriers who want load sourcing, broker communication, paperwork support, route coordination, and day-to-day execution handled with more discipline."
+        primaryCta={{ label: "Get Your Custom Plan", href: "#dispatch-contact-form" }}
+        secondaryCta={{ label: "Call Now", href: siteConfig.phoneHref }}
+        stats={["Owner operators and small fleets", "Broker-facing communication", "Flexible support without long-term contracts"]}
       >
-        <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
-          <p className="eyebrow">What Clients Come For</p>
-          <h2 className="mt-4 font-display text-2xl font-semibold text-ink">
-            What you can expect from SiratLink dispatching
-          </h2>
-          <ul className="mt-6 space-y-3 text-sm leading-7 text-slate">
-            {benefits.map((benefit) => (
-              <li key={benefit} className="flex gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
-                <span>{benefit}</span>
-              </li>
+        <div className="soft-card premium-border surface-outline rounded-[2.25rem] p-6 sm:p-8">
+          <p className="eyebrow">What Carriers Care About</p>
+          <div className="mt-5 grid gap-4">
+            {operationalBenefits.map((item) => (
+              <div key={item} className="rounded-[1.35rem] bg-canvas px-4 py-4 text-sm font-medium leading-7 text-ink">
+                {item}
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </PageHero>
 
       <SectionShell>
-        <Reveal>
-          <SectionIntro
-            eyebrow="Service Scope"
-            title="Dispatch coordination that covers the core needs of daily trucking operations."
-            description="The service scope stays practical and easy to understand so carriers can quickly see what is being handled and why it matters."
-            className="mb-10"
-          />
-        </Reveal>
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {serviceHighlights.map((service, index) => (
-            <Reveal key={service.title} delay={index * 80}>
-              <InfoCard title={service.title} description={service.description} />
-            </Reveal>
-          ))}
+        <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
+          <Reveal>
+            <SectionIntro
+              eyebrow="Who We Help"
+              title="The offer is built for carriers who want steadier support, not more chaos."
+              description="The dispatching page now answers the practical business question first: who is this actually for and why would they trust it?"
+            />
+          </Reveal>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {whoWeHelp.map((item, index) => (
+              <Reveal key={item.title} delay={index * 70}>
+                <InfoCard title={item.title} description={item.description} eyebrow="Best Fit" />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </SectionShell>
 
       <SectionShell className="section-wash">
         <Reveal>
           <SectionIntro
-            eyebrow="How We Support Carriers"
-            title="A dispatching approach built around professionalism, communication, and consistent support."
-            description="The workflow stays clear from onboarding to daily execution so the offer feels more trustworthy and easier to act on."
+            eyebrow="Service Scope"
+            title="What the dispatching service actually covers day to day."
+            description="The scope stays grounded in what real carriers look for before they book a call."
             className="mb-10"
           />
         </Reveal>
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Reveal>
-            <StepCard
-              step="01"
-              title="Operational Alignment"
-              description="We get clear on your lanes, equipment, revenue priorities, and dispatch workflow needs."
-            />
-          </Reveal>
-          <Reveal delay={90}>
-            <StepCard
-              step="02"
-              title="Daily Load Coordination"
-              description="SiratLink supports load searching, broker communication, rate discussions, and trip coordination with a structured process."
-            />
-          </Reveal>
-          <Reveal delay={180}>
-            <StepCard
-              step="03"
-              title="Ongoing Carrier Support"
-              description="We stay focused on dependable follow-through, paperwork support, and steady carrier support."
-            />
-          </Reveal>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {serviceHighlights.map((service, index) => (
+            <Reveal key={service.title} delay={index * 70}>
+              <InfoCard title={service.title} description={service.description} />
+            </Reveal>
+          ))}
         </div>
       </SectionShell>
 
       <SectionShell>
-        <div className="grid gap-8 xl:grid-cols-[0.88fr_1.12fr]">
-          <Reveal>
+        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+          <Reveal className="lg:sticky lg:top-28">
             <SectionIntro
-              eyebrow="Pricing Strategy"
-              title="Flexible dispatch pricing built around fit, support level, and operational complexity."
-              description="SiratLink does not use one-size-fits-all pricing. Plans are structured around fleet size, support needs, lane profile, and the level of day-to-day coordination required."
+              eyebrow="How Carriers Start"
+              title="A clean process built around fit, expectations, and steady operating support."
+              description="This should feel more like a serious business workflow than a generic dispatch sales pitch."
             />
-            <div className="mt-8 rounded-[2rem] bg-brand-navy p-6 text-white shadow-soft sm:p-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">
-                What To Expect
-              </p>
-              <p className="mt-4 text-base leading-8 text-white/76">
-                Flexible plans based on your operation, custom pricing for owner operators and fleets, no hidden fees, and no long-term contracts.
+            <div className="mt-8 rounded-[2rem] bg-brand-navy px-6 py-6 text-white shadow-soft">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold">Why It Converts Better</p>
+              <p className="mt-3 text-sm leading-7 text-white/72">
+                Better coordination, more organized paperwork, consistent communication, and a dispatch process that feels more stable from the start.
               </p>
             </div>
           </Reveal>
 
+          <div className="grid gap-4">
+            {startSteps.map((item, index) => (
+              <Reveal key={item.step} delay={index * 90}>
+                <StepCard step={item.step} title={item.title} description={item.description} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </SectionShell>
+
+      <SectionShell className="section-wash">
+        <div className="grid gap-8 xl:grid-cols-[0.88fr_1.12fr]">
+          <Reveal>
+            <SectionIntro
+              eyebrow="Pricing Strategy"
+              title="Flexible dispatch pricing that fits the operation instead of forcing every carrier into the same structure."
+              description="No exact pricing is shown here on purpose. The pricing conversation should reflect truck count, workflow complexity, lane profile, and how much day-to-day support is needed."
+            />
+            <div className="mt-8 rounded-[2rem] bg-brand-navy p-6 text-white shadow-soft sm:p-7">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">What To Expect</p>
+              <div className="mt-5 grid gap-3">
+                {pricingPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="rounded-[1.35rem] border border-white/10 bg-white/6 px-4 py-4 text-sm leading-7 text-white/78"
+                  >
+                    {point}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6">
+                <LinkButton href="#dispatch-contact-form">Get Your Custom Plan</LinkButton>
+              </div>
+            </div>
+          </Reveal>
+
           <div className="grid gap-4 md:grid-cols-2">
-            {pricingPoints.map((item, index) => (
-              <Reveal key={item.title} delay={index * 80}>
+            {[
+              {
+                title: "Flexible by fleet size",
+                description:
+                  "Support can be shaped around a single truck, a small carrier, or a growing fleet instead of using a one-size-fits-all model.",
+              },
+              {
+                title: "Custom plans for real operations",
+                description:
+                  "The right dispatch structure depends on lanes, truck count, communication expectations, and the complexity of the day-to-day workflow.",
+              },
+              {
+                title: "No hidden fees",
+                description:
+                  "The service is positioned around clarity and trust, not surprising cost structures that create friction before the relationship starts.",
+              },
+              {
+                title: "No long-term contracts",
+                description:
+                  "The offer is designed to earn trust through fit, communication, and execution rather than forcing long-term commitment too early.",
+              },
+            ].map((item, index) => (
+              <Reveal key={item.title} delay={index * 70}>
                 <InfoCard title={item.title} description={item.description} />
               </Reveal>
             ))}
-            <Reveal delay={pricingPoints.length * 80} className="md:col-span-2">
-              <div className="soft-card premium-border rounded-[2rem] p-6 sm:p-7">
-                <p className="eyebrow">Custom Planning</p>
-                <h3 className="mt-4 font-display text-2xl font-semibold text-ink">
-                  Let&apos;s discuss the right dispatch model for your operation.
-                </h3>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate">
-                  We will review your equipment, lanes, current workflow, and support expectations so you receive a custom recommendation that makes sense for your business.
-                </p>
-                <LinkButton href="/contact" className="mt-6 w-full sm:w-auto">
-                  Get Your Custom Plan
-                </LinkButton>
-              </div>
-            </Reveal>
           </div>
         </div>
       </SectionShell>
 
       <SectionShell>
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
           <Reveal>
             <SectionIntro
-              eyebrow="Why It Matters"
-              title="Dispatching should help you operate smarter, communicate better, and protect your time."
-              description="For owner operators and small carriers, scattered communication and inconsistent planning create unnecessary strain. SiratLink brings more structure to the process so your operation feels better supported every day."
+              eyebrow="FAQ"
+              title="Answers to the questions serious carriers ask before they commit to a dispatch partner."
+              description="The language stays practical and avoids overpromising so the service feels more credible."
             />
-            <div className="mt-8 space-y-4">
-              {[
-                "Load searching",
-                "Rate negotiation",
-                "Broker communication",
-                "Paperwork support",
-                "Route coordination",
-                "Dispatch management",
-                "Carrier support",
-              ].map((item) => (
-                <div key={item} className="soft-card premium-border flex items-center gap-3 rounded-2xl px-4 py-4">
-                  <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-                  <span className="text-sm font-medium text-ink">{item}</span>
-                </div>
+            <div className="mt-8 grid gap-4">
+              {dispatchFaqs.map((item, index) => (
+                <Reveal key={item.question} delay={index * 70}>
+                  <InfoCard title={item.question} description={item.answer} />
+                </Reveal>
               ))}
             </div>
           </Reveal>
+
           <Reveal delay={90}>
-            <ContactForm
-              title="Request dispatch support"
-              description="Tell us about your trucks, lanes, and dispatch needs and prepare a ready-to-send consultation inquiry."
-              defaultService="Dispatching Services"
-              submitLabel="Get Your Custom Plan"
-            />
+            <div id="dispatch-contact-form">
+              <ContactForm
+                title="Request dispatch support"
+                description="Tell us about your operation, number of trucks, current dispatch needs, and how you want the support relationship to work."
+                defaultService="Dispatching Services"
+                submitLabel="Get Your Custom Plan"
+              />
+            </div>
           </Reveal>
         </div>
       </SectionShell>
@@ -216,9 +276,11 @@ export default function DispatchingServicesPage() {
       <SectionShell className="pt-0">
         <Reveal>
           <ConsultationBand
-            title="Book a dispatch consultation built around your lane, fleet size, and growth goals."
-            description="If you are looking for dependable dispatch support without a generic pricing pitch, we can review your operation and recommend the right structure."
-            primaryLabel="Book a Dispatch Consultation"
+            eyebrow="Book The Consultation"
+            title="Discuss the right dispatch structure for your lanes, truck count, and daily operating needs."
+            description="If you need a dispatch partner that sounds more professional, stays more organized, and supports a cleaner workflow, let’s talk through what your operation needs next."
+            primaryLabel="Get Your Custom Plan"
+            secondaryLabel={`Call ${siteConfig.phone}`}
           />
         </Reveal>
       </SectionShell>

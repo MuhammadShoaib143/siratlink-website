@@ -1,4 +1,4 @@
-import { InfoCard } from "@/components/cards";
+import { InfoCard, StepCard } from "@/components/cards";
 import { ConsultationBand } from "@/components/consultation-band";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
@@ -52,6 +52,37 @@ const marketingAreas = [
     title: "Growth-Minded Execution",
     description:
       "A business-first approach that keeps digital marketing tied to visibility, trust-building, and practical commercial outcomes.",
+  },
+];
+
+const workflow = [
+  {
+    step: "01",
+    title: "Define the growth priority",
+    description: "We identify whether the business needs more visibility, stronger lead flow, better positioning, or more consistent campaign support.",
+  },
+  {
+    step: "02",
+    title: "Align the marketing mix",
+    description: "Social media, paid support, content direction, and lead generation priorities are shaped around what the business actually needs.",
+  },
+  {
+    step: "03",
+    title: "Support clearer growth execution",
+    description: "The service stays tied to practical business outcomes like stronger presentation, steadier visibility, and better inquiry quality.",
+  },
+];
+
+const faqs = [
+  {
+    title: "Is digital marketing the main SiratLink service?",
+    description:
+      "No. Dispatching remains the primary SiratLink offer. Digital marketing is positioned as a polished secondary growth service for businesses that need it.",
+  },
+  {
+    title: "What kinds of businesses fit this service best?",
+    description:
+      "Businesses that need better online visibility, clearer positioning, and more consistent lead generation support are the best fit.",
   },
 ];
 
@@ -119,6 +150,41 @@ export default function DigitalMarketingServicesPage() {
               defaultService="Digital Marketing Services"
               submitLabel="Book a Consultation"
             />
+          </Reveal>
+        </div>
+      </SectionShell>
+
+      <SectionShell>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <Reveal>
+            <SectionIntro
+              eyebrow="Process"
+              title="A cleaner strategy path for businesses that need more visibility and better-quality inquiries."
+              description="The process is positioned to feel strategic and business-first instead of vague marketing language."
+              className="mb-8"
+            />
+            <div className="grid gap-4">
+              {workflow.map((item, index) => (
+                <Reveal key={item.step} delay={index * 80}>
+                  <StepCard step={item.step} title={item.title} description={item.description} />
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={90}>
+            <SectionIntro
+              eyebrow="FAQ"
+              title="A few practical questions before starting a growth conversation."
+              description="This keeps the page more complete for businesses evaluating digital support."
+              className="mb-8"
+            />
+            <div className="grid gap-4">
+              {faqs.map((item, index) => (
+                <Reveal key={item.title} delay={index * 80}>
+                  <InfoCard title={item.title} description={item.description} />
+                </Reveal>
+              ))}
+            </div>
           </Reveal>
         </div>
       </SectionShell>

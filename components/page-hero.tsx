@@ -26,6 +26,8 @@ export function PageHero({
   return (
     <SectionShell className="relative overflow-hidden pb-10 pt-10 sm:pt-14 lg:pb-16 lg:pt-20">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(circle_at_top_left,_rgba(15,118,110,0.16),_transparent_38%),radial-gradient(circle_at_top_right,_rgba(212,162,76,0.12),_transparent_24%)]" />
+      <div className="hero-orb hero-orb--teal absolute left-[8%] top-24 hidden h-36 w-36 lg:block" />
+      <div className="hero-orb hero-orb--gold absolute right-[12%] top-20 hidden h-28 w-28 lg:block" />
       <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-12">
         <Reveal className="relative z-10">
           <div className="glass-strip inline-flex rounded-full px-4 py-2">

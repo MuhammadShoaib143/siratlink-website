@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LinkButton } from "@/components/link-button";
-import { primaryNav } from "@/lib/site";
+import { primaryNav, siteConfig } from "@/lib/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -18,11 +18,11 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="border-b border-white/50 bg-brand-navy px-4 py-2 text-center text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-white/75 sm:px-6 lg:px-8">
+      <div className="border-b border-white/10 bg-brand-navy px-4 py-2 text-center text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-white/75 sm:px-6 lg:px-8">
         Columbus, Ohio Based • Serving U.S. Carriers and Growth-Minded Businesses
       </div>
-      <div className="border-b border-white/55 bg-canvas/82 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
+      <div className="border-b border-white/55 bg-[linear-gradient(180deg,rgba(243,246,248,0.88),rgba(255,255,255,0.84))] backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4">
           <Link href="/" className="flex shrink-0 items-center gap-3">
             <div className="relative h-[3.6rem] w-[8.25rem] sm:h-[4rem] sm:w-[9.25rem] lg:h-[4.35rem] lg:w-[10rem]">
               <Image
@@ -36,7 +36,7 @@ export function SiteHeader() {
             </div>
           </Link>
 
-          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-px xl:flex 2xl:gap-1">
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 xl:flex">
             {primaryNav.map((item) => {
               const active =
                 item.href === "/"
@@ -50,8 +50,8 @@ export function SiteHeader() {
                   aria-current={active ? "page" : undefined}
                   className={`whitespace-nowrap rounded-full px-2.5 py-2 text-[0.8rem] font-medium transition xl:px-3 2xl:px-4 2xl:text-sm ${
                     active
-                      ? "bg-white text-accent shadow-soft"
-                      : "text-slate hover:bg-white/80 hover:text-ink"
+                      ? "bg-white text-accent shadow-[0_14px_28px_rgba(15,23,42,0.08)]"
+                      : "text-slate hover:bg-white/82 hover:text-ink"
                   }`}
                 >
                   {item.label}
@@ -60,7 +60,13 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="hidden shrink-0 xl:block">
+          <div className="hidden shrink-0 xl:flex xl:items-center xl:gap-3">
+            <a
+              href={siteConfig.phoneHref}
+              className="inline-flex items-center justify-center rounded-full border border-line bg-white/86 px-4 py-3 text-sm font-semibold text-ink shadow-[0_12px_26px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
+            >
+              Call Now
+            </a>
             <LinkButton href="/contact" className="px-4 py-3 2xl:px-5 2xl:py-3.5">
               <span className="hidden 2xl:inline">Book a Consultation</span>
               <span className="2xl:hidden">Consultation</span>
@@ -99,9 +105,15 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <LinkButton href="/contact" className="mt-2">
-            Book a Consultation
-          </LinkButton>
+          <div className="mt-2 grid gap-2 sm:grid-cols-2">
+            <a
+              href={siteConfig.phoneHref}
+              className="inline-flex items-center justify-center rounded-full border border-line bg-white px-4 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
+            >
+              Call Now
+            </a>
+            <LinkButton href="/contact">Book a Consultation</LinkButton>
+          </div>
         </nav>
       </div>
     </header>

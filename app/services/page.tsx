@@ -57,7 +57,7 @@ export default function ServicesPage() {
           description="The supporting services are positioned to strengthen the SiratLink brand without competing with the primary dispatching offer."
           className="mb-10"
         />
-        <div className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+        <div className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr_0.85fr]">
           <Reveal>
             <ServiceCard
               title="Dispatching Services"
@@ -80,12 +80,31 @@ export default function ServicesPage() {
               href="/web-development"
             />
           </Reveal>
+        </div>
+        <div className="mt-4 grid gap-4 xl:grid-cols-[0.86fr_0.86fr_1.28fr]">
           <Reveal delay={270}>
             <ServiceCard
               title="Digital Marketing Services"
               description="Social media management, paid advertising support, lead generation, branding support, and content strategy for businesses focused on visibility and growth."
               href="/digital-marketing-services"
             />
+          </Reveal>
+          <Reveal delay={340}>
+            <ServiceCard
+              title="Business Support"
+              description="Flexible back-office and operational support for companies that need structured communication, admin help, and smoother day-to-day coordination."
+            />
+          </Reveal>
+          <Reveal delay={410}>
+            <div className="spot-grid overflow-hidden rounded-[2rem] px-6 py-6 text-white shadow-soft sm:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-gold">Service Hierarchy</p>
+              <h3 className="mt-4 font-display text-2xl font-semibold">
+                Dispatching is the lead offer. Everything else supports the bigger SiratLink brand.
+              </h3>
+              <p className="mt-4 text-sm leading-7 text-white/74">
+                That hierarchy keeps the message clear for carriers while still allowing the business to grow into broader support services over time.
+              </p>
+            </div>
           </Reveal>
         </div>
       </SectionShell>

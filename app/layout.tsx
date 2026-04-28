@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { StickyMobileCta } from "@/components/sticky-mobile-cta";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
@@ -102,9 +103,10 @@ export default function RootLayout({
         />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-24 xl:pb-0">{children}</main>
           <SiteFooter />
         </div>
+        <StickyMobileCta />
       </body>
     </html>
   );

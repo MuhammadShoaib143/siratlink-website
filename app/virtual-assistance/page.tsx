@@ -1,4 +1,4 @@
-import { InfoCard } from "@/components/cards";
+import { InfoCard, StepCard } from "@/components/cards";
 import { ConsultationBand } from "@/components/consultation-band";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
@@ -49,6 +49,37 @@ const supportAreas = [
     title: "Scalable Support",
     description:
       "A service approach designed to grow as your workload and operational complexity increase over time.",
+  },
+];
+
+const workflow = [
+  {
+    step: "01",
+    title: "Identify the recurring workload",
+    description: "We define which administrative or operations tasks are slowing down the business and need dependable support.",
+  },
+  {
+    step: "02",
+    title: "Build the support rhythm",
+    description: "We align on communication flow, priorities, scheduling, and the recurring work that needs to happen consistently.",
+  },
+  {
+    step: "03",
+    title: "Create steadier execution",
+    description: "The service then supports cleaner internal organization, follow-through, and operational consistency over time.",
+  },
+];
+
+const faqs = [
+  {
+    title: "What kind of virtual assistance can SiratLink support?",
+    description:
+      "The service is positioned around scheduling, admin support, inbox help, documentation, data entry, recurring coordination, and broader operations assistance.",
+  },
+  {
+    title: "Is this designed for solo founders or teams?",
+    description:
+      "Both. The support model can fit a founder who needs leverage or a business team that needs more reliable operational help behind the scenes.",
   },
 ];
 
@@ -116,6 +147,41 @@ export default function VirtualAssistancePage() {
               defaultService="Virtual Assistance"
               submitLabel="Book a Consultation"
             />
+          </Reveal>
+        </div>
+      </SectionShell>
+
+      <SectionShell>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+          <Reveal>
+            <SectionIntro
+              eyebrow="Process"
+              title="A support model built around cleaner workflow, not random task dumping."
+              description="This page now shows a clearer process so the service feels more intentional and premium."
+              className="mb-8"
+            />
+            <div className="grid gap-4">
+              {workflow.map((item, index) => (
+                <Reveal key={item.step} delay={index * 80}>
+                  <StepCard step={item.step} title={item.title} description={item.description} />
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={90}>
+            <SectionIntro
+              eyebrow="FAQ"
+              title="A few practical questions businesses ask before booking."
+              description="The service is meant to feel like structured business support, not generic VA marketing."
+              className="mb-8"
+            />
+            <div className="grid gap-4">
+              {faqs.map((item, index) => (
+                <Reveal key={item.title} delay={index * 80}>
+                  <InfoCard title={item.title} description={item.description} />
+                </Reveal>
+              ))}
+            </div>
           </Reveal>
         </div>
       </SectionShell>
