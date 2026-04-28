@@ -4,12 +4,27 @@ export const siteConfig = {
   slogan: "Reliable Dispatch. Smarter Business Support.",
   description:
     "SiratLink LLC is a Columbus, Ohio based dispatching and business support company serving owner operators, trucking carriers, and growing service businesses across the United States with dispatching, virtual assistance, web development, and digital marketing support.",
-  url: "https://www.siratlink.com",
-  email: "hello@siratlink.com",
+  url: "https://siratlink.com",
+  email: "support@siratlink.com",
   phone: "(614) 555-0147",
   phoneHref: "tel:+16145550147",
-  emailHref: "mailto:hello@siratlink.com",
-  location: "Columbus, Ohio",
+  emailHref: "mailto:support@siratlink.com",
+  location: "Westerville and Columbus, Ohio",
+  mailingAddress: {
+    street1: "3296 Westerville Rd",
+    street2: "Rm 10 #164",
+    city: "Columbus",
+    region: "OH",
+    postalCode: "43224",
+    country: "US",
+  },
+  physicalAddress: {
+    street1: "5060 Fairway Lakes Dr",
+    city: "Westerville",
+    region: "OH",
+    postalCode: "43081",
+    country: "US",
+  },
   serviceArea: "United States",
 };
 

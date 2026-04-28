@@ -4,6 +4,12 @@ import Link from "next/link";
 import { footerNav, siteConfig } from "@/lib/site";
 
 export function SiteFooter() {
+  const mailingAddressLineOne = [siteConfig.mailingAddress.street1, siteConfig.mailingAddress.street2]
+    .filter(Boolean)
+    .join(", ");
+
+  const mailingAddressLineTwo = `${siteConfig.mailingAddress.city}, ${siteConfig.mailingAddress.region} ${siteConfig.mailingAddress.postalCode}`;
+
   return (
     <footer className="border-t border-line bg-brand-navy text-white">
       <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
@@ -40,6 +46,8 @@ export function SiteFooter() {
           </p>
           <div className="mt-5 space-y-2 text-sm text-white/80">
             <p>{siteConfig.location}</p>
+            <p>{mailingAddressLineOne}</p>
+            <p>{mailingAddressLineTwo}</p>
             <p>
               <a href={siteConfig.phoneHref} className="transition hover:text-white">
                 {siteConfig.phone}

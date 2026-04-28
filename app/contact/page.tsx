@@ -21,6 +21,17 @@ export const metadata = buildPageMetadata({
 });
 
 export default function ContactPage() {
+  const mailingAddress = [
+    siteConfig.mailingAddress.street1,
+    siteConfig.mailingAddress.street2,
+    `${siteConfig.mailingAddress.city}, ${siteConfig.mailingAddress.region} ${siteConfig.mailingAddress.postalCode}`,
+  ].filter(Boolean);
+
+  const physicalAddress = [
+    siteConfig.physicalAddress.street1,
+    `${siteConfig.physicalAddress.city}, ${siteConfig.physicalAddress.region} ${siteConfig.physicalAddress.postalCode}`,
+  ];
+
   return (
     <>
       <PageHero
@@ -29,7 +40,11 @@ export default function ContactPage() {
         description="Whether you need dispatching right away or you are planning for broader support, SiratLink makes it easy to start a serious business conversation with a clear next step."
         primaryCta={{ label: "Book a Consultation", href: "#contact-form" }}
         secondaryCta={{ label: "View Dispatching Services", href: "/dispatching-services" }}
-        stats={["Responsive contact experience", "Built for carriers and business clients", "Columbus, Ohio based"]}
+        stats={[
+          "Responsive contact experience",
+          "Built for carriers and business clients",
+          "Westerville and Columbus, Ohio based",
+        ]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">Reach Out With Confidence</p>
@@ -96,6 +111,22 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-white/50">Location</p>
                   <p className="mt-2 text-lg font-medium">{siteConfig.location}</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">Mailing Address</p>
+                  <address className="mt-2 space-y-1 text-lg font-medium not-italic">
+                    {mailingAddress.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </address>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">Physical Address</p>
+                  <address className="mt-2 space-y-1 text-lg font-medium not-italic">
+                    {physicalAddress.map((line) => (
+                      <p key={line}>{line}</p>
+                    ))}
+                  </address>
                 </div>
               </div>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">

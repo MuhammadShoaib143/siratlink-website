@@ -80,9 +80,11 @@ export default function RootLayout({
     areaServed: siteConfig.serviceArea,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Columbus",
-      addressRegion: "OH",
-      addressCountry: "US",
+      streetAddress: siteConfig.physicalAddress.street1,
+      addressLocality: siteConfig.physicalAddress.city,
+      addressRegion: siteConfig.physicalAddress.region,
+      postalCode: siteConfig.physicalAddress.postalCode,
+      addressCountry: siteConfig.physicalAddress.country,
     },
     description: siteConfig.description,
   };
