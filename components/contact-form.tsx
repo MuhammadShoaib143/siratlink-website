@@ -2,6 +2,8 @@
 
 import { FormEvent, useState } from "react";
 
+import { siteConfig } from "@/lib/site";
+
 type ContactFormProps = {
   title?: string;
   description?: string;
@@ -20,6 +22,32 @@ export function ContactForm({
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") ?? "");
+    const company = String(formData.get("company") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const phone = String(formData.get("phone") ?? "");
+    const service = String(formData.get("service") ?? selectedService);
+    const businessType = String(formData.get("business_type") ?? "");
+    const contactMethod = String(formData.get("contact_method") ?? "");
+    const message = String(formData.get("message") ?? "");
+
+    const subject = `${service} inquiry${company ? ` - ${company}` : name ? ` - ${name}` : ""}`;
+    const body = [
+      `Name: ${name}`,
+      `Company: ${company}`,
+      `Email: ${email}`,
+      `Phone: ${phone || "Not provided"}`,
+      `Service Needed: ${service}`,
+      `Business Type: ${businessType || "Not provided"}`,
+      `Preferred Contact: ${contactMethod || "Not provided"}`,
+      "",
+      "Message:",
+      message,
+    ].join("\n");
+
+    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   }
 
@@ -28,13 +56,6 @@ export function ContactForm({
       <div className="mb-6">
         <h2 className="font-display text-2xl font-semibold text-ink">{title}</h2>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate">{description}</p>
-        <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-          {["Tailored consultation", "Professional follow-up", "Ready for CRM integration"].map((item) => (
-            <span key={item} className="metric-pill text-xs font-semibold uppercase tracking-[0.16em] text-ink">
-              {item}
-            </span>
-          ))}
-        </div>
       </div>
 
       <form className="grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit}>
@@ -108,8 +129,8 @@ export function ContactForm({
           </button>
           <p className="mt-3 text-sm text-slate" aria-live="polite">
             {submitted
-              ? "Thank you. Your inquiry has been received, and this form is ready to connect to your preferred email or CRM workflow."
-              : "This production-ready front-end form is prepared for email, CRM, or API integration, with a polished experience across mobile and desktop."}
+              ? `Your email draft is being prepared for ${siteConfig.email}. If your email app does not open, send your details directly to that address.`
+              : `This form opens a ready-to-send email to ${siteConfig.email} with your inquiry details.`}
           </p>
         </div>
       </form>

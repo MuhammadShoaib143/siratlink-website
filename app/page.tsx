@@ -1,6 +1,7 @@
 import { ContactForm } from "@/components/contact-form";
 import { ConsultationBand } from "@/components/consultation-band";
 import { LinkButton } from "@/components/link-button";
+import { MailActionButton } from "@/components/mail-action-button";
 import { Reveal } from "@/components/reveal";
 import { SectionIntro } from "@/components/section-intro";
 import { SectionShell } from "@/components/section-shell";
@@ -28,38 +29,38 @@ export const metadata = buildPageMetadata({
 });
 
 const heroHighlights = [
-  "Professional broker communication handled with structure, urgency, and follow-through.",
-  "Dispatching support designed for owner operators, fleet owners, and small to mid-sized carriers.",
+  "Professional broker communication with faster follow-through.",
+  "Built for owner operators, fleet owners, and growing carriers.",
 ];
 
 const trustSignals = [
   {
     title: "Columbus, Ohio Based",
     description:
-      "SiratLink serves owner operators and trucking carriers from Columbus, Ohio with a professional, U.S.-based support standard.",
+      "U.S.-based support for carriers that value clear communication and dependable execution.",
   },
   {
     title: "Dispatching Comes First",
     description:
-      "Dispatching is the main service, with clear support for load coordination, broker communication, paperwork, and daily execution.",
+      "Dispatching is the core service, with support around loads, paperwork, and daily coordination.",
   },
   {
     title: "Clear Communication",
     description:
-      "Carriers need timely updates, organized follow-through, and broker communication that reflects well on their business.",
+      "Timely updates and organized broker-facing communication help the operation stay steady.",
   },
   {
     title: "Built For Long-Term Support",
     description:
-      "As SiratLink grows, clients can also access additional support in virtual assistance, web development, and digital marketing.",
+      "Additional support is available in virtual assistance, web, and digital marketing.",
   },
 ];
 
 const differentiators = [
-  "Load opportunities sourced with lane fit, revenue goals, and operational practicality in mind.",
-  "Broker-facing communication that helps carriers sound more organized and more credible.",
-  "Paperwork and trip coordination support designed to reduce friction throughout the day.",
-  "A premium client experience built around responsiveness, clarity, and long-term relationships.",
+  "Load sourcing aligned to lane fit and revenue goals.",
+  "Broker-facing communication that sounds sharper and more organized.",
+  "Paperwork and trip coordination designed to reduce daily friction.",
+  "A steady service style built around clarity and responsiveness.",
 ];
 
 const featuredServiceHighlights = serviceHighlights.slice(0, 4);
@@ -69,19 +70,19 @@ const workflow = [
     step: "01",
     title: "Discovery Call",
     description:
-      "We learn your truck type, lanes, preferences, and operational goals so the support starts from real business context.",
+      "We learn your lanes, truck type, and dispatch priorities.",
   },
   {
     step: "02",
     title: "Dispatch Alignment",
     description:
-      "SiratLink structures the communication style, dispatch priorities, and day-to-day workflow so expectations stay clear.",
+      "We align on communication style, load criteria, and workflow expectations.",
   },
   {
     step: "03",
     title: "Consistent Execution",
     description:
-      "The service focuses on reliable dispatch coordination, stronger communication, and daily support that feels calm and professional.",
+      "Support stays focused on cleaner coordination and dependable daily execution.",
   },
 ];
 
@@ -104,10 +105,10 @@ export default function HomePage() {
               </span>
             </div>
             <h1 className="mt-6 max-w-5xl font-display text-4xl font-semibold leading-[1.02] text-ink sm:text-5xl lg:text-[4.7rem]">
-              Dispatching support for serious carriers who need better loads, stronger communication, and a more dependable daily operation.
+              Premium dispatch support for carriers that need stronger communication and more dependable daily execution.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate sm:text-[1.1rem]">
-              SiratLink LLC helps owner operators, fleet owners, and small to mid-sized trucking carriers operate with more structure, clearer broker communication, and a stronger day-to-day dispatch workflow across the United States.
+              SiratLink helps owner operators, fleet owners, and growing carriers move with more structure, cleaner broker communication, and steadier dispatch support.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -141,12 +142,12 @@ export default function HomePage() {
               >
                 Call {siteConfig.phone}
               </a>
-              <a
-                href={siteConfig.emailHref}
+              <MailActionButton
+                email={siteConfig.email}
+                label={`Email ${siteConfig.email}`}
+                copiedLabel="Email Copied"
                 className="inline-flex items-center justify-center rounded-full border border-line bg-white/76 px-4 py-3 text-sm font-medium text-ink shadow-[0_12px_26px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
-              >
-                Email {siteConfig.email}
-              </a>
+              />
             </div>
 
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -272,7 +273,7 @@ export default function HomePage() {
               <SectionIntro
                 eyebrow="Why SiratLink"
                 title="Support built around professionalism, responsiveness, and day-to-day reliability."
-                description={`${siteConfig.shortName} helps carriers stay organized, communicate more clearly, and run with more confidence across daily dispatch operations.`}
+                description={`${siteConfig.shortName} helps carriers stay organized, communicate clearly, and run with more confidence.`}
               />
               <div className="grid gap-3 sm:grid-cols-2">
                 {[
@@ -307,7 +308,7 @@ export default function HomePage() {
           <SectionIntro
             eyebrow="Dispatching Services"
             title="Dispatching is the core service and the clearest place to get started with SiratLink."
-            description="We focus on the dispatch work that matters most to carriers: better loads, professional communication, cleaner coordination, and dependable support."
+            description="The focus stays on what matters most: better loads, cleaner coordination, and more dependable support."
             action={
               <LinkButton href="/dispatching-services" variant="secondary">
                 View Full Dispatching Page
@@ -322,10 +323,10 @@ export default function HomePage() {
                   Dispatching Services
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold sm:text-[2.6rem]">
-                  Dispatching support that helps carriers stay profitable, responsive, and organized.
+                  Dispatching support built for profitable, well-organized operations.
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/74">
-                  SiratLink focuses on the practical parts of dispatching that directly affect how a carrier operates: load sourcing, communication, coordination, and day-to-day execution.
+                  SiratLink focuses on the dispatch work that directly affects how a carrier runs each day.
                 </p>
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -364,7 +365,7 @@ export default function HomePage() {
                     Also Included
                   </p>
                   <p className="mt-3 text-sm leading-7 text-slate">
-                    Route coordination and paperwork support remain part of the dispatching offer, with the full scope available on the dedicated service page.
+                    Route coordination and paperwork support remain part of the offer.
                   </p>
                 </div>
               </Reveal>
@@ -378,7 +379,7 @@ export default function HomePage() {
           <ConsultationBand
             eyebrow="Book A Consultation"
             title="Talk with SiratLink about dispatch support that fits your operation."
-            description="If you need help with loads, broker communication, or daily coordination, we can talk through what support makes the most sense for your business."
+            description="If you need help with loads, broker communication, or daily coordination, we can talk through the right next step."
           />
         </Reveal>
       </SectionShell>
@@ -389,15 +390,14 @@ export default function HomePage() {
             <SectionIntro
               eyebrow="Why Carriers Choose SiratLink"
               title="The goal is simple: help carriers operate with more consistency and less daily friction."
-              description="SiratLink focuses on the practical things that make a real difference to carriers: communication, coordination, responsiveness, and reliable follow-through."
+              description="The service stays focused on communication, coordination, and reliable follow-through."
             />
 
             <div className="mt-8 space-y-4">
               {[
-                "Broker communication handled in a more professional and organized way.",
-                "Dependable follow-through that helps loads move with less confusion.",
-                "A cleaner workflow around paperwork, coordination, and execution.",
-                "Support that helps owner operators and carriers protect time and stay focused on the road.",
+                "Broker communication handled in a more professional way.",
+                "Dependable follow-through that keeps loads moving with less confusion.",
+                "A cleaner workflow around paperwork and daily coordination.",
               ].map((item) => (
                 <div
                   key={item}
@@ -415,14 +415,14 @@ export default function HomePage() {
               <FeaturedInsight
                 eyebrow="Professional Support"
                 title="Reliable communication helps carriers protect relationships and stay on schedule."
-                description="From broker updates to trip coordination, consistent communication reduces friction and helps the business run more smoothly."
+                description="From broker updates to trip coordination, consistent communication helps the day run more smoothly."
               />
             </Reveal>
             <Reveal delay={90}>
               <FeaturedInsight
                 eyebrow="Operational Focus"
                 title="Better organization leads to fewer delays, less confusion, and more productive days."
-                description="SiratLink brings structure to the dispatch process so carriers can stay focused on execution instead of chasing details."
+                description="SiratLink brings structure to the dispatch process so carriers can stay focused on execution."
               />
             </Reveal>
             <Reveal delay={180} className="sm:col-span-2">
@@ -443,7 +443,7 @@ export default function HomePage() {
             eyebrow="How It Works"
             title="A clearer three-step process for getting started."
             align="center"
-            description="This keeps the conversion path simple for busy operators while still sounding premium and operationally grounded."
+            description="A simple start for busy operators who want clarity fast."
             className="mb-10"
           />
         </Reveal>
@@ -469,7 +469,7 @@ export default function HomePage() {
         <SectionIntro
           eyebrow="Additional Services"
           title="SiratLink also offers business support services beyond dispatching."
-          description="These services are secondary to dispatching, but they give clients access to broader support as their business needs grow."
+          description="These services are secondary to dispatching and available as broader support needs grow."
           className="mb-10"
         />
 
@@ -492,7 +492,7 @@ export default function HomePage() {
           <SectionIntro
             eyebrow="Client Feedback"
             title="Realistic client feedback built around trust, consistency, and communication."
-            description="These testimonials reflect the kind of support carriers expect when they are trusting someone with a critical part of daily operations."
+            description="These testimonials reflect the kind of support carriers expect from a dependable dispatch partner."
             className="mb-10"
           />
 
@@ -506,7 +506,7 @@ export default function HomePage() {
                   Carriers want support that makes the business feel more composed, not more chaotic.
                 </h3>
                 <p className="mt-5 text-base leading-8 text-white/74">
-                  Clear communication, steady follow-through, and organized execution are what make dispatch support worth trusting.
+                  Clear communication and steady follow-through are what make dispatch support worth trusting.
                 </p>
               </div>
             </Reveal>
@@ -535,10 +535,10 @@ export default function HomePage() {
                   Get Started
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">
-                  Start with a consultation and see how SiratLink can support your operation with more structure and less friction.
+                  Start with a consultation and see what support fits your operation best.
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-8 text-white/74">
-                  Tell us about your lanes, dispatch needs, or broader business support goals, and we&apos;ll help you identify the right next step.
+                  Tell us about your lanes, dispatch needs, or broader support goals and we&apos;ll help you identify the next step.
                 </p>
 
                 <div className="mt-6 space-y-3">
@@ -567,7 +567,7 @@ export default function HomePage() {
 
               <ContactForm
                 title="Request your consultation"
-                description="Use this homepage form to capture serious inquiries from carriers, owner operators, and future support clients."
+                description="Share the essentials and open a ready-to-send inquiry email."
                 submitLabel="Book a Consultation"
               />
             </div>
