@@ -16,6 +16,16 @@ export function SiteHeader() {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.dataset.mobileNav = open ? "open" : "closed";
+    document.body.style.overflow = open ? "hidden" : "";
+
+    return () => {
+      document.body.dataset.mobileNav = "closed";
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header className="sticky top-0 z-50">
       <div className="border-b border-white/10 bg-brand-navy px-4 py-2 text-center text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-white/75 sm:px-6 lg:px-8">
@@ -85,16 +95,16 @@ export function SiteHeader() {
       </div>
 
       <div
-        className={`overflow-hidden border-b border-line bg-white/95 transition-[max-height,opacity] duration-300 xl:hidden ${
-          open ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
+        className={`fixed inset-x-0 bottom-0 top-[7.45rem] z-[55] border-t border-line bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(243,246,248,0.98))] backdrop-blur-2xl transition-[opacity,transform] duration-300 xl:hidden ${
+          open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <nav className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+        <nav className="mx-auto flex h-full max-w-7xl flex-col gap-2 overflow-y-auto px-4 py-5 pb-28 sm:px-6 sm:pb-32">
           {primaryNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-2xl px-4 py-3 text-sm font-medium text-ink transition hover:bg-canvas hover:text-accent"
+              className="rounded-2xl px-4 py-3 text-base font-medium text-ink transition hover:bg-canvas hover:text-accent"
             >
               {item.label}
             </Link>

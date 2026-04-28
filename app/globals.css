@@ -269,6 +269,15 @@ main {
 
 .mobile-sticky-cta {
   padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.25rem);
+  transition:
+    transform 240ms ease,
+    opacity 240ms ease;
+}
+
+body[data-mobile-nav="open"] .mobile-sticky-cta {
+  opacity: 0;
+  transform: translateY(120%);
+  pointer-events: none;
 }
 
 .text-fade-mask {
