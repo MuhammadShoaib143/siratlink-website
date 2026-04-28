@@ -17,11 +17,11 @@ export function SiteHeader() {
   }, [pathname]);
 
   useEffect(() => {
-    document.body.dataset.mobileNav = open ? "open" : "closed";
+    document.documentElement.dataset.mobileNav = open ? "open" : "closed";
     document.body.style.overflow = open ? "hidden" : "";
 
     return () => {
-      document.body.dataset.mobileNav = "closed";
+      document.documentElement.dataset.mobileNav = "closed";
       document.body.style.overflow = "";
     };
   }, [open]);
@@ -95,7 +95,7 @@ export function SiteHeader() {
       </div>
 
       <div
-        className={`fixed inset-x-0 bottom-0 top-[7.45rem] z-[55] border-t border-line bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(243,246,248,0.98))] backdrop-blur-2xl transition-[opacity,transform] duration-300 xl:hidden ${
+        className={`fixed inset-x-0 top-[7.45rem] z-[70] h-[calc(100dvh-7.45rem)] border-t border-line bg-canvas transition-[opacity,transform] duration-300 xl:hidden ${
           open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >

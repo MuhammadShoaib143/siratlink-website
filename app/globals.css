@@ -274,7 +274,7 @@ main {
     opacity 240ms ease;
 }
 
-body[data-mobile-nav="open"] .mobile-sticky-cta {
+html[data-mobile-nav="open"] .mobile-sticky-cta {
   opacity: 0;
   transform: translateY(120%);
   pointer-events: none;
