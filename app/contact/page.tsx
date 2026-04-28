@@ -88,7 +88,6 @@ export default function ContactPage() {
                 <MailActionButton
                   email={siteConfig.email}
                   label="Email Us"
-                  copiedLabel="Email Copied"
                   className="inline-flex items-center justify-center rounded-full border border-white/16 bg-white/10 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14"
                 />
               </div>

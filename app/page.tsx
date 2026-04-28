@@ -137,7 +137,6 @@ export default function HomePage() {
               <MailActionButton
                 email={siteConfig.email}
                 label={`Email ${siteConfig.email}`}
-                copiedLabel="Email Copied"
                 className="inline-flex items-center justify-center rounded-full border border-line bg-white/82 px-4 py-3 text-sm font-medium text-ink shadow-[0_12px_26px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
               />
             </div>

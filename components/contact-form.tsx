@@ -45,7 +45,25 @@ export function ContactForm({
       message,
     ].join("\n");
 
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const gmailParams = new URLSearchParams({
+      view: "cm",
+      fs: "1",
+      to: siteConfig.email,
+      su: subject,
+      body,
+    });
+
+    const gmailUrl = `https://mail.google.com/mail/?${gmailParams.toString()}`;
+    const openedWindow = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+
+    if (!openedWindow) {
+      const mailtoParams = new URLSearchParams({
+        subject,
+        body,
+      });
+      window.location.href = `mailto:${siteConfig.email}?${mailtoParams.toString()}`;
+    }
+
     setSubmitted(true);
   }
 
@@ -120,8 +138,8 @@ export function ContactForm({
           </button>
           <p className="mt-3 text-sm text-slate" aria-live="polite">
             {submitted
-              ? `Your email draft is being prepared for ${siteConfig.email}. If your email app does not open, send your details directly to that address.`
-              : `This form prepares a ready-to-send email to ${siteConfig.email} with your inquiry details.`}
+              ? `Your compose window is opening for ${siteConfig.email}. If it does not open, email us directly at that address.`
+              : `This form opens a ready-to-send compose draft to ${siteConfig.email} with your inquiry details.`}
           </p>
         </div>
       </form>

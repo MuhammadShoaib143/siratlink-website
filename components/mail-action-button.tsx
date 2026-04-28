@@ -1,47 +1,57 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 type MailActionButtonProps = {
   email: string;
   label: string;
-  copiedLabel?: string;
   className?: string;
+  subject?: string;
+  body?: string;
 };
 
 export function MailActionButton({
   email,
   label,
-  copiedLabel = "Email Copied",
   className = "",
+  subject,
+  body,
 }: MailActionButtonProps) {
-  const [copied, setCopied] = useState(false);
+  const gmailParams = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: email,
+  });
 
-  useEffect(() => {
-    if (!copied) {
+  if (subject) {
+    gmailParams.set("su", subject);
+  }
+
+  if (body) {
+    gmailParams.set("body", body);
+  }
+
+  async function handleClick() {
+    const gmailUrl = `https://mail.google.com/mail/?${gmailParams.toString()}`;
+    const openedWindow = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+
+    if (openedWindow) {
       return;
     }
 
-    const timer = window.setTimeout(() => setCopied(false), 2200);
-    return () => window.clearTimeout(timer);
-  }, [copied]);
-
-  async function handleClick() {
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(email);
-        setCopied(true);
-      }
-    } catch {
-      setCopied(false);
+    const mailtoParams = new URLSearchParams();
+    if (subject) {
+      mailtoParams.set("subject", subject);
+    }
+    if (body) {
+      mailtoParams.set("body", body);
     }
 
-    window.location.href = `mailto:${email}`;
+    const mailtoUrl = `mailto:${email}${mailtoParams.toString() ? `?${mailtoParams.toString()}` : ""}`;
+    window.location.href = mailtoUrl;
   }
 
   return (
-    <button type="button" onClick={handleClick} className={className} aria-live="polite">
-      {copied ? copiedLabel : label}
+    <button type="button" onClick={handleClick} className={className}>
+      {label}
     </button>
   );
 }
