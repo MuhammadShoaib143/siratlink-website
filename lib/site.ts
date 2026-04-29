@@ -6,8 +6,8 @@ export const siteConfig = {
     "SiratLink LLC is a Columbus, Ohio based dispatching and business support company serving owner operators, trucking carriers, and growing service businesses across the United States with dispatching, virtual assistance, web development, and digital marketing support.",
   url: "https://siratlink.com",
   email: "support@siratlink.com",
-  phone: "(614) 555-0147",
-  phoneHref: "tel:+16145550147",
+  phone: "(380) 800-6717",
+  phoneHref: "tel:+13808006717",
   emailHref: "mailto:support@siratlink.com",
   location: "Westerville and Columbus, Ohio",
   mailingAddress: {
