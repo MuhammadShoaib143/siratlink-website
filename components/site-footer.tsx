@@ -9,8 +9,6 @@ export function SiteFooter() {
     .join(", ");
 
   const mailingAddressLineTwo = `${siteConfig.mailingAddress.city}, ${siteConfig.mailingAddress.region} ${siteConfig.mailingAddress.postalCode}`;
-  const physicalAddressLine = `${siteConfig.physicalAddress.street1}, ${siteConfig.physicalAddress.city}, ${siteConfig.physicalAddress.region} ${siteConfig.physicalAddress.postalCode}`;
-
   return (
     <footer className="border-t border-line bg-brand-navy text-white">
       <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
@@ -55,7 +53,6 @@ export function SiteFooter() {
             <p>{siteConfig.location}</p>
             <p>{mailingAddressLineOne}</p>
             <p>{mailingAddressLineTwo}</p>
-            <p>{physicalAddressLine}</p>
             <p>
               <a href={siteConfig.phoneHref} className="transition hover:text-white">
                 {siteConfig.phone}

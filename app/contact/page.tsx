@@ -28,11 +28,6 @@ export default function ContactPage() {
     `${siteConfig.mailingAddress.city}, ${siteConfig.mailingAddress.region} ${siteConfig.mailingAddress.postalCode}`,
   ].filter(Boolean);
 
-  const physicalAddress = [
-    siteConfig.physicalAddress.street1,
-    `${siteConfig.physicalAddress.city}, ${siteConfig.physicalAddress.region} ${siteConfig.physicalAddress.postalCode}`,
-  ];
-
   return (
     <>
       <PageHero
@@ -120,14 +115,6 @@ export default function ContactPage() {
                   <p className="text-xs uppercase tracking-[0.18em] text-white/50">Mailing Address</p>
                   <address className="mt-2 space-y-1 text-base font-medium not-italic sm:text-lg">
                     {mailingAddress.map((line) => (
-                      <p key={line}>{line}</p>
-                    ))}
-                  </address>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">Physical Address</p>
-                  <address className="mt-2 space-y-1 text-base font-medium not-italic sm:text-lg">
-                    {physicalAddress.map((line) => (
                       <p key={line}>{line}</p>
                     ))}
                   </address>
