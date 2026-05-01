@@ -37,11 +37,6 @@ export const carrierSetupDocumentCategories: CarrierDocumentCategory[] = [
     description: "Driver identification for setup review when needed.",
   },
   {
-    id: "dispatch-agreement",
-    label: "Dispatch Agreement",
-    description: "Upload a signed dispatch agreement if you already have it ready for review.",
-  },
-  {
     id: "other-documents",
     label: "Other Documents",
     description: "Any additional onboarding files your operation wants to share.",
@@ -64,7 +59,7 @@ export const carrierSetupChecklistSections = [
   {
     title: "Additional setup records",
     items: [
-      "Notice of assignment, banking details, and dispatch agreement only if they apply to your operation.",
+      "Notice of assignment and banking details only if they apply to your operation.",
       "If something is missing, submit what you have and our team will follow up with the next step.",
     ],
   },
@@ -85,9 +80,9 @@ export const carrierSetupProcessSteps = [
   },
   {
     step: "03",
-    title: "Receive next-step guidance",
+    title: "Receive next-step guidance and agreement",
     description:
-      "Once the review is complete, SiratLink follows up with the clearest next step for dispatch onboarding and support alignment.",
+      "Once the review is complete, SiratLink follows up with the clearest next step for dispatch onboarding and sends the dispatch agreement if your setup is moving forward.",
   },
 ];
 

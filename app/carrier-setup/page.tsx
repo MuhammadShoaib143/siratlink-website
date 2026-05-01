@@ -111,6 +111,12 @@ export default function CarrierSetupPage() {
                   <p className="mt-1">{category.description}</p>
                 </div>
               ))}
+              <div className="rounded-[1.35rem] border border-accent/14 bg-accent/[0.06] px-4 py-4 text-sm leading-7 text-slate shadow-[0_10px_24px_rgba(15,118,110,0.06)]">
+                <p className="font-semibold text-ink">Dispatch Agreement</p>
+                <p className="mt-1">
+                  You do not need to upload a dispatch agreement here. If your carrier setup is approved, SiratLink will send the agreement directly for review and signature.
+                </p>
+              </div>
             </div>
           </Reveal>
           <Reveal delay={90}>
