@@ -104,7 +104,7 @@ export async function POST(request: Request) {
     try {
       await transporter.sendMail({
         from: process.env.SMTP_FROM || smtpUser,
-        to: process.env.CONTACT_FORM_TO || siteConfig.email,
+        to: process.env.CONTACT_FORM_TO?.trim() || smtpUser || siteConfig.email,
         cc: process.env.CONTACT_FORM_CC || undefined,
         replyTo: sanitized.email,
         subject,
