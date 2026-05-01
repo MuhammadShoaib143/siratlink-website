@@ -101,10 +101,10 @@ export async function POST(request: Request) {
   const bestTimeToContact = String(formData.get("bestTimeToContact") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
 
-  const smtpHost = process.env.SMTP_HOST;
+  const smtpHost = process.env.SMTP_HOST?.trim();
   const smtpPort = Number(process.env.SMTP_PORT ?? "465");
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
+  const smtpUser = process.env.SMTP_USER?.trim();
+  const smtpPass = process.env.SMTP_PASS?.replace(/\s+/g, "");
   const smtpConfigured = !!(smtpHost && smtpPort && smtpUser && smtpPass);
   const secureForwardUrl = process.env.CARRIER_SETUP_WEBHOOK_URL;
 
@@ -186,12 +186,12 @@ export async function POST(request: Request) {
           "Thank you. Your carrier setup information has been submitted. Our team will review your documents and contact you with the next steps.",
       });
     } catch (error) {
+      console.error("Carrier setup SMTP delivery failed", error);
+
       return NextResponse.json(
         {
           message:
-            error instanceof Error
-              ? `Secure carrier delivery could not complete: ${error.message}`
-              : "Secure carrier delivery could not complete right now. Please verify the SMTP connection and try again.",
+            "Carrier setup could not be delivered right now. Please verify the email connection settings and try again, or contact SiratLink directly for setup support.",
         },
         { status: 502 },
       );
