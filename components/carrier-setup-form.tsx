@@ -6,7 +6,9 @@ import Link from "next/link";
 import { DocumentUploadField, type SelectedCarrierFile } from "@/components/document-upload-field";
 import {
   carrierSetupDocumentCategories,
+  formatCarrierFileSize,
   isAllowedCarrierFile,
+  maxCarrierUploadBundleBytes,
   maxCarrierUploadSizeBytes,
 } from "@/lib/carrier-setup";
 
@@ -19,7 +21,7 @@ type SubmissionState =
 const trackerSteps = [
   "Carrier information",
   "Equipment details",
-  "Required documents",
+  "Documents if ready",
   "Review and submit",
 ];
 
@@ -36,6 +38,14 @@ export function CarrierSetupForm() {
 
   const totalFiles = useMemo(
     () => Object.values(uploads).reduce((count, entries) => count + entries.length, 0),
+    [uploads],
+  );
+  const totalUploadBytes = useMemo(
+    () =>
+      Object.values(uploads).reduce(
+        (total, entries) => total + entries.reduce((entryTotal, item) => entryTotal + item.file.size, 0),
+        0,
+      ),
     [uploads],
   );
 
@@ -96,6 +106,16 @@ export function CarrierSetupForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    if (totalUploadBytes > maxCarrierUploadBundleBytes) {
+      setState({
+        status: "error",
+        message: `The total upload package is too large. Please keep the combined file size under ${formatCarrierFileSize(
+          maxCarrierUploadBundleBytes,
+        )} or submit fewer files at once.`,
+      });
+      return;
+    }
+
     Object.entries(uploads).forEach(([categoryId, files]) => {
       files.forEach((entry) => {
         formData.append(`documents.${categoryId}`, entry.file, entry.file.name);
@@ -118,7 +138,7 @@ export function CarrierSetupForm() {
       if (!response.ok) {
         throw new Error(
           data?.message ??
-            "Carrier setup intake is not connected yet. Please connect secure storage or onboarding delivery before collecting live files.",
+            "Carrier setup could not be processed right now. Please try again with fewer or smaller files, or contact SiratLink directly for setup support.",
         );
       }
 
@@ -161,6 +181,9 @@ export function CarrierSetupForm() {
           <p className="font-semibold uppercase tracking-[0.18em]">Uploaded files</p>
           <p className="mt-2 font-display text-3xl font-semibold text-ink">{totalFiles}</p>
           <p className="mt-1 text-slate">Files currently attached to this setup request.</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.16em] text-slate/80">
+            {formatCarrierFileSize(totalUploadBytes)} total
+          </p>
         </div>
       </div>
 

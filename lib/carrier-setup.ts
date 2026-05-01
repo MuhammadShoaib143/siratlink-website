@@ -99,6 +99,7 @@ export const carrierUploadMimeTypes = [
 export const carrierUploadExtensions = [".pdf", ".jpg", ".jpeg", ".png", ".doc", ".docx"];
 
 export const maxCarrierUploadSizeBytes = 10 * 1024 * 1024;
+export const maxCarrierUploadBundleBytes = 20 * 1024 * 1024;
 
 export function isAllowedCarrierFile({
   fileName,
