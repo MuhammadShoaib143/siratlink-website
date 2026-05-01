@@ -33,6 +33,7 @@ export const primaryNav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Dispatching", href: "/dispatching-services" },
+  { label: "Carrier Setup", href: "/carrier-setup" },
   { label: "Virtual Assistance", href: "/virtual-assistance" },
   { label: "Web Development", href: "/web-development" },
   { label: "Digital Marketing", href: "/digital-marketing-services" },
@@ -43,10 +44,12 @@ export const footerNav = {
   company: [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Carrier Setup", href: "/carrier-setup" },
     { label: "Contact", href: "/contact" },
   ],
   services: [
     { label: "Dispatching Services", href: "/dispatching-services" },
+    { label: "Carrier Setup", href: "/carrier-setup" },
     { label: "Virtual Assistance", href: "/virtual-assistance" },
     { label: "Web Development", href: "/web-development" },
     { label: "Digital Marketing Services", href: "/digital-marketing-services" },

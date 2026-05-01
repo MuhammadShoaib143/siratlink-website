@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/services",
     "/dispatching-services",
+    "/carrier-setup",
     "/virtual-assistance",
     "/web-development",
     "/digital-marketing-services",

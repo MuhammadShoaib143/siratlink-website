@@ -207,7 +207,12 @@ export default function DispatchingServicesPage() {
                 ))}
               </div>
               <div className="mt-6">
-                <LinkButton href="#dispatch-contact-form">Get Your Custom Plan</LinkButton>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <LinkButton href="#dispatch-contact-form">Get Your Custom Plan</LinkButton>
+                  <LinkButton href="/carrier-setup#carrier-setup-form" variant="secondary">
+                    Upload Documents
+                  </LinkButton>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -257,6 +262,15 @@ export default function DispatchingServicesPage() {
                   <InfoCard title={item.question} description={item.answer} />
                 </Reveal>
               ))}
+            </div>
+            <div className="mt-8 rounded-[1.9rem] border border-line bg-white/86 px-5 py-5 shadow-[0_14px_30px_rgba(15,23,42,0.04)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Carrier Setup</p>
+              <p className="mt-3 text-sm leading-7 text-slate">
+                Ready to get set up? Submit your carrier information and onboarding documents through the SiratLink carrier setup flow before your dispatch consultation.
+              </p>
+              <div className="mt-5">
+                <LinkButton href="/carrier-setup#carrier-setup-form">Start Carrier Setup</LinkButton>
+              </div>
             </div>
           </Reveal>
 

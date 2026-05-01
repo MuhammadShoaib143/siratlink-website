@@ -1,6 +1,5 @@
 import { ContactForm } from "@/components/contact-form";
 import { LinkButton } from "@/components/link-button";
-import { MailActionButton } from "@/components/mail-action-button";
 import { Reveal } from "@/components/reveal";
 import { SectionIntro } from "@/components/section-intro";
 import { SectionShell } from "@/components/section-shell";
@@ -144,12 +143,9 @@ export default function HomePage() {
               <LinkButton href="/dispatching-services" variant="secondary" className="w-full sm:w-auto">
                 Explore Dispatching Services
               </LinkButton>
-              <MailActionButton
-                email={siteConfig.email}
-                label="Email Support"
-                subject="SiratLink Dispatch Consultation"
-                className="inline-flex items-center justify-center rounded-full border border-line bg-white/84 px-4 py-3 text-sm font-medium text-ink shadow-[0_12px_26px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
-              />
+              <LinkButton href="/carrier-setup#carrier-setup-form" variant="secondary" className="w-full sm:w-auto">
+                Start Carrier Setup
+              </LinkButton>
             </div>
           </Reveal>
 
@@ -301,6 +297,9 @@ export default function HomePage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <LinkButton href="/contact">Book a Consultation</LinkButton>
+                <LinkButton href="/carrier-setup#carrier-setup-form" variant="secondary">
+                  Upload Documents
+                </LinkButton>
                 <a
                   href={siteConfig.phoneHref}
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14"
@@ -409,6 +408,28 @@ export default function HomePage() {
       </SectionShell>
 
       <SectionShell>
+        <Reveal className="mb-10">
+          <div className="soft-card premium-border surface-outline rounded-[2.15rem] px-6 py-6 shadow-soft sm:px-8">
+            <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p className="eyebrow">Carrier Onboarding</p>
+                <h2 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-[2.5rem]">
+                  Ready to get set up? Submit your carrier documents securely through our website.
+                </h2>
+                <p className="mt-4 max-w-3xl text-base leading-7 text-slate">
+                  Carriers who are ready to move forward can send company details, onboarding documents, and dispatch setup notes directly through the new carrier setup flow.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <LinkButton href="/carrier-setup#carrier-setup-form">Start Carrier Setup</LinkButton>
+                <LinkButton href="/carrier-setup" variant="secondary">
+                  View Setup Checklist
+                </LinkButton>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         <Reveal>
           <div className="spot-grid overflow-hidden rounded-[2.4rem] px-6 py-8 text-white shadow-soft sm:px-8 lg:px-10 lg:py-10">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">

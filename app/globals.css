@@ -260,6 +260,18 @@ main {
   background: rgba(212, 162, 76, 0.18);
 }
 
+@keyframes carrier-upload-progress {
+  0% {
+    transform: translateX(-30%) scaleX(0.6);
+  }
+  50% {
+    transform: translateX(35%) scaleX(1);
+  }
+  100% {
+    transform: translateX(110%) scaleX(0.72);
+  }
+}
+
 .surface-grid {
   background-image:
     linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
