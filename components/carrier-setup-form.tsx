@@ -165,7 +165,10 @@ export function CarrierSetupForm() {
   }
 
   return (
-    <div id="carrier-setup-form" className="soft-card premium-border surface-outline rounded-[2.35rem] p-6 sm:p-8 lg:p-9">
+    <div
+      id="carrier-setup-form"
+      className="soft-card premium-border surface-outline scroll-mt-32 rounded-[2.35rem] p-6 sm:scroll-mt-36 sm:p-8 lg:scroll-mt-40 lg:p-9"
+    >
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
           <p className="eyebrow">Carrier Information + Documents</p>
