@@ -1,12 +1,16 @@
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 import {
   carrierSetupDocumentCategories,
   isAllowedCarrierFile,
   maxCarrierUploadSizeBytes,
 } from "@/lib/carrier-setup";
+import { siteConfig } from "@/lib/site";
 
 export const runtime = "nodejs";
+
+const maxCarrierUploadBundleBytes = 20 * 1024 * 1024;
 
 const requiredFields = [
   ["fullName", "Full name"],
@@ -103,16 +107,126 @@ export async function POST(request: Request) {
     }
   }
 
-  const secureForwardUrl = process.env.CARRIER_SETUP_WEBHOOK_URL;
+  const totalUploadBytes = allFiles.reduce((total, file) => total + file.size, 0);
 
-  if (!secureForwardUrl) {
+  if (totalUploadBytes > maxCarrierUploadBundleBytes) {
     return NextResponse.json(
       {
         message:
-          "Secure document delivery is not connected on this deployment yet. Connect a protected API, CRM, or storage workflow before collecting live carrier onboarding files.",
+          "The total upload package is too large for secure email delivery. Please keep the combined document bundle under 20 MB.",
+      },
+      { status: 413 },
+    );
+  }
+
+  const companyName = String(formData.get("companyName") ?? "").trim();
+  const fullName = String(formData.get("fullName") ?? "").trim();
+  const email = String(formData.get("email") ?? "").trim();
+  const phone = String(formData.get("phone") ?? "").trim();
+  const mcNumber = String(formData.get("mcNumber") ?? "").trim();
+  const dotNumber = String(formData.get("dotNumber") ?? "").trim();
+  const truckType = String(formData.get("truckType") ?? "").trim();
+  const numberOfTrucks = String(formData.get("numberOfTrucks") ?? "").trim();
+  const preferredLanes = String(formData.get("preferredLanes") ?? "").trim();
+  const currentLocation = String(formData.get("currentLocation") ?? "").trim();
+  const bestTimeToContact = String(formData.get("bestTimeToContact") ?? "").trim();
+  const message = String(formData.get("message") ?? "").trim();
+
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT ?? "465");
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+  const smtpConfigured = !!(smtpHost && smtpPort && smtpUser && smtpPass);
+  const secureForwardUrl = process.env.CARRIER_SETUP_WEBHOOK_URL;
+
+  if (!smtpConfigured && !secureForwardUrl) {
+    return NextResponse.json(
+      {
+        message:
+          "Secure document delivery is not connected on this deployment yet. Add SMTP credentials or a protected webhook before collecting live carrier onboarding files.",
       },
       { status: 503 },
     );
+  }
+
+  const categoryBreakdown = carrierSetupDocumentCategories
+    .map((category) => {
+      const count = formData
+        .getAll(`documents.${category.id}`)
+        .filter((entry): entry is File => entry instanceof File && entry.size > 0).length;
+
+      return count ? `${category.label}: ${count}` : null;
+    })
+    .filter(Boolean);
+
+  if (smtpConfigured) {
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
+
+    const attachments = await Promise.all(
+      allFiles.map(async (file) => ({
+        filename: file.name,
+        content: Buffer.from(await file.arrayBuffer()),
+        contentType: file.type || undefined,
+      })),
+    );
+
+    const subject = `Carrier Setup Review - ${companyName}${mcNumber ? ` - MC ${mcNumber}` : ""}`;
+    const text = [
+      "A new carrier setup package was submitted through the SiratLink website.",
+      "",
+      `Full Name: ${fullName}`,
+      `Company Name: ${companyName}`,
+      `Phone Number: ${phone}`,
+      `Email Address: ${email}`,
+      `MC Number: ${mcNumber}`,
+      `DOT Number: ${dotNumber}`,
+      `Truck Type: ${truckType}`,
+      `Number of Trucks: ${numberOfTrucks}`,
+      `Preferred Lanes: ${preferredLanes}`,
+      `Current Location: ${currentLocation}`,
+      `Best Time to Contact: ${bestTimeToContact || "Flexible"}`,
+      "",
+      "Document categories included:",
+      ...categoryBreakdown.map((entry) => `- ${entry}`),
+      "",
+      "Additional Notes:",
+      message || "No additional notes provided.",
+    ].join("\n");
+
+    try {
+      await transporter.sendMail({
+        from: process.env.SMTP_FROM || smtpUser,
+        to: process.env.CARRIER_SETUP_TO || siteConfig.email,
+        cc: process.env.CARRIER_SETUP_CC || undefined,
+        replyTo: email || undefined,
+        subject,
+        text,
+        attachments,
+      });
+
+      return NextResponse.json({
+        message:
+          "Thank you. Your carrier setup information has been submitted. Our team will review your documents and contact you with the next steps.",
+      });
+    } catch (error) {
+      return NextResponse.json(
+        {
+          message:
+            error instanceof Error
+              ? `Secure carrier delivery could not complete: ${error.message}`
+              : "Secure carrier delivery could not complete right now. Please verify the SMTP connection and try again.",
+        },
+        { status: 502 },
+      );
+    }
   }
 
   const outbound = new FormData();
@@ -136,7 +250,7 @@ export async function POST(request: Request) {
     });
   });
 
-  const upstream = await fetch(secureForwardUrl, {
+  const upstream = await fetch(secureForwardUrl!, {
     method: "POST",
     body: outbound,
   });
