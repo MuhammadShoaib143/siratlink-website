@@ -25,10 +25,6 @@ const requiredFields = [
   ["currentLocation", "Current location"],
 ] as const;
 
-const requiredDocumentIds = carrierSetupDocumentCategories
-  .filter((category) => category.required)
-  .map((category) => category.id);
-
 export async function POST(request: Request) {
   const contentType = request.headers.get("content-type") ?? "";
 
@@ -54,38 +50,11 @@ export async function POST(request: Request) {
     );
   }
 
-  const requiredDocumentsMissing = requiredDocumentIds.filter((categoryId) => {
-    const documents = formData.getAll(`documents.${categoryId}`);
-    return !documents.some((entry) => entry instanceof File && entry.size > 0);
-  });
-
-  if (requiredDocumentsMissing.length) {
-    const label =
-      carrierSetupDocumentCategories.find((category) => category.id === requiredDocumentsMissing[0])?.label ??
-      "A required document";
-
-    return NextResponse.json(
-      {
-        message: `${label} is required before the carrier setup can be submitted.`,
-      },
-      { status: 422 },
-    );
-  }
-
   const allFiles = carrierSetupDocumentCategories.flatMap((category) =>
     formData
       .getAll(`documents.${category.id}`)
       .filter((entry): entry is File => entry instanceof File && entry.size > 0),
   );
-
-  if (!allFiles.length) {
-    return NextResponse.json(
-      {
-        message: "Upload at least one onboarding document before submitting the carrier setup.",
-      },
-      { status: 422 },
-    );
-  }
 
   for (const file of allFiles) {
     if (!isAllowedCarrierFile({ fileName: file.name, mimeType: file.type })) {
@@ -195,7 +164,7 @@ export async function POST(request: Request) {
       `Best Time to Contact: ${bestTimeToContact || "Flexible"}`,
       "",
       "Document categories included:",
-      ...categoryBreakdown.map((entry) => `- ${entry}`),
+      ...(categoryBreakdown.length ? categoryBreakdown.map((entry) => `- ${entry}`) : ["- No documents uploaded with this request"]),
       "",
       "Additional Notes:",
       message || "No additional notes provided.",

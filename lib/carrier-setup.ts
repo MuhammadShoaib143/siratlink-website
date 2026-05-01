@@ -10,29 +10,21 @@ export const carrierSetupDocumentCategories: CarrierDocumentCategory[] = [
     id: "mc-authority",
     label: "MC Authority",
     description: "Operating authority confirmation for dispatch onboarding review.",
-    required: true,
   },
   {
     id: "w9",
     label: "W9",
     description: "W9 for company verification and onboarding records.",
-    required: true,
   },
   {
     id: "certificate-of-insurance",
     label: "Certificate of Insurance",
     description: "Insurance confirmation showing current carrier coverage.",
-    required: true,
   },
   {
     id: "notice-of-assignment",
     label: "Notice of Assignment",
     description: "Notice of assignment if factoring is part of your workflow.",
-  },
-  {
-    id: "factoring-information",
-    label: "Factoring Information",
-    description: "Factoring profile, instructions, or related onboarding paperwork.",
   },
   {
     id: "voided-check",
@@ -45,19 +37,9 @@ export const carrierSetupDocumentCategories: CarrierDocumentCategory[] = [
     description: "Driver identification for setup review when needed.",
   },
   {
-    id: "truck-registration",
-    label: "Truck Registration",
-    description: "Truck registration matching the equipment being dispatched.",
-  },
-  {
-    id: "trailer-registration",
-    label: "Trailer Registration",
-    description: "Trailer registration if trailer details are part of the lane setup.",
-  },
-  {
     id: "dispatch-agreement",
-    label: "Signed Dispatch Agreement",
-    description: "Signed dispatch agreement if you already have it ready.",
+    label: "Dispatch Agreement",
+    description: "Upload a signed dispatch agreement if you already have it ready for review.",
   },
   {
     id: "other-documents",
@@ -77,15 +59,13 @@ export const carrierSetupChecklistSections = [
   },
   {
     title: "Core onboarding documents",
-    items: carrierSetupDocumentCategories
-      .filter((category) => category.required)
-      .map((category) => category.label),
+    items: ["MC Authority", "W9", "Certificate of Insurance", "Driver License if available"],
   },
   {
     title: "Additional setup records",
     items: [
-      "Factoring, banking, and registration documents if they apply to your operation.",
-      "Signed dispatch paperwork and any documents our team may need to verify setup.",
+      "Notice of assignment, banking details, and dispatch agreement only if they apply to your operation.",
+      "If something is missing, submit what you have and our team will follow up with the next step.",
     ],
   },
 ];

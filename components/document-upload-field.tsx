@@ -16,7 +16,6 @@ type DocumentUploadFieldProps = {
   onAddFiles: (categoryId: string, files: File[]) => void;
   onRemoveFile: (categoryId: string, fileId: string) => void;
   disabled?: boolean;
-  invalid?: boolean;
 };
 
 export function DocumentUploadField({
@@ -25,7 +24,6 @@ export function DocumentUploadField({
   onAddFiles,
   onRemoveFile,
   disabled = false,
-  invalid = false,
 }: DocumentUploadFieldProps) {
   const inputId = useId();
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -42,23 +40,15 @@ export function DocumentUploadField({
 
   return (
     <div
-      className={`soft-card premium-border surface-outline rounded-[1.75rem] p-5 transition duration-300 ${
-        invalid ? "ring-2 ring-rose-200" : ""
-      }`}
+      className="soft-card premium-border surface-outline rounded-[1.75rem] p-5 transition duration-300"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{category.label}</p>
-            {category.required ? (
-              <span className="rounded-full bg-brand-gold/12 px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#8e6925]">
-                Required
-              </span>
-            ) : (
-              <span className="rounded-full bg-brand-navy/[0.06] px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-slate">
-                Optional
-              </span>
-            )}
+            <span className="rounded-full bg-brand-navy/[0.06] px-2.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-slate">
+              Optional
+            </span>
           </div>
           <p className="mt-2 text-sm leading-7 text-slate">{category.description}</p>
         </div>
@@ -126,10 +116,6 @@ export function DocumentUploadField({
           </div>
         </div>
       </div>
-
-      {invalid ? (
-        <p className="mt-3 text-sm font-medium text-rose-700">This required document category still needs at least one file.</p>
-      ) : null}
 
       {files.length ? (
         <div className="mt-4 grid gap-3">

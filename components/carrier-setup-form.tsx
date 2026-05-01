@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import Link from "next/link";
 
 import { DocumentUploadField, type SelectedCarrierFile } from "@/components/document-upload-field";
 import {
@@ -22,10 +23,6 @@ const trackerSteps = [
   "Review and submit",
 ];
 
-const requiredDocumentIds = carrierSetupDocumentCategories
-  .filter((category) => category.required)
-  .map((category) => category.id);
-
 const inputClasses =
   "w-full rounded-2xl border border-line bg-canvas/78 px-4 py-3 text-sm text-ink outline-none transition placeholder:text-slate/60 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10";
 
@@ -35,14 +32,12 @@ export function CarrierSetupForm() {
     status: "idle",
     message: "Submit your information and documents through the secure onboarding intake when you are ready.",
   });
-  const [attemptedSubmit, setAttemptedSubmit] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const totalFiles = useMemo(
     () => Object.values(uploads).reduce((count, entries) => count + entries.length, 0),
     [uploads],
   );
-
-  const missingRequiredDocuments = requiredDocumentIds.filter((categoryId) => !(uploads[categoryId] ?? []).length);
 
   function addFiles(categoryId: string, files: File[]) {
     const acceptedFiles: SelectedCarrierFile[] = [];
@@ -97,23 +92,6 @@ export function CarrierSetupForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setAttemptedSubmit(true);
-
-    if (missingRequiredDocuments.length) {
-      setState({
-        status: "error",
-        message: "Please add the required onboarding documents before submitting the carrier setup.",
-      });
-      return;
-    }
-
-    if (!totalFiles) {
-      setState({
-        status: "error",
-        message: "Please upload at least one onboarding document before submitting.",
-      });
-      return;
-    }
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -146,13 +124,13 @@ export function CarrierSetupForm() {
 
       form.reset();
       setUploads({});
-      setAttemptedSubmit(false);
       setState({
         status: "success",
         message:
           data?.message ??
           "Thank you. Your carrier setup information has been submitted. Our team will review your documents and contact you with the next steps.",
       });
+      setShowSuccessModal(true);
     } catch (error) {
       setState({
         status: "error",
@@ -302,13 +280,13 @@ export function CarrierSetupForm() {
         <section className="rounded-[2rem] border border-line bg-white/82 p-5 shadow-[0_14px_30px_rgba(15,23,42,0.04)] sm:p-6">
           <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Required Documents</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Setup Documents</p>
               <p className="mt-2 max-w-3xl text-sm leading-7 text-slate">
-                Please do not submit unnecessary sensitive information. Uploaded documents are used only for carrier onboarding and setup review.
+                Please do not submit unnecessary sensitive information. Upload what you already have available now. If something is missing, our team can follow up after review.
               </p>
             </div>
             <div className="rounded-[1.2rem] border border-brand-gold/18 bg-brand-gold/10 px-4 py-3 text-sm leading-6 text-[#74561d]">
-              Required now: {requiredDocumentIds.length} categories
+              Optional uploads: submit what is ready
             </div>
           </div>
           <div className="grid gap-4 xl:grid-cols-2">
@@ -320,7 +298,6 @@ export function CarrierSetupForm() {
                 onAddFiles={addFiles}
                 onRemoveFile={removeFile}
                 disabled={state.status === "submitting"}
-                invalid={attemptedSubmit && !!category.required && !(uploads[category.id] ?? []).length}
               />
             ))}
           </div>
@@ -361,6 +338,45 @@ export function CarrierSetupForm() {
           </div>
         </div>
       </form>
+
+      {showSuccessModal ? (
+        <div className="fixed inset-0 z-[90] flex items-center justify-center px-4 py-6">
+          <button
+            type="button"
+            aria-label="Close success message"
+            className="absolute inset-0 bg-brand-navy/55 backdrop-blur-[3px]"
+            onClick={() => setShowSuccessModal(false)}
+          />
+          <div className="soft-card premium-border surface-outline relative z-[91] w-full max-w-xl rounded-[2.2rem] p-6 shadow-[0_34px_90px_rgba(15,23,42,0.26)] sm:p-8">
+            <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
+              ✓
+            </div>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Setup Submitted</p>
+            <h3 className="mt-3 font-display text-3xl font-semibold text-ink">Your carrier setup is complete.</h3>
+            <p className="mt-4 text-base leading-8 text-slate">
+              Thank you. Your carrier information has been submitted successfully. Our team will review everything you shared and contact you with the next steps.
+            </p>
+            <div className="mt-6 rounded-[1.4rem] border border-line bg-white/78 px-4 py-4 text-sm leading-7 text-slate">
+              If any setup documents are still missing, SiratLink can follow up directly instead of blocking your request now.
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={() => setShowSuccessModal(false)}
+                className="inline-flex items-center justify-center rounded-full bg-brand-navy px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-steel"
+              >
+                Close
+              </button>
+              <Link
+                href="/dispatching-services"
+                className="inline-flex items-center justify-center rounded-full border border-line bg-white px-5 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
+              >
+                Review Dispatching Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

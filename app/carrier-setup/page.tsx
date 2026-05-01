@@ -18,7 +18,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildPageMetadata({
   title: "Carrier Setup",
   description:
-    "Start carrier setup with SiratLink LLC by submitting dispatch onboarding details and required carrier documents through a secure, professional review flow.",
+    "Start carrier setup with SiratLink LLC by submitting dispatch onboarding details and any available carrier documents through a secure, professional review flow.",
   path: "/carrier-setup",
   keywords: [
     "carrier setup",
@@ -70,7 +70,7 @@ export default function CarrierSetupPage() {
           <SectionIntro
             eyebrow="Setup Checklist"
             title="A cleaner onboarding flow starts with the right details and the right documents."
-            description="Use this checklist to make sure your carrier setup request includes the information our dispatch team expects before review starts."
+            description="Use this checklist to make sure your carrier setup request includes the company details our dispatch team expects before review starts. If some documents are still missing, you can still submit your setup."
             action={
               <LinkButton href="#carrier-setup-form" variant="secondary">
                 Upload Documents
@@ -97,9 +97,9 @@ export default function CarrierSetupPage() {
         <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
           <Reveal>
             <SectionIntro
-              eyebrow="Required Documents"
+              eyebrow="Setup Documents"
               title="The upload area is grouped to keep onboarding simple instead of overwhelming."
-              description="Each document category accepts multiple files and is organized so carriers can submit their dispatch onboarding package with more confidence."
+              description="Each document category accepts multiple files and is organized so carriers can submit what they have now and let our team follow up for anything else."
             />
             <div className="mt-8 grid gap-3">
               {carrierSetupDocumentCategories.slice(0, 5).map((category) => (
