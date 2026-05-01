@@ -77,7 +77,7 @@ const faqs = [
   {
     title: "Is digital marketing the main SiratLink service?",
     description:
-      "No. Dispatching remains the primary SiratLink offer. Digital marketing is positioned as a polished secondary growth service for businesses that need it.",
+      "No. Dispatching remains the primary SiratLink offer. Digital marketing is available as a secondary growth service for businesses that need it.",
   },
   {
     title: "What kinds of businesses fit this service best?",
@@ -117,8 +117,8 @@ export default function DigitalMarketingServicesPage() {
         <Reveal>
           <SectionIntro
             eyebrow="What This Covers"
-            title="A modern digital marketing service positioned to support visibility, trust, and long-term business growth."
-            description="This service is intentionally presented as a premium secondary offer while keeping dispatching as the company&apos;s lead service."
+            title="A modern digital marketing service built to support visibility, trust, and long-term business growth."
+            description="It complements the dispatch-first brand while giving clients access to broader growth support."
             className="mb-10"
           />
         </Reveal>
@@ -140,7 +140,7 @@ export default function DigitalMarketingServicesPage() {
               description="Marketing support should do more than create activity. It should help a business look more established, generate stronger inquiries, and build a more credible presence."
             />
             <p className="mt-5 text-base leading-8 text-slate">
-              SiratLink positions digital marketing as a serious business growth service for companies that want structured support around visibility, messaging, and lead generation.
+              SiratLink offers digital marketing as a serious growth service for companies that want structured support around visibility, messaging, and lead generation.
             </p>
           </Reveal>
           <Reveal delay={90}>
@@ -160,7 +160,7 @@ export default function DigitalMarketingServicesPage() {
             <SectionIntro
               eyebrow="Process"
               title="A cleaner strategy path for businesses that need more visibility and better-quality inquiries."
-              description="The process is positioned to feel strategic and business-first instead of vague marketing language."
+              description="The process is built to stay strategic and business-first instead of drifting into vague marketing language."
               className="mb-8"
             />
             <div className="grid gap-4">

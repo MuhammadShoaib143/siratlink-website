@@ -27,11 +27,11 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Premium business support with dispatching as the clear lead service."
-        description="Dispatching remains the primary SiratLink offer, while virtual assistance, web development, and digital marketing support the brand as polished secondary services."
+        title="Dispatching first, with business support services that scale when clients need more."
+        description="Dispatching remains the lead SiratLink service. Virtual assistance, web development, and digital marketing are available for clients who need broader operational or growth support."
         primaryCta={{ label: "Book a Consultation", href: "/contact" }}
         secondaryCta={{ label: "Explore Dispatching", href: "/dispatching-services" }}
-        stats={["Dispatching stays primary", "Secondary services support growth", "Built for premium business positioning"]}
+        stats={["Dispatching stays primary", "Secondary services support growth", "Built for serious business operations"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">Service Structure</p>
@@ -53,8 +53,8 @@ export default function ServicesPage() {
       <SectionShell>
         <SectionIntro
           eyebrow="Core Services"
-          title="Dispatching leads the service lineup and stays the clearest conversion path."
-          description="The supporting services are positioned to strengthen the SiratLink brand without competing with the primary dispatching offer."
+          title="Dispatching leads the lineup, while the rest of the service mix stays clear and supportive."
+          description="Carriers can get to the dispatch help they need quickly, while broader support remains available for clients who want it."
           className="mb-10"
         />
         <div className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr_0.85fr]">
@@ -102,7 +102,7 @@ export default function ServicesPage() {
                 Dispatching is the lead offer. Everything else supports the bigger SiratLink brand.
               </h3>
               <p className="mt-4 text-sm leading-7 text-white/74">
-                That hierarchy keeps the message clear for carriers while still allowing the business to grow into broader support services over time.
+                That service hierarchy keeps the message clear for carriers while still making room for broader support when clients need more than dispatching alone.
               </p>
             </div>
           </Reveal>
@@ -114,7 +114,7 @@ export default function ServicesPage() {
           <SectionIntro
             eyebrow="Growth Services"
             title="Secondary services presented with the same premium standard."
-            description="These services give growth-minded clients access to broader support while keeping dispatching front and center."
+            description="These services expand what SiratLink can support while keeping dispatching front and center."
             className="mb-10"
           />
         </Reveal>

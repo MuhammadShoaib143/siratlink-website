@@ -16,9 +16,9 @@ export default function PrivacyPolicyPage() {
     <>
       <PageHero
         eyebrow="Privacy Policy"
-        title="A professional privacy policy framework for a U.S. business website."
-        description="This policy is written for a real service business website and includes placeholder business details that should be reviewed with legal counsel before launch."
-        stats={["U.S. business website framework", "Placeholder details for review", "Professional launch-ready format"]}
+        title="How SiratLink LLC handles website privacy and inquiry data."
+        description="Review how SiratLink LLC collects, uses, stores, and protects information submitted through this website."
+        stats={["U.S. business website privacy terms", "Contact and inquiry data handling", "Clear business-facing disclosure"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">Quick Summary</p>
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
             {[
               "Explains what information the site may collect",
               "Describes how inquiries and communications are handled",
-              "Flags placeholder business details for final legal review",
+              "Summarizes how personal information is protected and used",
             ].map((item) => (
               <div key={item} className="rounded-[1.35rem] bg-canvas px-4 py-4 text-sm font-medium leading-7 text-ink">
                 {item}

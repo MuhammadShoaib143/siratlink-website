@@ -74,7 +74,7 @@ const faqs = [
   {
     title: "Is this only for trucking businesses?",
     description:
-      "No. Web development is positioned as a broader SiratLink business support service for companies that need a more credible and modern online presence.",
+      "No. Web development is a broader SiratLink business support service for companies that need a more credible and modern online presence.",
   },
   {
     title: "What kind of websites fit this service best?",
@@ -89,7 +89,7 @@ export default function WebDevelopmentPage() {
       <PageHero
         eyebrow="Web Development"
         title="Premium websites and digital support for businesses that want to look more credible and grow online with confidence."
-        description="SiratLink is positioned to support businesses with modern website development, responsive design, and a stronger digital presence that reflects the quality of their work."
+        description="SiratLink supports businesses with modern website development, responsive design, and a stronger digital presence that reflects the quality of their work."
         primaryCta={{ label: "Discuss a Website Project", href: "/contact" }}
         secondaryCta={{ label: "Explore Services", href: "/services" }}
         stats={["Responsive modern websites", "Premium business presence", "Future-focused digital support"]}
@@ -137,7 +137,7 @@ export default function WebDevelopmentPage() {
               description="Businesses increasingly need a digital presence that communicates credibility, clarity, and quality. SiratLink’s web development direction is designed to help clients present themselves better."
             />
             <p className="mt-5 text-base leading-8 text-slate">
-              This service is positioned as premium, modern, and practical for companies that want their online presence to match the professionalism of their business.
+              This service is designed for companies that want their online presence to match the professionalism of their business.
             </p>
           </Reveal>
           <Reveal delay={90}>

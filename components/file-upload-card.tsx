@@ -27,6 +27,7 @@ export function FileUploadCard({ fileName, fileSize, onRemove }: FileUploadCardP
       <button
         type="button"
         onClick={onRemove}
+        aria-label={`Remove ${fileName}`}
         className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line bg-white text-sm font-semibold text-slate transition duration-300 hover:border-accent/35 hover:text-accent"
       >
         ×

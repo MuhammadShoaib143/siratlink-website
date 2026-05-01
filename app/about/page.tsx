@@ -49,8 +49,8 @@ export default function AboutPage() {
       <SectionShell>
         <SectionIntro
           eyebrow="Foundation"
-          title="SiratLink is being built to become a dependable business partner, not just a service vendor."
-          description="The positioning is intentionally premium and grounded: clear support, operational discipline, and a client experience that feels established from the start."
+          title="SiratLink is built to be a dependable business partner, not just a service vendor."
+          description="Clients come to SiratLink for clear support, operational discipline, and a service experience that feels professional from the start."
           className="mb-10"
         />
         <div className="grid gap-6 lg:grid-cols-2">
@@ -110,7 +110,7 @@ export default function AboutPage() {
             <div className="rounded-[1.75rem] bg-canvas p-5">
               <h3 className="font-display text-xl font-semibold text-ink">Client Care</h3>
               <p className="mt-3 text-sm leading-7 text-slate">
-                Responsive support that keeps people informed, respected, and positioned for better business outcomes.
+                Responsive support that keeps clients informed, respected, and confident in the next step.
               </p>
             </div>
             <div className="rounded-[1.75rem] bg-canvas p-5">

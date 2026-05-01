@@ -65,7 +65,7 @@ const dispatchFaqs = [
   {
     question: "How do you communicate with brokers?",
     answer:
-      "Communication is positioned to sound clear, timely, and professional so your operation is represented with more confidence and consistency.",
+      "Communication is handled with a clear, timely, and professional tone so your operation is represented with more confidence and consistency.",
   },
   {
     question: "Do you guarantee better rates or revenue?",
@@ -77,7 +77,7 @@ const dispatchFaqs = [
 const pricingPoints = [
   "Flexible plans based on your operation size and dispatch needs.",
   "Custom pricing for owner operators and fleets.",
-  "No hidden fees in the way the service is positioned.",
+  "No hidden fees in the way the service is structured.",
   "No long-term contracts required to start the conversation.",
 ];
 
@@ -128,7 +128,7 @@ export default function DispatchingServicesPage() {
             <SectionIntro
               eyebrow="Who We Help"
               title="The offer is built for carriers who want steadier support, not more chaos."
-              description="The dispatching page now answers the practical business question first: who is this actually for and why would they trust it?"
+              description="This service is built for carriers who want dependable support, clearer communication, and a dispatch process that feels more stable day to day."
             />
           </Reveal>
 
@@ -166,10 +166,10 @@ export default function DispatchingServicesPage() {
             <SectionIntro
               eyebrow="How Carriers Start"
               title="A clean process built around fit, expectations, and steady operating support."
-              description="This should feel more like a serious business workflow than a generic dispatch sales pitch."
+              description="The goal is to make the next step clear, keep expectations aligned, and start the relationship with a more organized workflow."
             />
             <div className="mt-8 rounded-[2rem] bg-brand-navy px-6 py-6 text-white shadow-soft">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold">Why It Converts Better</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold">Why Carriers Value It</p>
               <p className="mt-3 text-sm leading-7 text-white/72">
                 Better coordination, more organized paperwork, consistent communication, and a dispatch process that feels more stable from the start.
               </p>
@@ -232,12 +232,12 @@ export default function DispatchingServicesPage() {
               {
                 title: "No hidden fees",
                 description:
-                  "The service is positioned around clarity and trust, not surprising cost structures that create friction before the relationship starts.",
+                  "The service is built around clarity and trust, not surprising cost structures that create friction before the relationship starts.",
               },
               {
                 title: "No long-term contracts",
                 description:
-                  "The offer is designed to earn trust through fit, communication, and execution rather than forcing long-term commitment too early.",
+                  "The support model is meant to earn trust through fit, communication, and execution rather than forcing long-term commitment too early.",
               },
             ].map((item, index) => (
               <Reveal key={item.title} delay={index * 70}>

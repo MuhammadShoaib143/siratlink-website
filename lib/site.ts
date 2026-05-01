@@ -18,13 +18,6 @@ export const siteConfig = {
     postalCode: "43224",
     country: "US",
   },
-  physicalAddress: {
-    street1: "5060 Fairway Lakes Dr",
-    city: "Westerville",
-    region: "OH",
-    postalCode: "43081",
-    country: "US",
-  },
   serviceArea: "United States",
 };
 

@@ -74,7 +74,7 @@ const faqs = [
   {
     title: "What kind of virtual assistance can SiratLink support?",
     description:
-      "The service is positioned around scheduling, admin support, inbox help, documentation, data entry, recurring coordination, and broader operations assistance.",
+      "The service covers scheduling, admin support, inbox help, documentation, data entry, recurring coordination, and broader operations assistance.",
   },
   {
     title: "Is this designed for solo founders or teams?",
@@ -157,7 +157,7 @@ export default function VirtualAssistancePage() {
             <SectionIntro
               eyebrow="Process"
               title="A support model built around cleaner workflow, not random task dumping."
-              description="This page now shows a clearer process so the service feels more intentional and premium."
+              description="A clear process keeps responsibilities organized, communication easier to manage, and support more dependable over time."
               className="mb-8"
             />
             <div className="grid gap-4">

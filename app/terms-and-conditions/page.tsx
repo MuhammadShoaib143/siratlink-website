@@ -16,9 +16,9 @@ export default function TermsPage() {
     <>
       <PageHero
         eyebrow="Terms and Conditions"
-        title="Professional website terms for a U.S. service business."
-        description="These terms are written to be realistic and business-appropriate, with placeholder details that should be reviewed before final launch."
-        stats={["Professional website use terms", "Ohio governing law placeholder", "Ready for legal review before launch"]}
+        title="Terms for using the SiratLink LLC website and service inquiry pages."
+        description="Review the terms that govern use of the SiratLink LLC website, service inquiries, and related business communications."
+        stats={["Professional website use terms", "Ohio governing law", "Service inquiry and disclaimer coverage"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">Quick Summary</p>
@@ -26,7 +26,7 @@ export default function TermsPage() {
             {[
               "Covers website use, inquiries, and service disclaimers",
               "Clarifies that a form submission does not create a client relationship",
-              "Includes placeholder legal details for final review",
+              "Outlines limitations, liabilities, and governing law",
             ].map((item) => (
               <div key={item} className="rounded-[1.35rem] bg-canvas px-4 py-4 text-sm font-medium leading-7 text-ink">
                 {item}

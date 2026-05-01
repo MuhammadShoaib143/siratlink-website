@@ -74,6 +74,7 @@ export function DocumentUploadField({
       <div
         role="button"
         tabIndex={0}
+        aria-label={`Upload ${category.label} files`}
         onClick={() => inputRef.current?.click()}
         onKeyDown={(event) => {
           if (event.key === "Enter" || event.key === " ") {

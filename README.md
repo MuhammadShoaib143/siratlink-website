@@ -76,9 +76,11 @@ SMTP_PASS=
 SMTP_FROM=
 CARRIER_SETUP_TO=support@siratlink.com
 CARRIER_SETUP_CC=
+CONTACT_FORM_TO=support@siratlink.com
+CONTACT_FORM_CC=
 ```
 
-This sends carrier setup details and uploaded documents directly from the server to your inbox without exposing files publicly.
+This sends contact inquiries plus carrier setup details and uploaded onboarding documents directly from the server to your inbox without exposing files publicly.
 
 ### Option B: Protected webhook / CRM intake
 
@@ -92,7 +94,7 @@ If SMTP is not configured, the carrier setup route can forward the onboarding pa
 
 - Uploaded files are validated for file type and size before secure delivery.
 - Files are handled in memory on the server and are not stored publicly in the frontend.
-- The current API route enforces required document categories before submission.
+- Carriers can submit the setup even if some optional onboarding documents are still missing.
 - For live production use, make sure the destination inbox or webhook is protected and access-controlled.
 
 ## Project Structure
@@ -106,6 +108,6 @@ public/       Static assets
 
 ## Notes
 
-- The contact form currently provides polished front-end behavior and is ready to be connected to email, CRM, or API handling.
-- The carrier setup form now supports secure server-side delivery through SMTP or a protected webhook, but environment variables must be configured before accepting real onboarding documents.
+- The contact form now supports secure server-side SMTP delivery and can also be routed to dedicated inboxes with `CONTACT_FORM_TO` and `CONTACT_FORM_CC`.
+- The carrier setup form supports secure server-side delivery through SMTP or a protected webhook, but environment variables must be configured before accepting real onboarding documents.
 - Business contact details and legal copy should be reviewed before a public launch if final production details change.

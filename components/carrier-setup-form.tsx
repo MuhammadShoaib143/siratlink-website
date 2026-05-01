@@ -200,7 +200,7 @@ export function CarrierSetupForm() {
       </div>
 
       {state.status === "submitting" ? (
-        <div className="mt-6 rounded-[1.5rem] border border-accent/12 bg-accent/5 px-4 py-4">
+        <div className="mt-6 rounded-[1.5rem] border border-accent/12 bg-accent/5 px-4 py-4" aria-live="polite">
           <div className="h-2 overflow-hidden rounded-full bg-white/80">
             <div className="h-full w-2/3 animate-[carrier-upload-progress_1.3s_ease-in-out_infinite] rounded-full bg-[linear-gradient(90deg,#0f766e,#d4a24c)]" />
           </div>
@@ -209,13 +209,13 @@ export function CarrierSetupForm() {
       ) : null}
 
       {state.status === "success" ? (
-        <div className="mt-6 rounded-[1.5rem] border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm leading-7 text-emerald-800">
+        <div className="mt-6 rounded-[1.5rem] border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm leading-7 text-emerald-800" aria-live="polite">
           {state.message}
         </div>
       ) : null}
 
       {state.status === "error" ? (
-        <div className="mt-6 rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm leading-7 text-rose-800">
+        <div className="mt-6 rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm leading-7 text-rose-800" aria-live="assertive">
           {state.message}
         </div>
       ) : null}
@@ -370,12 +370,19 @@ export function CarrierSetupForm() {
             className="absolute inset-0 bg-brand-navy/55 backdrop-blur-[3px]"
             onClick={() => setShowSuccessModal(false)}
           />
-          <div className="soft-card premium-border surface-outline relative z-[91] w-full max-w-xl rounded-[2.2rem] p-6 shadow-[0_34px_90px_rgba(15,23,42,0.26)] sm:p-8">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="carrier-setup-success-title"
+            className="soft-card premium-border surface-outline relative z-[91] w-full max-w-xl rounded-[2.2rem] p-6 shadow-[0_34px_90px_rgba(15,23,42,0.26)] sm:p-8"
+          >
             <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
               ✓
             </div>
             <p className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Setup Submitted</p>
-            <h3 className="mt-3 font-display text-3xl font-semibold text-ink">Your carrier setup is complete.</h3>
+            <h3 id="carrier-setup-success-title" className="mt-3 font-display text-3xl font-semibold text-ink">
+              Your carrier setup is complete.
+            </h3>
             <p className="mt-4 text-base leading-8 text-slate">
               Thank you. Your carrier information has been submitted successfully. Our team will review everything you shared and contact you with the next steps.
             </p>

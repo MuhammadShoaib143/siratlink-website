@@ -88,7 +88,7 @@ const processSteps = [
 
 const trustReasons = [
   "Professional support without overpromising results",
-  "No long-term contract positioning",
+  "No long-term contracts required to start",
   "Flexible dispatch plans based on operation size",
   "Secondary business support available as you grow",
 ];
@@ -246,7 +246,7 @@ export default function HomePage() {
             <SectionIntro
               eyebrow="Who We Help"
               title="Dispatch support built for operators who need more than a generic load board approach."
-              description="The offer is positioned for carriers who care about cleaner workflow, dependable communication, and a more stable operating rhythm."
+              description="This service is built for carriers who want cleaner workflow, dependable communication, and a more stable operating rhythm."
             />
           </Reveal>
 
@@ -264,7 +264,7 @@ export default function HomePage() {
         <SectionIntro
           eyebrow="Primary Service"
           title="Dispatching stays front and center because it is the clearest business problem we solve."
-          description="The site architecture now reflects the real business strategy: dispatching leads, while other services remain clean secondary extensions of the SiratLink brand."
+          description="Dispatching stays primary, while the rest of the service mix remains available for clients who need broader operational or digital support."
           action={
             <LinkButton href="/dispatching-services" variant="secondary">
               View Full Dispatching Page
@@ -326,7 +326,7 @@ export default function HomePage() {
             <SectionIntro
               eyebrow="How It Works"
               title="A clean dispatch process built to reduce back-and-forth and make the next step obvious."
-              description="Good conversion architecture is not just visual. It means carriers can quickly understand how support starts and what operating with SiratLink actually feels like."
+              description="Carriers should be able to see quickly how support starts, what SiratLink handles, and what the working relationship looks like."
             />
             <div className="mt-8 rounded-[2rem] bg-brand-navy px-6 py-6 text-white shadow-soft">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold">Why This Matters</p>
@@ -352,7 +352,7 @@ export default function HomePage() {
             <SectionIntro
               eyebrow="Secondary Services"
               title="Additional support is available, but the site keeps dispatching as the primary conversion path."
-              description="Virtual assistance, web development, and digital marketing support the larger SiratLink brand without making the company feel unfocused."
+              description="Virtual assistance, web development, and digital marketing are available for clients who need them without diluting the dispatch-first message."
             />
           </Reveal>
 
@@ -370,7 +370,7 @@ export default function HomePage() {
         <SectionIntro
           eyebrow="Why Carriers Choose SiratLink"
           title="Trust is built through disciplined communication, practical support, and a serious business presentation."
-          description="The site now leans harder into the credibility layer that real operators care about before they decide to call."
+          description="Carriers want to know who they are working with, how communication will be handled, and whether support will stay consistent day to day."
           className="mb-10"
         />
 

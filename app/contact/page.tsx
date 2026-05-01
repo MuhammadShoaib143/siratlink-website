@@ -88,7 +88,7 @@ export default function ContactPage() {
                 />
               </div>
               <p className="mt-3 text-sm text-white/58">
-                The email action opens a web compose window first, then falls back to your default mail app if needed.
+                Use the direct email action if you want to write manually, or use the consultation form for secure backend delivery.
               </p>
               <div className="mt-8 space-y-5">
                 <div>
@@ -140,10 +140,10 @@ export default function ContactPage() {
           <Reveal delay={90}>
             <div id="contact-form">
               <ContactForm
-              title="Request your consultation"
-              description="Tell us what you need and we&apos;ll respond with the best next step."
-              submitLabel="Book a Consultation"
-            />
+                title="Request your consultation"
+                description="Tell us what you need and we&apos;ll deliver your inquiry securely to the SiratLink team for review."
+                submitLabel="Book a Consultation"
+              />
             </div>
           </Reveal>
         </div>

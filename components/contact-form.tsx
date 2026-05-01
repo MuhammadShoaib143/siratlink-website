@@ -11,6 +11,12 @@ type ContactFormProps = {
   submitLabel?: string;
 };
 
+type SubmissionState =
+  | { status: "idle"; message: string }
+  | { status: "submitting"; message: string }
+  | { status: "success"; message: string }
+  | { status: "error"; message: string };
+
 export function ContactForm({
   title = "Start the conversation",
   description = "Tell us about your business, what support you need, and how you want us to help.",
@@ -18,53 +24,69 @@ export function ContactForm({
   submitLabel = "Send Inquiry",
 }: ContactFormProps) {
   const [selectedService, setSelectedService] = useState(defaultService);
-  const [submitted, setSubmitted] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [state, setState] = useState<SubmissionState>({
+    status: "idle",
+    message: `Your inquiry will be delivered securely to ${siteConfig.email} for review.`,
+  });
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
     const form = event.currentTarget;
     const formData = new FormData(form);
-    const name = String(formData.get("name") ?? "");
-    const company = String(formData.get("company") ?? "");
-    const email = String(formData.get("email") ?? "");
-    const phone = String(formData.get("phone") ?? "");
-    const trucks = String(formData.get("trucks") ?? "");
-    const service = String(formData.get("service") ?? selectedService);
-    const message = String(formData.get("message") ?? "");
 
-    const subject = `${service} inquiry${company ? ` - ${company}` : name ? ` - ${name}` : ""}`;
-    const body = [
-      `Name: ${name}`,
-      `Company: ${company}`,
-      `Email: ${email}`,
-      `Phone: ${phone || "Not provided"}`,
-      `Number of Trucks: ${trucks || "Not provided"}`,
-      `Service Needed: ${service}`,
-      "",
-      "Message:",
-      message,
-    ].join("\n");
+    const payload = {
+      name: String(formData.get("name") ?? "").trim(),
+      company: String(formData.get("company") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim(),
+      trucks: String(formData.get("trucks") ?? "").trim(),
+      service: String(formData.get("service") ?? selectedService).trim(),
+      message: String(formData.get("message") ?? "").trim(),
+    };
 
-    const gmailParams = new URLSearchParams({
-      view: "cm",
-      fs: "1",
-      to: siteConfig.email,
-      su: subject,
-      body,
+    setState({
+      status: "submitting",
+      message: "Sending your inquiry to the SiratLink team for review...",
     });
 
-    const gmailUrl = `https://mail.google.com/mail/?${gmailParams.toString()}`;
-    const openedWindow = window.open(gmailUrl, "_blank", "noopener,noreferrer");
-
-    if (!openedWindow) {
-      const mailtoParams = new URLSearchParams({
-        subject,
-        body,
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
-      window.location.href = `mailto:${siteConfig.email}?${mailtoParams.toString()}`;
-    }
 
-    setSubmitted(true);
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(
+          data?.message ??
+            "Your inquiry could not be delivered right now. Please try again in a moment or contact SiratLink directly by phone or email.",
+        );
+      }
+
+      form.reset();
+      setSelectedService(defaultService);
+      setState({
+        status: "success",
+        message:
+          data?.message ??
+          "Thank you. Your inquiry has been delivered successfully. The SiratLink team will review it and respond with the best next step.",
+      });
+      setShowSuccessModal(true);
+    } catch (error) {
+      setState({
+        status: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Your inquiry could not be submitted right now. Please try again or contact SiratLink directly.",
+      });
+    }
   }
 
   return (
@@ -73,7 +95,7 @@ export function ContactForm({
         <h2 className="font-display text-2xl font-semibold text-ink">{title}</h2>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-slate">{description}</p>
         <div className="mt-5 flex flex-wrap gap-2">
-          {["Direct to business email", "Mobile friendly", "Built for serious inquiries"].map((item) => (
+          {["Secure backend capture", "Mobile friendly", "Built for serious inquiries"].map((item) => (
             <span
               key={item}
               className="rounded-full border border-accent/10 bg-accent/5 px-3 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-accent-deep"
@@ -88,7 +110,7 @@ export function ContactForm({
         {[
           { label: "Response style", value: "Clear next-step guidance" },
           { label: "Best for", value: "Carriers and growth-minded businesses" },
-          { label: "Inquiry path", value: "Gmail compose or mail app fallback" },
+          { label: "Delivery path", value: "Secure server-side inquiry capture" },
         ].map((item) => (
           <div key={item.label} className="rounded-[1.35rem] border border-line bg-white/78 px-4 py-4">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-accent">{item.label}</p>
@@ -96,6 +118,27 @@ export function ContactForm({
           </div>
         ))}
       </div>
+
+      {state.status === "submitting" ? (
+        <div className="mb-6 rounded-[1.5rem] border border-accent/12 bg-accent/5 px-4 py-4" aria-live="polite">
+          <div className="h-2 overflow-hidden rounded-full bg-white/80">
+            <div className="h-full w-2/3 animate-[carrier-upload-progress_1.3s_ease-in-out_infinite] rounded-full bg-[linear-gradient(90deg,#0f766e,#d4a24c)]" />
+          </div>
+          <p className="mt-3 text-sm font-medium text-accent-deep">{state.message}</p>
+        </div>
+      ) : null}
+
+      {state.status === "success" ? (
+        <div className="mb-6 rounded-[1.5rem] border border-emerald-200 bg-emerald-50 px-4 py-4 text-sm leading-7 text-emerald-800" aria-live="polite">
+          {state.message}
+        </div>
+      ) : null}
+
+      {state.status === "error" ? (
+        <div className="mb-6 rounded-[1.5rem] border border-rose-200 bg-rose-50 px-4 py-4 text-sm leading-7 text-rose-800" aria-live="assertive">
+          {state.message}
+        </div>
+      ) : null}
 
       <form className="grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit}>
         <label className="space-y-2">
@@ -127,6 +170,7 @@ export function ContactForm({
             onChange={(event) => setSelectedService(event.target.value)}
           >
             <option>Dispatching Services</option>
+            <option>Carrier Setup</option>
             <option>Virtual Assistance</option>
             <option>Web Development</option>
             <option>Digital Marketing Services</option>
@@ -150,12 +194,64 @@ export function ContactForm({
             {submitLabel}
           </button>
           <p className="mt-3 text-sm text-slate" aria-live="polite">
-            {submitted
-              ? `Your compose window is opening for ${siteConfig.email}. If it does not open, email us directly at that address.`
-              : `This form opens a ready-to-send compose draft to ${siteConfig.email} with your inquiry details.`}
+            {state.status === "idle"
+              ? `This form sends your inquiry directly to ${siteConfig.email} through secure backend delivery.`
+              : state.status === "submitting"
+                ? state.message
+                : state.message}
           </p>
         </div>
       </form>
+
+      {showSuccessModal ? (
+        <div className="fixed inset-0 z-[90] flex items-center justify-center px-4">
+          <button
+            type="button"
+            aria-label="Close confirmation"
+            className="absolute inset-0 bg-brand-navy/55 backdrop-blur-[3px]"
+            onClick={() => setShowSuccessModal(false)}
+          />
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-success-title"
+            className="soft-card premium-border surface-outline relative z-[91] w-full max-w-xl rounded-[2.2rem] p-6 shadow-[0_34px_90px_rgba(15,23,42,0.26)] sm:p-8"
+          >
+            <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-2xl text-emerald-700">
+              ✓
+            </div>
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Inquiry Delivered</p>
+            <h3 id="contact-success-title" className="mt-3 font-display text-3xl font-semibold text-ink">
+              Your consultation request is complete.
+            </h3>
+            <p className="mt-4 text-base leading-8 text-slate">
+              Thank you. Your inquiry has been sent to the SiratLink team. We’ll review it and respond with the best next step for your dispatching, support, or digital growth needs.
+            </p>
+            <div className="mt-6 rounded-[1.5rem] border border-line bg-canvas px-4 py-4 text-sm leading-7 text-slate">
+              For urgent requests, you can also call{" "}
+              <a className="font-semibold text-ink underline-offset-4 hover:underline" href={siteConfig.phoneHref}>
+                {siteConfig.phone}
+              </a>
+              .
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-accent-deep"
+                onClick={() => setShowSuccessModal(false)}
+              >
+                Close
+              </button>
+              <a
+                href="/dispatching-services"
+                className="inline-flex items-center justify-center rounded-full border border-line px-5 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-accent/30 hover:bg-white"
+              >
+                View Dispatching Services
+              </a>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
