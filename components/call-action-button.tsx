@@ -19,6 +19,14 @@ export function CallActionButton({
   const [copied, setCopied] = useState(false);
   const fallbackTimerRef = useRef<number | null>(null);
 
+  function prefersDesktopCallFallback() {
+    if (typeof window === "undefined") {
+      return false;
+    }
+
+    return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  }
+
   useEffect(() => {
     return () => {
       if (fallbackTimerRef.current) {
@@ -27,7 +35,7 @@ export function CallActionButton({
     };
   }, []);
 
-  function tryDial() {
+  function tryDial({ withFallback }: { withFallback: boolean }) {
     const anchor = document.createElement("a");
     anchor.href = href;
     anchor.rel = "nofollow";
@@ -40,17 +48,25 @@ export function CallActionButton({
       window.clearTimeout(fallbackTimerRef.current);
     }
 
-    fallbackTimerRef.current = window.setTimeout(() => {
-      if (document.visibilityState === "visible") {
-        setFallbackOpen(true);
-      }
-    }, 900);
+    if (withFallback) {
+      fallbackTimerRef.current = window.setTimeout(() => {
+        if (document.visibilityState === "visible") {
+          setFallbackOpen(true);
+        }
+      }, 900);
+    }
   }
 
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
+    const useDesktopFallback = prefersDesktopCallFallback();
+
+    if (!useDesktopFallback) {
+      return;
+    }
+
     event.preventDefault();
     setCopied(false);
-    tryDial();
+    tryDial({ withFallback: true });
   }
 
   async function handleCopyNumber() {
@@ -69,7 +85,7 @@ export function CallActionButton({
       </a>
 
       {fallbackOpen ? (
-        <div className="fixed inset-0 z-[120] flex items-center justify-center px-4">
+        <div className="fixed inset-0 z-[120] flex items-end justify-center px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-16 sm:items-center sm:px-4 sm:pb-4">
           <button
             type="button"
             aria-label="Close call help"
@@ -80,14 +96,14 @@ export function CallActionButton({
             role="dialog"
             aria-modal="true"
             aria-labelledby="call-fallback-title"
-            className="soft-card premium-border surface-outline relative z-[121] w-full max-w-md rounded-[2rem] p-6 shadow-[0_34px_90px_rgba(15,23,42,0.26)] sm:p-7"
+            className="soft-card premium-border surface-outline relative z-[121] max-h-[calc(100dvh-5rem)] w-full max-w-md overflow-y-auto rounded-[1.9rem] p-5 shadow-[0_34px_90px_rgba(15,23,42,0.26)] sm:max-h-[calc(100dvh-2rem)] sm:rounded-[2rem] sm:p-7"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Call Support</p>
             <h3 id="call-fallback-title" className="mt-3 font-display text-2xl font-semibold text-ink sm:text-[2rem]">
-              The dialer didn&apos;t open automatically.
+              Your device didn&apos;t open a calling app automatically.
             </h3>
             <p className="mt-4 text-sm leading-7 text-slate">
-              Some browsers need a phone app configured before they can hand off a call. You can try again or copy the number and dial it manually.
+              On computers, browsers often need a calling app configured before they can hand off a phone link. You can try again or copy the number and dial it manually.
             </p>
             <div className="mt-5 rounded-[1.4rem] border border-line bg-canvas px-4 py-4 text-center text-lg font-semibold text-ink">
               {phoneLabel}
@@ -98,7 +114,7 @@ export function CallActionButton({
                 className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-accent-deep"
                 onClick={() => {
                   setFallbackOpen(false);
-                  tryDial();
+                  tryDial({ withFallback: true });
                 }}
               >
                 Try Again
