@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { CallActionButton } from "@/components/call-action-button";
 import { footerNav, siteConfig } from "@/lib/site";
 
 export function SiteFooter() {
@@ -54,9 +55,13 @@ export function SiteFooter() {
             <p>{mailingAddressLineOne}</p>
             <p>{mailingAddressLineTwo}</p>
             <p>
-              <a href={siteConfig.phoneHref} className="transition hover:text-white">
+              <CallActionButton
+                href={siteConfig.phoneHref}
+                phoneLabel={siteConfig.phone}
+                className="transition hover:text-white"
+              >
                 {siteConfig.phone}
-              </a>
+              </CallActionButton>
             </p>
             <p>
               <a href={siteConfig.emailHref} className="transition hover:text-white">
@@ -68,9 +73,13 @@ export function SiteFooter() {
             <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-white px-4 py-3 text-sm font-semibold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:bg-white/92">
               Book a Consultation
             </Link>
-            <a href={siteConfig.phoneHref} className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14">
+            <CallActionButton
+              href={siteConfig.phoneHref}
+              phoneLabel={siteConfig.phone}
+              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14"
+            >
               Call Now
-            </a>
+            </CallActionButton>
           </div>
         </div>
 

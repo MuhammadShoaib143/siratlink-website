@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { type ReactNode } from "react";
+
+import { CallActionButton } from "@/components/call-action-button";
+import { siteConfig } from "@/lib/site";
 
 type LinkButtonProps = {
   href: string;
@@ -38,6 +43,19 @@ export function LinkButton({
   );
 
   if (href.startsWith("tel:") || href.startsWith("mailto:") || href.startsWith("http")) {
+    if (href.startsWith("tel:")) {
+      return (
+        <CallActionButton
+          href={href}
+          phoneLabel={href === siteConfig.phoneHref ? siteConfig.phone : href.replace(/^tel:/, "")}
+          className={classes}
+        >
+          {children}
+          {arrow}
+        </CallActionButton>
+      );
+    }
+
     return (
       <a href={href} className={classes}>
         {children}

@@ -1,3 +1,4 @@
+import { CallActionButton } from "@/components/call-action-button";
 import { ContactForm } from "@/components/contact-form";
 import { LinkButton } from "@/components/link-button";
 import { Reveal } from "@/components/reveal";
@@ -131,12 +132,13 @@ export default function HomePage() {
               <LinkButton href="/contact" className="w-full sm:w-auto">
                 Book a Consultation
               </LinkButton>
-              <a
+              <CallActionButton
                 href={siteConfig.phoneHref}
+                phoneLabel={siteConfig.phone}
                 className="inline-flex w-full items-center justify-center rounded-full border border-line bg-white/92 px-5 py-3.5 text-sm font-semibold text-ink shadow-[0_12px_26px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent sm:w-auto"
               >
                 Call Now
-              </a>
+              </CallActionButton>
             </div>
 
             <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -300,12 +302,13 @@ export default function HomePage() {
                 <LinkButton href="/carrier-setup#carrier-setup-form" variant="secondary">
                   Upload Documents
                 </LinkButton>
-                <a
+                <CallActionButton
                   href={siteConfig.phoneHref}
+                  phoneLabel={siteConfig.phone}
                   className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14"
                 >
                   Call Now
-                </a>
+                </CallActionButton>
               </div>
             </div>
           </Reveal>
@@ -444,12 +447,13 @@ export default function HomePage() {
 
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <LinkButton href="/contact">Book a Consultation</LinkButton>
-                  <a
+                  <CallActionButton
                     href={siteConfig.phoneHref}
+                    phoneLabel={siteConfig.phone}
                     className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14"
                   >
                     Call Now
-                  </a>
+                  </CallActionButton>
                 </div>
               </div>
 

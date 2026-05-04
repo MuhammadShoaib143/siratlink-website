@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
+import { CallActionButton } from "@/components/call-action-button";
 import { siteConfig } from "@/lib/site";
 
 type ContactFormProps = {
@@ -229,9 +230,13 @@ export function ContactForm({
             </p>
             <div className="mt-6 rounded-[1.5rem] border border-line bg-canvas px-4 py-4 text-sm leading-7 text-slate">
               For urgent requests, you can also call{" "}
-              <a className="font-semibold text-ink underline-offset-4 hover:underline" href={siteConfig.phoneHref}>
+              <CallActionButton
+                href={siteConfig.phoneHref}
+                phoneLabel={siteConfig.phone}
+                className="font-semibold text-ink underline-offset-4 hover:underline"
+              >
                 {siteConfig.phone}
-              </a>
+              </CallActionButton>
               .
             </div>
             <div className="mt-8 flex flex-wrap gap-3">

@@ -1,3 +1,4 @@
+import { CallActionButton } from "@/components/call-action-button";
 import { LinkButton } from "@/components/link-button";
 import { consultationPoints, siteConfig } from "@/lib/site";
 
@@ -48,12 +49,13 @@ export function ConsultationBand({
           <LinkButton href={primaryHref} className="w-full sm:w-auto">
             {primaryLabel}
           </LinkButton>
-          <a
+          <CallActionButton
             href={secondaryHref}
+            phoneLabel={secondaryHref === siteConfig.phoneHref ? siteConfig.phone : secondaryHref.replace(/^tel:/, "")}
             className="inline-flex w-full items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/14 sm:w-auto"
           >
             {secondaryLabel}
-          </a>
+          </CallActionButton>
         </div>
       </div>
     </div>

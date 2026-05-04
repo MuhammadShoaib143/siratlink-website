@@ -1,3 +1,4 @@
+import { CallActionButton } from "@/components/call-action-button";
 import { ContactForm } from "@/components/contact-form";
 import { ConsultationBand } from "@/components/consultation-band";
 import { MailActionButton } from "@/components/mail-action-button";
@@ -74,12 +75,13 @@ export default function ContactPage() {
                 Call, open a compose window, or send your details through the consultation form below.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a
+                <CallActionButton
                   href={siteConfig.phoneHref}
+                  phoneLabel={siteConfig.phone}
                   className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3.5 text-sm font-semibold text-brand-navy transition duration-300 hover:-translate-y-0.5 hover:bg-white/92"
                 >
                   Call {siteConfig.phone}
-                </a>
+                </CallActionButton>
                 <MailActionButton
                   email={siteConfig.email}
                   label="Email Us"
@@ -102,9 +104,13 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs uppercase tracking-[0.18em] text-white/50">Phone</p>
                   <p className="mt-2 text-base font-medium sm:text-lg">
-                    <a href={siteConfig.phoneHref} className="transition hover:text-white/80">
+                    <CallActionButton
+                      href={siteConfig.phoneHref}
+                      phoneLabel={siteConfig.phone}
+                      className="transition hover:text-white/80"
+                    >
                       {siteConfig.phone}
-                    </a>
+                    </CallActionButton>
                   </p>
                 </div>
                 <div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
+import { CallActionButton } from "@/components/call-action-button";
 import { LinkButton } from "@/components/link-button";
 import { primaryNav, siteConfig } from "@/lib/site";
 
@@ -110,12 +111,13 @@ export function SiteHeader() {
             </Link>
           ))}
           <div className="mt-2 grid gap-2 sm:grid-cols-2">
-            <a
+            <CallActionButton
               href={siteConfig.phoneHref}
+              phoneLabel={siteConfig.phone}
               className="inline-flex items-center justify-center rounded-full border border-line bg-white px-4 py-3 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 hover:text-accent"
             >
               Call Now
-            </a>
+            </CallActionButton>
             <LinkButton href="/contact">Book a Consultation</LinkButton>
           </div>
         </nav>
