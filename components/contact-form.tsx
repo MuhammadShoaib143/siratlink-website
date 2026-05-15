@@ -26,6 +26,8 @@ export function ContactForm({
 }: ContactFormProps) {
   const [selectedService, setSelectedService] = useState(defaultService);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const showTruckField =
+    selectedService === "Dispatching Services" || selectedService === "Carrier Setup";
   const [state, setState] = useState<SubmissionState>({
     status: "idle",
     message: `Your inquiry will be delivered securely to ${siteConfig.email} for review.`,
@@ -158,10 +160,12 @@ export function ContactForm({
           <span className="text-sm font-medium text-ink">Phone Number</span>
           <input className={inputClasses} type="tel" name="phone" placeholder="(000) 000-0000" autoComplete="tel" required />
         </label>
-        <label className="space-y-2">
-          <span className="text-sm font-medium text-ink">Number of Trucks</span>
-          <input className={inputClasses} type="text" name="trucks" placeholder="1, 3, 10+" inputMode="numeric" />
-        </label>
+        {showTruckField ? (
+          <label className="space-y-2">
+            <span className="text-sm font-medium text-ink">Number of Trucks</span>
+            <input className={inputClasses} type="text" name="trucks" placeholder="1, 3, 10+" inputMode="numeric" />
+          </label>
+        ) : null}
         <label className="space-y-2 sm:col-span-2">
           <span className="text-sm font-medium text-ink">Service Needed</span>
           <select
