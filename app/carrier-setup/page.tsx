@@ -87,8 +87,8 @@ export default function CarrierSetupPage() {
       <SectionShell>
         <SetupProcessSection
           eyebrow="How Setup Review Works"
-          title="A step-by-step carrier onboarding flow that keeps document review clear and professional."
-          description="The goal is to help carriers submit what matters, avoid unnecessary back-and-forth, and move into dispatch onboarding with a cleaner process."
+          title="A clear carrier onboarding flow that keeps document review organized and professional."
+          description="The goal is to help carriers submit what matters, avoid unnecessary back and forth, and move into dispatch onboarding with a cleaner process."
           steps={carrierSetupProcessSteps}
         />
       </SectionShell>
@@ -137,7 +137,7 @@ export default function CarrierSetupPage() {
             points={[
               "Built for carrier onboarding and dispatch review",
               "Professional intake flow for serious operators",
-              "Clear next-step follow-up from our team",
+              "Clear next step follow up from our team",
             ]}
           />
         </Reveal>

@@ -92,7 +92,7 @@ export default function ServicesPage() {
           <Reveal delay={340}>
             <ServiceCard
               title="Business Support"
-              description="Flexible back-office and operational support for companies that need structured communication, admin help, and smoother day-to-day coordination."
+              description="Flexible back office and operational support for companies that need structured communication, admin help, and smoother daily coordination."
             />
           </Reveal>
           <Reveal delay={410}>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
               </p>
             </div>
             <div className="rounded-[1.75rem] bg-canvas p-5">
-              <h3 className="font-display text-xl font-semibold text-ink">Business-Focused Execution</h3>
+              <h3 className="font-display text-xl font-semibold text-ink">Business Focused Execution</h3>
               <p className="mt-3 text-sm leading-7 text-slate">
                 Every offer is shaped around saving time, reducing friction, and supporting better execution.
               </p>

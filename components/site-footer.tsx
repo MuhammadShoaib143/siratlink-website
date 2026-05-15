@@ -42,7 +42,7 @@ export function SiteFooter() {
             />
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-white/72">
-            SiratLink supports carriers, owner operators, and growth-minded businesses with dependable execution, organized communication, and a premium client experience.
+            SiratLink supports carriers, owner operators, and growth minded businesses with dependable execution, organized communication, and a premium client experience.
           </p>
           <div className="mt-6 flex flex-wrap gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/65">
             <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2">Dispatch Focused</span>

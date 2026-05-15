@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Depending on applicable law, you may have the right to request access to, correction of, or deletion of certain personal information. To make a request, please contact us using the business contact information listed on this website.
             </p>
-            <h2>Third-Party Links</h2>
+            <h2>Third Party Links</h2>
             <p>
               This website may contain links to third-party websites. We are not responsible for the privacy practices or content of those external sites.
             </p>

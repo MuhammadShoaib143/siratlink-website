@@ -31,7 +31,7 @@ export const metadata = buildPageMetadata({
 
 const heroTrustBadges = [
   "Columbus, Ohio based",
-  "Dispatch-first support",
+  "Dispatch first support",
   "Built for owner operators and fleets",
 ];
 
@@ -42,7 +42,7 @@ const operatorSegments = [
   },
   {
     eyebrow: "Small Carriers",
-    title: "A cleaner dispatch workflow for teams that need consistency, clearer updates, and steadier follow-through.",
+    title: "A cleaner dispatch workflow for teams that need consistency, clearer updates, and steadier follow through.",
   },
   {
     eyebrow: "Growing Fleets",
@@ -57,11 +57,11 @@ const dispatchBenefits = [
   },
   {
     title: "Stronger broker communication",
-    description: "A sharper business-facing tone that helps brokers experience your operation as organized and dependable.",
+    description: "A sharper business facing tone that helps brokers experience your operation as organized and dependable.",
   },
   {
     title: "Less daily friction",
-    description: "Paperwork support, route coordination, and dependable follow-through built to reduce avoidable stress.",
+    description: "Paperwork support, route coordination, and dependable follow through built to reduce avoidable stress.",
   },
   {
     title: "More operational consistency",
@@ -89,7 +89,7 @@ const processSteps = [
 
 const trustReasons = [
   "Professional support without overpromising results",
-  "No long-term contracts required to start",
+  "No long term contracts required to start",
   "Flexible dispatch plans based on operation size",
   "Secondary business support available as you grow",
 ];
@@ -180,7 +180,7 @@ export default function HomePage() {
 
                   <div className="mt-7 grid gap-4 sm:grid-cols-2">
                     <DashboardMetric label="Load Focus" value="Lane fit, timing, margin protection" />
-                    <DashboardMetric label="Broker Facing" value="Clear, professional follow-through" />
+                    <DashboardMetric label="Broker Facing" value="Clear, professional follow through" />
                   </div>
                 </div>
 
@@ -231,7 +231,7 @@ export default function HomePage() {
                 "Dispatch focused support",
                 "Clear communication",
                 "Flexible plans",
-                "No long-term contracts",
+                "No long term contracts",
               ].map((item) => (
                 <div key={item} className="soft-card premium-border rounded-[1.4rem] px-4 py-4 text-sm font-medium text-ink">
                   {item}
@@ -282,7 +282,7 @@ export default function HomePage() {
                 Better coordination, stronger negotiation support, and more organized dispatch operations.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-white/74">
-                SiratLink supports the daily pieces carriers actually care about: loads, broker conversations, route flow, confirmations, and follow-through.
+                SiratLink supports the daily pieces carriers actually care about: loads, broker conversations, route flow, confirmations, and follow through.
               </p>
 
               <div className="mt-7 grid gap-3">
@@ -328,7 +328,7 @@ export default function HomePage() {
           <Reveal className="lg:sticky lg:top-28">
             <SectionIntro
               eyebrow="How It Works"
-              title="A clean dispatch process built to reduce back-and-forth and make the next step obvious."
+              title="A clean dispatch process built to reduce back and forth and make the next step obvious."
               description="Carriers should be able to see quickly how support starts, what SiratLink handles, and what the working relationship looks like."
             />
             <div className="mt-8 rounded-[2rem] bg-brand-navy px-6 py-6 text-white shadow-soft">
@@ -355,7 +355,7 @@ export default function HomePage() {
             <SectionIntro
               eyebrow="Secondary Services"
               title="Additional support is available, but the site keeps dispatching as the primary conversion path."
-              description="Virtual assistance, web development, and digital marketing are available for clients who need them without diluting the dispatch-first message."
+              description="Virtual assistance, web development, and digital marketing are available for clients who need them without diluting the dispatch first message."
             />
           </Reveal>
 

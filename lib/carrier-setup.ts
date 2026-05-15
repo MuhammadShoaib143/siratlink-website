@@ -49,7 +49,7 @@ export const carrierSetupChecklistSections = [
     items: [
       "MC number, DOT number, company contact details, and truck count.",
       "Preferred lanes, current operating location, and truck type.",
-      "Best contact window for setup review and onboarding follow-up.",
+      "Best contact window for setup review and onboarding follow up.",
     ],
   },
   {
@@ -80,7 +80,7 @@ export const carrierSetupProcessSteps = [
   },
   {
     step: "03",
-    title: "Receive next-step guidance and agreement",
+    title: "Receive next step guidance and agreement",
     description:
       "Once the review is complete, SiratLink follows up with the clearest next step for dispatch onboarding and sends the dispatch agreement if your setup is moving forward.",
   },

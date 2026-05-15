@@ -55,14 +55,14 @@ export const footerNav = {
 
 export const homeStats = [
   { value: "Dispatch First", label: "Primary support for carriers and owner operators" },
-  { value: "Columbus, OH", label: "Ohio-based operations with national reach" },
-  { value: "Growth Ready", label: "Secondary support for digital and back-office needs" },
+  { value: "Columbus, OH", label: "Ohio based operations with national reach" },
+  { value: "Growth Ready", label: "Secondary support for digital and back office needs" },
 ];
 
 export const trustPoints = [
   "Professional communication with brokers and shippers",
   "Structured dispatch coordination for consistent daily execution",
-  "Reliable support mindset built for long-term carrier growth",
+  "Reliable support mindset built for long term carrier growth",
   "Premium client experience grounded in responsiveness and clarity",
 ];
 
@@ -80,7 +80,7 @@ export const serviceHighlights = [
   {
     title: "Broker Communication",
     description:
-      "Timely updates, confirmations, and follow-through that reduce friction and keep your operation moving.",
+      "Timely updates, confirmations, and follow through that reduce friction and keep your operation moving.",
   },
   {
     title: "Paperwork Support",
@@ -114,20 +114,20 @@ export const secondaryServices = [
   {
     title: "Web Development",
     description:
-      "Premium websites and digital support built to strengthen business presence, trust, and long-term growth.",
+      "Premium websites and digital support built to strengthen business presence, trust, and long term growth.",
     href: "/web-development",
   },
   {
     title: "Digital Marketing Services",
     description:
-      "Social media management, paid advertising support, lead generation, branding support, and content strategy for growth-minded businesses.",
+      "Social media management, paid advertising support, lead generation, branding support, and content strategy for growth minded businesses.",
     href: "/digital-marketing-services",
   },
 ];
 
 export const consultationPoints = [
-  "Dispatch-first support with a clear next step",
-  "Flexible recommendations for fleets and growth-minded businesses",
+  "Dispatch first support with a clear next step",
+  "Flexible recommendations for fleets and growth minded businesses",
   "Professional communication from first inquiry onward",
 ];
 
@@ -156,7 +156,7 @@ export const values = [
   {
     title: "Trust First",
     description:
-      "We believe strong service relationships start with honesty, consistency, and dependable follow-through.",
+      "We believe strong service relationships start with honesty, consistency, and dependable follow through.",
   },
   {
     title: "Operational Discipline",

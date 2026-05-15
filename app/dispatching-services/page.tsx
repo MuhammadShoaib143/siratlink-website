@@ -40,7 +40,7 @@ const whoWeHelp = [
   },
   {
     title: "Carriers needing steady support",
-    description: "Teams looking for day-to-day dispatch consistency instead of chasing loads and updates in a reactive way.",
+    description: "Teams looking for daily dispatch consistency instead of chasing loads and updates in a reactive way.",
   },
 ];
 
@@ -48,7 +48,7 @@ const operationalBenefits = [
   "Less time spent searching for the next workable load.",
   "Better communication flow with brokers and dispatch contacts.",
   "Organized paperwork support that keeps key details from slipping.",
-  "A clearer dispatch process with more consistent follow-through.",
+  "A clearer dispatch process with more consistent follow through.",
 ];
 
 const dispatchFaqs = [
@@ -78,7 +78,7 @@ const pricingPoints = [
   "Flexible plans based on your operation size and dispatch needs.",
   "Custom pricing for owner operators and fleets.",
   "No hidden fees in the way the service is structured.",
-  "No long-term contracts required to start the conversation.",
+  "No long term contracts required to start the conversation.",
 ];
 
 const startSteps = [
@@ -95,7 +95,7 @@ const startSteps = [
   {
     step: "03",
     title: "Move into steady execution",
-    description: "Dispatching support stays focused on consistent communication, cleaner workflow, and dependable follow-through.",
+    description: "Dispatching support stays focused on consistent communication, cleaner workflow, and dependable follow through.",
   },
 ];
 
@@ -105,10 +105,10 @@ export default function DispatchingServicesPage() {
       <PageHero
         eyebrow="Truck Dispatch Service"
         title="Dispatch support for owner operators and fleets that need stronger coordination, clearer communication, and a more dependable daily process."
-        description="SiratLink provides dispatch-first support for carriers who want load sourcing, broker communication, paperwork support, route coordination, and day-to-day execution handled with more discipline."
+        description="SiratLink provides dispatch first support for carriers who want load sourcing, broker communication, paperwork support, route coordination, and daily execution handled with more discipline."
         primaryCta={{ label: "Get Your Custom Plan", href: "#dispatch-contact-form" }}
         secondaryCta={{ label: "Call Now", href: siteConfig.phoneHref }}
-        stats={["Owner operators and small fleets", "Broker-facing communication", "Flexible support without long-term contracts"]}
+        stats={["Owner operators and small fleets", "Broker facing communication", "Flexible support without long term contracts"]}
       >
         <div className="soft-card premium-border surface-outline rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">What Carriers Care About</p>
@@ -192,7 +192,7 @@ export default function DispatchingServicesPage() {
             <SectionIntro
               eyebrow="Pricing Strategy"
               title="Flexible dispatch pricing that fits the operation instead of forcing every carrier into the same structure."
-              description="No exact pricing is shown here on purpose. The pricing conversation should reflect truck count, workflow complexity, lane profile, and how much day-to-day support is needed."
+              description="No exact pricing is shown here on purpose. The pricing conversation should reflect truck count, workflow complexity, lane profile, and how much daily support is needed."
             />
             <div className="mt-8 rounded-[2rem] bg-brand-navy p-6 text-white shadow-soft sm:p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand-gold">What To Expect</p>
@@ -222,12 +222,12 @@ export default function DispatchingServicesPage() {
               {
                 title: "Flexible by fleet size",
                 description:
-                  "Support can be shaped around a single truck, a small carrier, or a growing fleet instead of using a one-size-fits-all model.",
+                  "Support can be shaped around a single truck, a small carrier, or a growing fleet instead of using a one size fits all model.",
               },
               {
                 title: "Custom plans for real operations",
                 description:
-                  "The right dispatch structure depends on lanes, truck count, communication expectations, and the complexity of the day-to-day workflow.",
+                  "The right dispatch structure depends on lanes, truck count, communication expectations, and the complexity of the daily workflow.",
               },
               {
                 title: "No hidden fees",
@@ -235,9 +235,9 @@ export default function DispatchingServicesPage() {
                   "The service is built around clarity and trust, not surprising cost structures that create friction before the relationship starts.",
               },
               {
-                title: "No long-term contracts",
+                title: "No long term contracts",
                 description:
-                  "The support model is meant to earn trust through fit, communication, and execution rather than forcing long-term commitment too early.",
+                  "The support model is meant to earn trust through fit, communication, and execution rather than forcing long term commitment too early.",
               },
             ].map((item, index) => (
               <Reveal key={item.title} delay={index * 70}>

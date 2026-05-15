@@ -24,11 +24,11 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About SiratLink"
-        title="A modern service company built around trust, operational discipline, and long-term client growth."
-        description="SiratLink LLC is an Ohio-based professional service company focused on dependable dispatching and scalable business support with a more organized client experience."
+        title="A modern service company built around trust, operational discipline, and long term client growth."
+        description="SiratLink LLC is an Ohio based professional service company focused on dependable dispatching and scalable business support with a more organized client experience."
         primaryCta={{ label: "Contact Us", href: "/contact" }}
         secondaryCta={{ label: "View Services", href: "/services" }}
-        stats={["Ohio-based service company", "Dispatch-first service model", "Built for long-term client support"]}
+        stats={["Ohio based service company", "Dispatch first service model", "Built for long term client support"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">What Defines Us</p>
@@ -36,7 +36,7 @@ export default function AboutPage() {
             {[
               "Trust and reliability in every interaction",
               "Operational excellence over empty promises",
-              "A long-term growth mindset for client support",
+              "A long term growth mindset for client support",
             ].map((item) => (
               <div key={item} className="rounded-[1.35rem] bg-canvas px-4 py-4 text-sm font-medium leading-7 text-ink">
                 {item}
@@ -64,8 +64,8 @@ export default function AboutPage() {
           <Reveal delay={90}>
             <InfoCard
               eyebrow="Vision"
-              title="Grow into a trusted multi-service partner for operations, communication, and digital support."
-              description="While dispatching is the current priority, SiratLink is being built to support broader business needs over time through virtual assistance, web development, digital marketing, and scalable back-office support."
+              title="Grow into a trusted multiservice partner for operations, communication, and digital support."
+              description="While dispatching is the current priority, SiratLink is being built to support broader business needs over time through virtual assistance, web development, digital marketing, and scalable back office support."
             />
           </Reveal>
         </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionIntro
               eyebrow="Business Philosophy"
-              title="Strong operations come from clear systems, respectful communication, and consistent follow-through."
+              title="Strong operations come from clear systems, respectful communication, and consistent follow through."
               description="We believe great service should remove friction, not create more of it. That means staying organized, answering promptly, handling details carefully, and supporting clients in a way that reflects well on their business."
             />
             <p className="mt-5 text-base leading-8 text-slate">
@@ -114,7 +114,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-[1.75rem] bg-canvas p-5">
-              <h3 className="font-display text-xl font-semibold text-ink">Long-Term Growth</h3>
+              <h3 className="font-display text-xl font-semibold text-ink">Long Term Growth</h3>
               <p className="mt-3 text-sm leading-7 text-slate">
                 A service model designed to scale alongside client needs rather than remaining limited to one narrow task.
               </p>
@@ -128,7 +128,7 @@ export default function AboutPage() {
           <ConsultationBand
             eyebrow="Work With SiratLink"
             title="Partner with a service company built around trust, reliability, and operational discipline."
-            description="If you want support that feels responsive, organized, and ready for long-term business relationships, book a consultation and let&apos;s talk through the right fit."
+            description="If you want support that feels responsive, organized, and ready for long term business relationships, book a consultation and let&apos;s talk through the right fit."
           />
         </Reveal>
       </SectionShell>

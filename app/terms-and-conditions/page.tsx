@@ -59,7 +59,7 @@ export default function TermsPage() {
             <p>
               While we strive to provide reliable and professional support, we do not guarantee specific business, financial, or operational outcomes from use of our website or services.
             </p>
-            <h2>Third-Party Services</h2>
+            <h2>Third Party Services</h2>
             <p>
               Our website may reference or link to third-party platforms, brokers, tools, or service providers. We are not responsible for third-party content, terms, or performance.
             </p>

@@ -28,7 +28,7 @@ const supportAreas = [
   {
     title: "Scheduling & Coordination",
     description:
-      "Calendar support, follow-up coordination, and day-to-day organization for smoother operations.",
+      "Calendar support, follow up coordination, and daily organization for smoother operations.",
   },
   {
     title: "Communication Assistance",
@@ -66,7 +66,7 @@ const workflow = [
   {
     step: "03",
     title: "Create steadier execution",
-    description: "The service then supports cleaner internal organization, follow-through, and operational consistency over time.",
+    description: "The service then supports cleaner internal organization, follow through, and operational consistency over time.",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function VirtualAssistancePage() {
         description="SiratLink is expanding into virtual assistance services that help businesses stay organized, responsive, and ready to scale without unnecessary internal strain."
         primaryCta={{ label: "Discuss Support Needs", href: "/contact" }}
         secondaryCta={{ label: "View All Services", href: "/services" }}
-        stats={["Admin and operations support", "Scalable recurring workflows", "Business-first presentation"]}
+        stats={["Admin and operations support", "Scalable recurring workflows", "Business first presentation"]}
       >
         <div className="soft-card premium-border rounded-[2.25rem] p-6 sm:p-8">
           <p className="eyebrow">Ideal For</p>
@@ -114,7 +114,7 @@ export default function VirtualAssistancePage() {
         <Reveal>
           <SectionIntro
             eyebrow="Service Overview"
-            title="Business-focused support that feels polished, dependable, and operationally useful."
+            title="Business focused support that feels polished, dependable, and genuinely useful."
             description="This offer stays premium and practical instead of sounding like generic VA marketing."
             className="mb-10"
           />

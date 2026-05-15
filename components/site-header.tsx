@@ -30,7 +30,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50">
       <div className="border-b border-white/10 bg-brand-navy px-4 py-2 text-center text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-white/75 sm:px-6 lg:px-8">
-        Columbus, Ohio Based • Serving U.S. Carriers and Growth-Minded Businesses
+        Columbus, Ohio Based • Serving U.S. Carriers and Growth Minded Businesses
       </div>
       <div className="border-b border-white/55 bg-[linear-gradient(180deg,rgba(243,246,248,0.88),rgba(255,255,255,0.84))] backdrop-blur-2xl">
         <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8 lg:py-4">

@@ -129,7 +129,7 @@ export default function ContactPage() {
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {[
                   "Owner operators and carriers",
-                  "Clear service-fit guidance",
+                  "Clear service fit guidance",
                   "Responsive business communication",
                   "Operations and digital support",
                 ].map((item) => (

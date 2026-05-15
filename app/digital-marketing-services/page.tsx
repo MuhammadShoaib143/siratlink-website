@@ -46,12 +46,12 @@ const marketingAreas = [
   {
     title: "Content Strategy",
     description:
-      "Content direction shaped around audience trust, business clarity, and the kind of consistency that supports long-term growth.",
+      "Content direction shaped around audience trust, business clarity, and the kind of consistency that supports long term growth.",
   },
   {
-    title: "Growth-Minded Execution",
+    title: "Growth Minded Execution",
     description:
-      "A business-first approach that keeps digital marketing tied to visibility, trust-building, and practical commercial outcomes.",
+      "A business first approach that keeps digital marketing tied to visibility, trust building, and practical commercial outcomes.",
   },
 ];
 
@@ -117,8 +117,8 @@ export default function DigitalMarketingServicesPage() {
         <Reveal>
           <SectionIntro
             eyebrow="What This Covers"
-            title="A modern digital marketing service built to support visibility, trust, and long-term business growth."
-            description="It complements the dispatch-first brand while giving clients access to broader growth support."
+            title="A modern digital marketing service built to support visibility, trust, and long term business growth."
+            description="It complements the dispatch first brand while giving clients access to broader growth support."
             className="mb-10"
           />
         </Reveal>
@@ -159,8 +159,8 @@ export default function DigitalMarketingServicesPage() {
           <Reveal>
             <SectionIntro
               eyebrow="Process"
-              title="A cleaner strategy path for businesses that need more visibility and better-quality inquiries."
-              description="The process is built to stay strategic and business-first instead of drifting into vague marketing language."
+              title="A cleaner strategy path for businesses that need more visibility and better quality inquiries."
+              description="The process is built to stay strategic and business first instead of drifting into vague marketing language."
               className="mb-8"
             />
             <div className="grid gap-4">

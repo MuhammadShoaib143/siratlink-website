@@ -111,9 +111,9 @@ export function ContactForm({
 
       <div className="mb-6 grid gap-3 sm:grid-cols-3">
         {[
-          { label: "Response style", value: "Clear next-step guidance" },
-          { label: "Best for", value: "Carriers and growth-minded businesses" },
-          { label: "Delivery path", value: "Secure server-side inquiry capture" },
+          { label: "Response style", value: "Clear next step guidance" },
+          { label: "Best for", value: "Carriers and growth minded businesses" },
+          { label: "Delivery path", value: "Secure backend inquiry capture" },
         ].map((item) => (
           <div key={item.label} className="rounded-[1.35rem] border border-line bg-white/78 px-4 py-4">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-accent">{item.label}</p>

@@ -43,7 +43,7 @@ const offerings = [
   {
     title: "Growth-Focused Strategy",
     description:
-      "A future-ready approach that aligns digital presence with sales, trust-building, and operational scale.",
+      "A future ready approach that aligns digital presence with sales, trust building, and operational scale.",
   },
   {
     title: "Maintainable Execution",
@@ -79,7 +79,7 @@ const faqs = [
   {
     title: "What kind of websites fit this service best?",
     description:
-      "Service businesses, small companies, and growth-minded brands that need stronger clarity, trust, and conversion support are the best fit.",
+      "Service businesses, small companies, and growth minded brands that need stronger clarity, trust, and conversion support are the best fit.",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function WebDevelopmentPage() {
         <Reveal>
           <SectionIntro
             eyebrow="What This Service Covers"
-            title="Web support built for modern business presentation, responsiveness, and long-term value."
+            title="Web support built for modern business presentation, responsiveness, and long term value."
             description="The service is framed as premium, strategic, and practical for businesses that care about how they show up online."
             className="mb-10"
           />
@@ -190,7 +190,7 @@ export default function WebDevelopmentPage() {
         <Reveal>
           <ConsultationBand
             title="Discuss a website project that helps your business look more credible and convert more clearly."
-            description="From modern responsive websites to broader digital support, SiratLink can help you create a stronger online presence with a professional, business-first approach."
+            description="From modern responsive websites to broader digital support, SiratLink can help you create a stronger online presence with a professional, business first approach."
           />
         </Reveal>
       </SectionShell>
